@@ -1,0 +1,917 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../4-deploy-dynatrace/">
+      
+      
+        <link rel="next" href="../6-configure-dynatrace/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+    
+    
+      
+        <title>5. Scaling Log Analytics - Dynatrace Workshop: Scaling Log Analytics</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+  
+      
+    
+  <!--  <script type="text/javascript" src="https://js-cdn.dynatrace.com/jstag/1612cf70810/bf81393wlb/d6a688035595a70d_complete.js" crossorigin="anonymous"></script> -->
+
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#scaling-log-analytics" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Dynatrace Workshop: Scaling Log Analytics" class="md-header__button md-logo" aria-label="Dynatrace Workshop: Scaling Log Analytics" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynatrace Workshop: Scaling Log Analytics
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              5. Scaling Log Analytics
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dynatrace-wwse/workshop-dynatrace-log-analytics" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    View Code on GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Dynatrace Workshop: Scaling Log Analytics" class="md-nav__button md-logo" aria-label="Dynatrace Workshop: Scaling Log Analytics" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Dynatrace Workshop: Scaling Log Analytics
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dynatrace-wwse/workshop-dynatrace-log-analytics" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    View Code on GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2-getting-started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Getting started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3-codespaces/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Codespaces
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4-deploy-dynatrace/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Deploy Dynatrace
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    5. Scaling Log Analytics
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    5. Scaling Log Analytics
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#logs-in-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logs in Context
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#openpipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      OpenPipeline
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bucket-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bucket Strategy
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#segments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Segments
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Permissions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transforming-logs-to-metrics-and-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transforming Logs to Metrics and Events
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#continue" class="md-nav__link">
+    <span class="md-ellipsis">
+      Continue
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6-configure-dynatrace/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Configure Dynatrace
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7-dql-exercises/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. DQL Exercises
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8-anomaly-detection/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Anomaly Detection
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../9-dashboards/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Dashboards
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Resources
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cleanup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. Cleanup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#logs-in-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logs in Context
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#openpipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      OpenPipeline
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bucket-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bucket Strategy
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#segments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Segments
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Permissions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transforming-logs-to-metrics-and-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transforming Logs to Metrics and Events
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#continue" class="md-nav__link">
+    <span class="md-ellipsis">
+      Continue
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="scaling-log-analytics">Scaling Log Analytics<a class="headerlink" href="#scaling-log-analytics" title="Permanent link">#</a></h1>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  dynatrace.sendBizEvent('page_load', {"page": "5. Scaling Log Analytics"})
+});
+</script>
+
+<p>Let’s be real — logs are your lifeline. Whether you're chasing down a production bug at 2 a.m. or trying to understand why latency just spiked, you need answers fast. That’s where Dynatrace comes in. It scales log analytics effortlessly, ingesting massive volumes without breaking a sweat, and delivers lightning-fast search and AI-powered context so you can go from “what just happened?” to “problem solved” in minutes. No more stitching together tools or waiting on queries — just instant clarity, full-stack visibility, and the kind of speed that makes you feel like a superhero.</p>
+<p>Let's learn how Dynatrace is able to scale log analytics for your organization.</p>
+<div class="grid cards">
+<ul>
+<li><a href="https://github.com/dynatrace-wwse/workshop-dynatrace-log-analytics/blob/main/assets/LogsWorkshop.pdf" target="_blank">Learn More<span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span></a></li>
+</ul>
+</div>
+<h2 id="logs-in-context">Logs in Context<a class="headerlink" href="#logs-in-context" title="Permanent link">#</a></h2>
+<p><img alt="Logs in Context" src="../img/scaling-logs_logs_in_context.png" /></p>
+<p><strong>Automatic Correlation of Logs with Traces</strong></p>
+<p>Dynatrace enriches logs with metadata such as <code>trace_id</code> and <code>span_id</code>, allowing you to seamlessly link log entries to distributed traces. This contextualization helps you understand the full transaction flow and pinpoint where issues occur within a service call or user session </p>
+<p><strong>Problem-Centric Log Views via Davis AI</strong></p>
+<p>When Dynatrace detects a problem (e.g., performance degradation or error spikes), it automatically surfaces only the relevant log lines tied to that issue. This reduces noise and accelerates Mean-Time-to-Identify (MTTI). You can also run recommended queries like “Show logs for problem” or “Show surrounding logs” to expand your investigation</p>
+<p><strong>Integrated Observability Across Metrics, Logs, and Traces</strong></p>
+<p>Dynatrace provides a unified observability platform where logs are not isolated — they're integrated with metrics, traces, and topology data. This enables you to:</p>
+<ul>
+<li>Navigate from a log entry to the affected Kubernetes workload.</li>
+<li>View related metrics like resource usage and business KPI.</li>
+<li>Analyze service-level impact and user experience</li>
+</ul>
+<p>This holistic view ensures that logs are not just raw text but part of a broader diagnostic workflow.</p>
+<h2 id="openpipeline">OpenPipeline<a class="headerlink" href="#openpipeline" title="Permanent link">#</a></h2>
+<p><img alt="OpenPipeline" src="../img/scaling-logs_openpipeline.png" /></p>
+<p><strong>Customizable and Scalable Log Ingestion</strong></p>
+<p>OpenPipeline is Dynatrace’s flexible data processing engine that allows you to ingest, extract, and enrich log data at scale. </p>
+<p>You can:</p>
+<ul>
+<li>Create custom pipelines to extract relevant log fields.</li>
+<li>Convert log entries into actionable events (e.g., Davis events).</li>
+<li>Route logs dynamically based on conditions like severity or error type.</li>
+</ul>
+<p>This modular approach ensures that only meaningful data is processed and stored, optimizing performance and cost for large environments.</p>
+<p><strong>Modular Data Flow Architecture</strong></p>
+<p>OpenPipeline uses a modular data flow model where each stage can be independently configured. </p>
+<p>This enables:</p>
+<ul>
+<li>Fine-grained control over how logs are handled.</li>
+<li>Easy integration with external sources and destinations.</li>
+<li>Reusability and scalability across teams and environments.</li>
+</ul>
+<p>This architecture supports enterprise-grade customization while maintaining performance and reliability.</p>
+<p><strong>Event Extraction and AI Integration</strong></p>
+<p>OpenPipeline can convert log entries into other telemetry types, extract business events, and make them actionable within Dynatrace’s AI engine. </p>
+<p>This means:</p>
+<ul>
+<li>Logs can trigger alerts and problem detection.</li>
+<li>Events can be correlated with metrics, traces, and topology.</li>
+<li>Teams can directly relate technical issues to business impact and speed up root cause analysis.</li>
+</ul>
+<p>By turning raw logs into structured, AI-ready data, OpenPipeline helps teams solve problems faster and more intelligently.</p>
+<h2 id="bucket-strategy">Bucket Strategy<a class="headerlink" href="#bucket-strategy" title="Permanent link">#</a></h2>
+<p><img alt="Bucket Strategy" src="../img/scaling-logs_bucket_strategy.png" /></p>
+<p><strong>Logical Grouping of Data for Efficient Querying</strong></p>
+<p>Buckets allow you to organize log data by logical boundaries such as environment, application, team, or region. </p>
+<p>Consider a bucket strategy by evaluating the following information:</p>
+<ul>
+<li>Ingest sources</li>
+<li>Estimated Ingest volume</li>
+<li>Retention desires</li>
+<li>Compliance Requirements (audit)</li>
+<li>Sensitive data &amp; masking</li>
+<li>Permission requirements</li>
+</ul>
+<p><strong>Bucket Considerations</strong></p>
+<p>Consider the following details when using buckets with your log management and analytics solution:</p>
+<ul>
+<li>There is a limit to the number of buckets per tenant, but it can be increased based on log ingest volumes.</li>
+<li>Buckets exist for all data types available with Grail, not just logs - traces (spans) and business events too for example.</li>
+<li>Creating more buckets introduces additional administration, find the right balance.</li>
+<li>Leverage log attributes, including those added by OpenPipeline, to store logs in the correct bucket.</li>
+</ul>
+<p><strong>Optimized Query Execution via Bucket Targeting</strong></p>
+<p>When using Dynatrace Query Language (DQL), you can specify the bucket to query, which allows Grail to:</p>
+<ul>
+<li>Automatically optimize query execution.</li>
+<li>Skip irrelevant data and reduce latency.</li>
+<li>Leverage indexing and parallel processing for faster results.</li>
+</ul>
+<h2 id="segments">Segments<a class="headerlink" href="#segments" title="Permanent link">#</a></h2>
+<p><img alt="Segments" src="../img/scaling-logs_segments.png" /></p>
+<p><strong>Logical Filtering Across Data Types</strong></p>
+<p>Segments act as predefined logical filters that span across logs, traces, metrics, events, and entities. They allow you to organize observability data by dimensions such as:</p>
+<ul>
+<li>Business applications</li>
+<li>Organizational units</li>
+<li>Infrastructure components</li>
+</ul>
+<p>This logical structuring helps teams focus on relevant data, improving query efficiency and reducing noise in large-scale environments.</p>
+<p><strong>Enable Reusable, Scalable Filtering</strong></p>
+<p>Segments can be configured with variables, allowing dynamic filtering across multiple buckets or entities. For example:</p>
+<ul>
+<li>A segment can include a variable to filter logs by bucket name.</li>
+<li>Users can select one or more values at runtime, making the segment reusable across dashboards, notebooks, and workflows.</li>
+</ul>
+<p>This flexibility supports scalable log analytics by enabling consistent filtering logic across apps and teams.</p>
+<p><strong>Optimize Query Performance and Consumption</strong></p>
+<p>By scoping queries to specific buckets or entities using segments, Dynatrace can:</p>
+<ul>
+<li>Reduce query execution time by narrowing the search space.</li>
+<li>Optimize license usage by avoiding unnecessary data scans.</li>
+<li>Improve responsiveness in apps like Notebooks and Dashboards.</li>
+</ul>
+<p>This makes segments a powerful tool for performance tuning and cost control in enterprise-scale environments.</p>
+<h2 id="permissions">Permissions<a class="headerlink" href="#permissions" title="Permanent link">#</a></h2>
+<p><img alt="Permissions" src="../img/scaling-logs_permissions.png" /></p>
+<p><strong>Granular Access Control at Multiple Levels</strong></p>
+<p>Dynatrace Grail supports fine-grained permissions at the bucket, table, field, and entity levels. This allows organizations to:</p>
+<ul>
+<li>Control who can access specific log data.</li>
+<li>Limit visibility based on business units, environments, or data sensitivity.</li>
+<li>Ensure compliance with internal and external data governance policies.</li>
+</ul>
+<p><strong>Policy-Based Management for Scalability</strong></p>
+<p>Permissions in Grail are managed through IAM policies using a flexible syntax.</p>
+<p>For example, <code>ALLOW storage:buckets:read WHERE storage:bucket-name = "prod_logs"</code>.</p>
+<p>These policies:</p>
+<ul>
+<li>Can be reused across users and  groups, supporting dynamic boundaries</li>
+<li>Support conditions like <code>IN</code>, <code>STARTSWITH</code>, and <code>=</code>, enabling scalable and dynamic access control.</li>
+<li>Provide access to specific log data based on record-level and field-level values</li>
+</ul>
+<p><strong>Complement Bucket and Segment Strategy</strong></p>
+<p>Controlling access to logs can be accomplished via IAM policies and defining bucket level and/or record level
+access:</p>
+<ul>
+<li>Bucket level control is done via bucket names.</li>
+<li>Record level control is done via fields or dt.security.context which must be set on the records themselves and
+defined within the policy.</li>
+</ul>
+<p>Implement your permission strategy that aligns and complements your bucket and segment definitions.</p>
+<h2 id="transforming-logs-to-metrics-and-events">Transforming Logs to Metrics and Events<a class="headerlink" href="#transforming-logs-to-metrics-and-events" title="Permanent link">#</a></h2>
+<p><img alt="Logs to Metrics" src="../img/scaling-logs_logs_to_metrics.png" /></p>
+<p><strong>Create Metrics from Logs</strong></p>
+<p>Dynatrace, with OpenPipeline, can create metrics and aggregate metric data points from log data at ingest.  By leveraging metrics based on your log data you'll get:</p>
+<ul>
+<li>Enhanced performance through efficient storage, faster query performance, and even better scalability for large data volumes.</li>
+<li>Simplified alerting with easier setup, easier to generate dynamic thesholds, and easy to aggregate/summarize data.</li>
+</ul>
+<p><strong>Create Events from Logs</strong></p>
+<p>In addition to metrics, Dynatrace can extract log data into an event:</p>
+<ul>
+<li>Extract a Davis event to detect anomalies, simplify alerting, and speed up root cause analysis.</li>
+<li>Extract a Business Event to enable business observablity and report on business outcomes.</li>
+</ul>
+<p><strong>Best Practices on Using Log Data</strong></p>
+<p>When using data from logs on dashboards or in alerting, consider these best practices:</p>
+<p>Dashboards:</p>
+<ul>
+<li>Use logs when low frequency refresh is required, involve a complex DQL, join different data types, analyzing short timeframes.<ul>
+<li>Use metrics when high frequency refresh is required, trending over long timeframes, need to optimize query costs, to create SLOs/alerts.</li>
+</ul>
+</li>
+</ul>
+<p>Alerting:</p>
+<ul>
+<li>Use logs when infrequent ingest of log records, complex queries, detailed investigations.<ul>
+<li>Use metrics when frequent data points, dynamic thresholds, and performance tracking.</li>
+</ul>
+</li>
+</ul>
+<h2 id="continue">Continue<a class="headerlink" href="#continue" title="Permanent link">#</a></h2>
+<p>Now that we better understand how Dynatrace is able to scale log analytics for your organization, let's implement these strategies and best practices with hands-on exercises.</p>
+<div class="grid cards">
+<ul>
+<li><a href="../6-configure-dynatrace/">Continue to configuring Dynatrace<span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span></a></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>
