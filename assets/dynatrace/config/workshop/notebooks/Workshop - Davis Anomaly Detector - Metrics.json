@@ -1,0 +1,15 @@
+{
+    "version": "6",
+    "defaultTimeframe": {
+        "from": "now()-2h",
+        "to": "now()"
+    },
+    "defaultSegments": [],
+    "sections": [
+        {
+            "id": "2b102e93-6e63-4826-bfd0-a3a109dce6e0",
+            "type": "markdown",
+            "markdown": "#### 1. In the same notebook for **Log Metric Anomaly Baselines**, after completing the DQL > Open the side menu with ... and select Open With\n![](https://raw.githubusercontent.com/dynatrace-wwse/workshop-dynatrace-log-analytics/refs/heads/main/assets/images/metrics-davis-anomaly-detection_open_with_davis_anomaly_detection.png)\n####     2. Open with Davis Anomaly Detection\n####     3. Define the alert conditions, choose **Auto adaptive threshold** with a signal fluctuation of **1**\n![](https://raw.githubusercontent.com/dynatrace-wwse/workshop-dynatrace-log-analytics/refs/heads/main/assets/images/metrics-davis-anomaly-detection_anomaly_detection_define_alert_condition.png)\n####     4. Configure the event details, adding the **Title** and **Event name**\n![](https://raw.githubusercontent.com/dynatrace-wwse/workshop-dynatrace-log-analytics/refs/heads/main/assets/images/metrics-davis-anomaly-detection_anomaly_detection_add_details.png)\n####     5. Check-out the GB scan size for DQL Query - it should be 0 bytes\n####     6. Press Create to save"
+        }
+    ]
+}

@@ -1,0 +1,159 @@
+{
+    "version": "6",
+    "defaultTimeframe": {
+        "from": "now()-2h",
+        "to": "now()"
+    },
+    "defaultSegments": [],
+    "sections": [
+        {
+            "id": "adbee822-325b-4549-b3d2-b6d6e895d873",
+            "type": "markdown",
+            "markdown": "# Davis CoPilot\n### DQL is super powerful, but what if we could use generative AI to do some of the hard work for us? Let's use **[Davis CoPilot](https://docs.dynatrace.com/docs/discover-dynatrace/platform/davis-ai/copilot/copilot-getting-started)** to build the DQL for some common use cases\n![](https://raw.githubusercontent.com/dynatrace-wwse/workshop-dynatrace-log-analytics/refs/heads/main/assets/images/logs-copilot_davis_ai_marketecture.png)"
+        },
+        {
+            "id": "dfda42c9-5445-430d-87e6-4d66273d5722",
+            "type": "markdown",
+            "markdown": "**Get a high level overview of your logs**\n\n```Summarize all logs by log level```"
+        },
+        {
+            "id": "dbff690e-6c6f-45b7-9e9f-102f6d3ea9e1",
+            "type": "dql",
+            "filterSegments": [],
+            "drilldownPath": [],
+            "previousFilterSegments": [],
+            "subType": "davis-copilot",
+            "davisCopilot": {
+                "prompt": "",
+                "response": {
+                    "status": "idle"
+                },
+                "showDqlSnippet": false,
+                "feedbackProvided": false
+            },
+            "state": {
+                "input": {
+                    "timeframe": {
+                        "from": "now()-2h",
+                        "to": "now()"
+                    },
+                    "value": ""
+                },
+                "visualizationSettings": {
+                    "autoSelectVisualization": true,
+                    "chartSettings": {}
+                },
+                "querySettings": {
+                    "maxResultRecords": 1000,
+                    "defaultScanLimitGbytes": 500,
+                    "maxResultMegaBytes": 1,
+                    "defaultSamplingRatio": 10,
+                    "enableSampling": false
+                },
+                "state": "idle",
+                "davis": {
+                    "includeLogs": true,
+                    "davisVisualization": {
+                        "isAvailable": true
+                    }
+                }
+            }
+        },
+        {
+            "id": "c45c6be4-e276-4486-a6a0-073690f6e9c2",
+            "type": "markdown",
+            "markdown": "**Convert logs into a time series**\n\n```Show me all error logs this week with 15 minute intervals```"
+        },
+        {
+            "id": "2576cc48-0b0f-4fda-8a8c-2887edcb6130",
+            "type": "dql",
+            "filterSegments": [],
+            "drilldownPath": [],
+            "previousFilterSegments": [],
+            "subType": "davis-copilot",
+            "davisCopilot": {
+                "prompt": "",
+                "response": {
+                    "status": "idle"
+                },
+                "showDqlSnippet": false,
+                "feedbackProvided": false
+            },
+            "state": {
+                "input": {
+                    "timeframe": {
+                        "from": "now()-2h",
+                        "to": "now()"
+                    },
+                    "value": ""
+                },
+                "visualizationSettings": {
+                    "autoSelectVisualization": true,
+                    "chartSettings": {}
+                },
+                "querySettings": {
+                    "maxResultRecords": 1000,
+                    "defaultScanLimitGbytes": 500,
+                    "maxResultMegaBytes": 1,
+                    "defaultSamplingRatio": 10,
+                    "enableSampling": false
+                },
+                "state": "idle",
+                "davis": {
+                    "includeLogs": true,
+                    "davisVisualization": {
+                        "isAvailable": true
+                    }
+                }
+            }
+        },
+        {
+            "id": "5b25a692-a58f-4c1b-8a34-5f8bd7e5661d",
+            "type": "markdown",
+            "markdown": "**Split by K8s Namespace over time**\n\n```Show me the count of all error logs grouped by k8s namespace with a 5-minute interval```"
+        },
+        {
+            "id": "e3d69131-fafd-4e84-bb3c-ecff1ed3bb56",
+            "type": "dql",
+            "filterSegments": [],
+            "drilldownPath": [],
+            "previousFilterSegments": [],
+            "subType": "davis-copilot",
+            "davisCopilot": {
+                "prompt": "",
+                "response": {
+                    "status": "idle"
+                },
+                "showDqlSnippet": false,
+                "feedbackProvided": false
+            },
+            "state": {
+                "input": {
+                    "timeframe": {
+                        "from": "now()-2h",
+                        "to": "now()"
+                    },
+                    "value": ""
+                },
+                "visualizationSettings": {
+                    "autoSelectVisualization": true,
+                    "chartSettings": {}
+                },
+                "querySettings": {
+                    "maxResultRecords": 1000,
+                    "defaultScanLimitGbytes": 500,
+                    "maxResultMegaBytes": 1,
+                    "defaultSamplingRatio": 10,
+                    "enableSampling": false
+                },
+                "state": "idle",
+                "davis": {
+                    "includeLogs": true,
+                    "davisVisualization": {
+                        "isAvailable": true
+                    }
+                }
+            }
+        }
+    ]
+}
