@@ -1,0 +1,73 @@
+{
+    "version": "6",
+    "defaultTimeframe": {
+        "from": "now()-2h",
+        "to": "now()"
+    },
+    "defaultSegments": [],
+    "sections": [
+        {
+            "id": "0fb5a0f2-9ed8-49ee-a8b9-2c53f559c2ca",
+            "type": "markdown",
+            "markdown": "## Davis AI - Static Anomaly Baseline"
+        },
+        {
+            "id": "6d86387e-5d0d-44e9-87ad-09a4ead70275",
+            "type": "markdown",
+            "markdown": "**Exercise**\n1. Using the Metrics tile, Search for `log.loglevelcounter` metric\n2. Filter for `loglevel = \"ERROR\"`\n3. And Split By `loglevel`\n4. Select Options > Under the visualizations tab, enable **Davis AI Analyzer** and select the **Static Anomaly Baseline**"
+        },
+        {
+            "id": "61b0492e-6bad-4177-82fc-6baa914ca3c6",
+            "type": "dql",
+            "title": "Explore metrics",
+            "queryConfig": {
+                "version": "16.3.1",
+                "subQueries": [
+                    {
+                        "id": "A",
+                        "isEnabled": true,
+                        "datatype": "metrics",
+                        "metric": {
+                            "key": "",
+                            "aggregation": "avg"
+                        }
+                    }
+                ]
+            },
+            "filterSegments": [],
+            "drilldownPath": [],
+            "previousFilterSegments": [],
+            "state": {
+                "input": {
+                    "timeframe": {
+                        "from": "now()-2h",
+                        "to": "now()"
+                    },
+                    "value": ""
+                },
+                "visualizationSettings": {
+                    "chartSettings": {
+                        "truncationMode": "middle"
+                    },
+                    "autoSelectVisualization": true,
+                    "thresholds": []
+                },
+                "querySettings": {
+                    "maxResultRecords": 1000,
+                    "defaultScanLimitGbytes": 500,
+                    "maxResultMegaBytes": 1,
+                    "defaultSamplingRatio": 10,
+                    "enableSampling": false
+                },
+                "visualization": "lineChart",
+                "state": "idle",
+                "davis": {
+                    "includeLogs": true,
+                    "davisVisualization": {
+                        "isAvailable": true
+                    }
+                }
+            }
+        }
+    ]
+}

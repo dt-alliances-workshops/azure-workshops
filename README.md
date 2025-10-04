@@ -65,3 +65,4 @@ This workshop is designed to help participants understand how to scale log analy
 Ready to scale log analytics and understand your business like never before?
 
 ## [View the Lab Guide](https://dynatrace-wwse.github.io/workshop-dynatrace-log-analytics)
+
