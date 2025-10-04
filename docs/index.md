@@ -1,47 +1,79 @@
---8<-- "snippets/send-bizevent/bizevent-index.js"
-# Enablement Business Observability
+# About
+--8<-- "snippets/send-bizevent/index.js"
 
 --8<-- "snippets/disclaimer.md"
---8<-- "snippets/view-code.md"
 
-## Lab Overview
+## Workshop Overview
 
-During this hands-on training, we'll explore Business Observability powered by BizEvents. During this session we configure business events using OneAgent, Logs and API data sources in context of a single process flow. Additionally, we will use OpenPipeline to generate and enrich telemetry signals. Using the data generated, we'll run powerful analytics with Business Flows, Notebooks, and Dashboards.
+This workshop is designed to help participants understand how to scale log analytics using Dynatrace, particularly leveraging its Grail-powered Log Management and Analytics capabilities. It’s hands-on and intended for technical users who want to explore log ingestion, querying, and visualization at enterprise scale.
 
-The Astroshop `Order to Shipped` Business Process will be the target use case:
+**Lab tasks:**
 
-```txt
-Steps:
+1. About
 
-Step 1: Place Order
-Step 2: Fraud Check
-Step 3: Order Shipped
+    - Understand the purpose of this workshop and what will be accomplished
 
-Correlation Id:
+2. Getting Started
 
-orderId
-```
-![FlowRaw](./img/astroshop_flow_raw.png)
+    - Complete prerequisites before starting the workshop
 
-The training will start with:
+3. Codespaces
 
-1. Dynatrace Tenant Setup
-1. Environment Setup using Github Codespaces
+    - Deploy Kubernetes cluster with demo applications used during the workshop
+    - Deploy Dynatrace configurations (such as workshop notebooks) using Monaco
 
-Then we will move to the hands on lab tasks:
+4. Deploy Dynatrace
 
-1. Business Event Capture via the Dynatrace OneAgent - Place Order
-1. Business Event Capture via Dynatrace ingested logs - Fraud Check
-1. Business Event Capture via the events sent to the Dynatrace Business Events API - Order Shipped
-1. Create a Metric from Business Events - Place Order
-1. Create an Alert from Business Events - Place Order
-1. Create a Business Flow and an Alert - Order to Shipped business process
-1. Import and review sample Dashboards 
+    - Deploy Dynatrace on Kubernetes for full-stack observability with logs in context
+    - Validate observability signals, including logs
+
+5. Scaling Log Analytics
+
+    - Learn the best practices of scaling log analytics with Dynatrace
+    - Reference presentation companion asset
+
+6. Configure Dynatrace
+
+    - Configure Dynatrace using the best practices covered in scaling log analytics
+
+7. DQL Exercises
+
+    - Learn how to use Dynatrace Query Language (DQL) to perform fast and powerful analytics on your observability data, including logs
+
+8. Anomaly Detection
+
+    - Leverage Dynatrace's Davis AI to detect anomalies from log data to identify issues and resolve them faster
+
+9. Dashboards
+
+    - Learn how to visualize observability signals, including logs, using the powerful and easy to use dashboards in Dynatrace
+
+10. Resources
+
+    - Additional resources available to continue your log analytics journey with Dynatrace, after completing the workshop
+
+11. Cleanup
+
+    - Tear down and clean up the workshop assets after its completion
+
+## Technical Specification
+
+### Technologies Used
+- [Dynatrace](https://www.dynatrace.com/trial){target=_blank}
+- [Kubernetes Kind](https://kind.sigs.k8s.io/){target=_blank}
+    - tested on Kind tag 0.27.0
+- [Dynatrace Operator](https://github.com/Dynatrace/dynatrace-operator){target=_blank}
+    - tested on v1.7.0 (September 2025)
+- [Dynatrace OneAgent](https://docs.dynatrace.com/docs/whats-new/oneagent){target=_blank}
+    - tested on v1.319 (July 2025)
+
+### Reference Architecture
+<!--TODO: Updated reference architecture -->
 
 ## Continue
 
 In the next section, we'll review the prerequisites for this lab needed before launching our Codespaces instance.
 
 <div class="grid cards" markdown>
-- [Continue to getting started:octicons-arrow-right-24:](getting-started.md)
+- [Continue to getting started:octicons-arrow-right-24:](2-getting-started.md)
 </div>
