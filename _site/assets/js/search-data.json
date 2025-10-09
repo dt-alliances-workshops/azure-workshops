@@ -1,0 +1,23 @@
+{"0": {
+    "doc": "Home",
+    "title": "Welcome to Azure Workshops",
+    "content": "This collection of self-paced labs and workshops is designed to guide you through common Azure services and development scenarios. Each module provides step-by-step instructions, code snippets, and verification checks. We recommend starting with Module 1 to ensure your local development environment is set up correctly. ",
+    "url": "/#welcome-to-azure-workshops",
+    
+    "relUrl": "/#welcome-to-azure-workshops"
+  },"1": {
+    "doc": "Home",
+    "title": "🚀 Get Started",
+    "content": "| Module | Description | Time Estimate | . | 01. Setting up Your Azure Environment | Install Azure CLI and authenticate your account. | 10 minutes | . | 02. Creating an Azure Resource Group | Learn how to logically group resources. | 5 minutes | . | 03. Deploying a Basic Web App | Deploy your first application to Azure App Service. | 15 minutes | . Start Workshop Now → . ",
+    "url": "/#-get-started",
+    
+    "relUrl": "/#-get-started"
+  },"2": {
+    "doc": "Home",
+    "title": "Home",
+    "content": " ",
+    "url": "/",
+    
+    "relUrl": "/"
+  }
+}

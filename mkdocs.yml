@@ -1,0 +1,30 @@
+site_name: Azure Workshops Documentation
+site_url: https://github.com/YourUsername/azure-workshops # Update this to your repo URL
+repo_url: https://github.com/YourUsername/azure-workshops
+
+# The MkDocs structure is defined by the 'docs' folder, 
+# which should contain all your Markdown files.
+docs_dir: docs
+
+# Using the popular 'Material for MkDocs' theme for a modern, responsive design
+theme:
+  name: material
+  palette:
+    # Use Azure blue colors
+    primary: blue
+    accent: light blue
+  features:
+    - navigation.tabs
+    - navigation.instant
+    - toc.follow
+    - search.highlight
+    - search.share
+
+# Define the explicit navigation structure (replaces Jekyll nav_order/parent)
+nav:
+  - Home: index.md
+  - Azure Workshop:
+    - 01. Setting up Environment: workshops/01_module_setup.md
+    - 02. Creating Resource Group: workshops/02_create_resource_group.md
+    # Add other modules here
+    - 03. Deploying a Basic Web App: workshops/03_deploy_web_app.md
