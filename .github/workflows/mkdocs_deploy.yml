@@ -19,7 +19,8 @@ permissions:
 
 jobs:
   deploy:
-    runs_on: ubuntu-latest
+    # --- FIX APPLIED HERE: Changed runs_on to runs-on ---
+    runs-on: ubuntu-latest
     steps:
       # 1. Checkout the repository code
       - name: Checkout Repository
