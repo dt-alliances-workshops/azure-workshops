@@ -76,9 +76,7 @@ nav:
     # 1. New intermediate section title 'Labs'
     - Labs:  
       # 2. All labs are nested under 'Labs'
-      - 00. Lab0 Setting up Environment: workshops/00_module_setup.md
-        # 3. Anchor links are nested directly under the lab page key
-        # (Note: I corrected the full anchor text based on your Markdown file H2 headings)
+      - 00. Lab0 Setting up Environment: workshops/00_module_setup.md        
         - 01 Learning Objectives: workshops/00_module_setup.md#learning-objectives
         - 02 Azure Pass Subscription: workshops/00_module_setup.md#azure-pass-subscription-setup
         - 03 Create Azure Native setup: workshops/00_module_setup.md#create-azure-native-dynatrace-service-from-marketplace
