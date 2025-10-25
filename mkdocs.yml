@@ -39,6 +39,8 @@ theme:
     - navigation.tabs
     - navigation.instant
     - navigation.sections
+    - navigation.expand
+    - navigation.tabs.sticky
     - toc.follow
     - search.highlight
     - search.share
@@ -71,10 +73,16 @@ plugins:
 nav:
   - Home: index.md
   - Azure Workshop:
-    - 01. Setting up Environment: workshops/00_module_setup.md
-    - Learning Objectives: workshops/00_module_setup/#learning-objectives
-    - Azure Pass Subscription: workshops/00_module_setup/#azure-pass-subscription
-    - Create Azure Native setup: workshops/00_module_setup/#create-azure-native-dynatrace-service-from-marketplace  
-    - 02. Creating Resource Group: workshops/02_create_resource_group.md
+    # 1. New intermediate section title 'Labs'
+    - Labs:  
+      # 2. All labs are nested under 'Labs'
+      - 00. Lab0 Setting up Environment: workshops/00_module_setup.md
+        # 3. Anchor links are nested directly under the lab page key
+        # (Note: I corrected the full anchor text based on your Markdown file H2 headings)
+        - 01 Learning Objectives: workshops/00_module_setup.md#learning-objectives
+        - 02 Azure Pass Subscription: workshops/00_module_setup.md#azure-pass-subscription-setup
+        - 03 Create Azure Native setup: workshops/00_module_setup.md#create-azure-native-dynatrace-service-from-marketplace
+        # ... (other subsections for Lab 0) 
+    - 01. Start Lab 1 - Creating Resource Group: workshops/02_create_resource_group.md
     # Add other modules here
-    - 03. Deploying a Basic Web App: workshops/03_deploy_web_app.md
+    - 02. Start Lab2 - Deploying a Basic Web App: workshops/03_deploy_web_app.md
