@@ -9,9 +9,7 @@ docs_dir: docs
 # Using the popular 'Material for MkDocs' theme for a modern, responsive design
 theme:
   name: material
-  custom_dir: docs/overrides
-  features:
-    - content.code.copy
+  custom_dir: docs/overrides  
   palette:
     # Use Azure blue colors
     #primary: blue
@@ -39,12 +37,12 @@ theme:
     - navigation.tabs
     - navigation.instant
     - navigation.sections
-    - navigation.expand
     - navigation.tabs.sticky
     - toc.follow
     - search.highlight
     - search.share
     - content.code.copy
+    - navigation.expand
 
   
  
@@ -69,18 +67,31 @@ markdown_extensions:
       alternate_style: true
 plugins:
     - search
+# mkdocs.yml (Replace lines 74-88 in your file with this block)
+
 # Define the explicit navigation structure (replaces Jekyll nav_order/parent)
-# mkdocs.yml - MINIMAL FIX NAV
 nav:
   - Home: index.md
   - Azure Workshop:
-    - Labs:  
-      # All items under Labs must be indented correctly
-      - 00. Lab0 Setting up Environment: workshops/00_module_setup.md        
-        - 01 Learning Objectives: workshops/00_module_setup.md#learning-objectives
-        - 02 Azure Pass Subscription: workshops/00_module_setup.md#azure-pass-subscription-setup
-        - 03 Create Azure Native setup: workshops/00_module_setup.md#create-azure-native-dynatrace-service-from-marketplace
-        # ... (other subsections for Lab 0) 
-    # These next items must be at the same level as 'Labs' to be siblings
+    # --- START OF LAB LIST ---
+    
+    # Lab 0 is a page, and its anchors are nested directly underneath it.
+    # This page entry acts as a collapsible container.
+    - 00. Lab0 Setting up Environment: workshops/00_module_setup.md
+      # Anchors (subsections) must be indented 2 spaces deeper than the page link above
+      - 01 Learning Objectives: workshops/00_module_setup.md#learning-objectives
+      - 02 Azure Pass Subscription: workshops/00_module_setup.md#azure-pass-subscription-setup
+      - 03 Create Azure Native setup: workshops/00_module_setup.md#create-azure-native-dynatrace-service-from-marketplace
+      - 04 Azure Portal Prep: workshops/00_module_setup.md#azure-portal-prep
+      - 05 Setup Dynatrace Environment: workshops/00_module_setup.md#setup-your-dynatrace-environment
+      - 06 Collect Inputs: workshops/00_module_setup.md#collect-inputs-for-provision-script
+      - 07 Provision the Workshop: workshops/00_module_setup.md#provision-the-workshop
+      - 08 Validation: workshops/00_module_setup.md#validate-workshop-provisioning-completed
+      - 09 Summary: workshops/00_module_setup.md#summary
+
+    # Subsequent labs are siblings of the ENTIRE Lab 0 block.
+    # They are pages themselves and will be collapsed by `navigation.expand`.
     - 01. Start Lab 1 - Creating Resource Group: workshops/02_create_resource_group.md
     - 02. Start Lab2 - Deploying a Basic Web App: workshops/03_deploy_web_app.md
+
+    # --- END OF LAB LIST ---
