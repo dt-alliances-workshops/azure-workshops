@@ -71,7 +71,10 @@ plugins:
 nav:
   - Home: index.md
   - Azure Workshop:
-    - 01. Setting up Environment: workshops/01_module_setup.md
+    - 01. Setting up Environment: workshops/00_module_setup.md
+    - Learning Objectives: workshops/00_module_setup/#learning-objectives
+    - Azure Pass Subscription: workshops/00_module_setup/#azure-pass-subscription
+    - Create Azure Native setup: workshops/00_module_setup/#create-azure-native-dynatrace-service-from-marketplace  
     - 02. Creating Resource Group: workshops/02_create_resource_group.md
     # Add other modules here
     - 03. Deploying a Basic Web App: workshops/03_deploy_web_app.md
