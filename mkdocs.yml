@@ -67,18 +67,16 @@ markdown_extensions:
       alternate_style: true
 plugins:
     - search
-# mkdocs.yml (Replace lines 74-88 in your file with this block)
-
-# Define the explicit navigation structure (replaces Jekyll nav_order/parent)
+# mkdocs.yml - CORRECTED NAV STRUCTURE
 nav:
   - Home: index.md
   - Azure Workshop:
-    # --- START OF LAB LIST ---
-    
-    # Lab 0 is a page, and its anchors are nested directly underneath it.
-    # This page entry acts as a collapsible container.
-    - 00. Lab0 Setting up Environment: workshops/00_module_setup.md
-      # Anchors (subsections) must be indented 2 spaces deeper than the page link above
+    # 1. This is now the SECTION TITLE only (unclickable by itself). 
+    #    The link is defined in the nested 'Page' item below.
+    - 00. Lab0 Setting up Environment: 
+      # 2. This is the nested list that starts the page links/anchors.
+      #    Notice the indentation is consistent (4 spaces from 'Azure Workshop:').
+      - Page: workshops/00_module_setup.md # This is the main page link for the section
       - 01 Learning Objectives: workshops/00_module_setup.md#learning-objectives
       - 02 Azure Pass Subscription: workshops/00_module_setup.md#azure-pass-subscription-setup
       - 03 Create Azure Native setup: workshops/00_module_setup.md#create-azure-native-dynatrace-service-from-marketplace
@@ -89,9 +87,7 @@ nav:
       - 08 Validation: workshops/00_module_setup.md#validate-workshop-provisioning-completed
       - 09 Summary: workshops/00_module_setup.md#summary
 
-    # Subsequent labs are siblings of the ENTIRE Lab 0 block.
-    # They are pages themselves and will be collapsed by `navigation.expand`.
+    # 3. Subsequent labs are siblings of the *Section Title* above.
+    #    They are pages and will be collapsed by 'navigation.expand' when not active.
     - 01. Start Lab 1 - Creating Resource Group: workshops/02_create_resource_group.md
     - 02. Start Lab2 - Deploying a Basic Web App: workshops/03_deploy_web_app.md
-
-    # --- END OF LAB LIST ---
