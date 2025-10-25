@@ -38,6 +38,7 @@ theme:
   features:
     - navigation.tabs
     - navigation.instant
+    - navigation.sections
     - toc.follow
     - search.highlight
     - search.share
