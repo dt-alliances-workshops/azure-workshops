@@ -73,21 +73,21 @@ nav:
   - Azure Workshop:
     # 1. This is now the SECTION TITLE only (unclickable by itself). 
     #    The link is defined in the nested 'Page' item below.
-    - 00. Lab0 Setting up Environment: 
+    - 01. Lab1 Setting up Environment: 
       # 2. This is the nested list that starts the page links/anchors.
       #    Notice the indentation is consistent (4 spaces from 'Azure Workshop:').
       - Page: workshops/00_module_setup.md # This is the main page link for the section
-      - 01 Learning Objectives: workshops/00_module_setup.md#learning-objectives
-      - 02 Azure Pass Subscription: workshops/00_module_setup.md#azure-pass-subscription-setup
-      - 03 Create Azure Native setup: workshops/00_module_setup.md#create-azure-native-dynatrace-service-from-marketplace
-      - 04 Azure Portal Prep: workshops/00_module_setup.md#azure-portal-prep
-      - 05 Setup Dynatrace Environment: workshops/00_module_setup.md#setup-your-dynatrace-environment
-      - 06 Collect Inputs: workshops/00_module_setup.md#collect-inputs-for-provision-script
-      - 07 Provision the Workshop: workshops/00_module_setup.md#provision-the-workshop
-      - 08 Validation: workshops/00_module_setup.md#validate-workshop-provisioning-completed
-      - 09 Summary: workshops/00_module_setup.md#summary
+      - 1.1 Learning Objectives: workshops/00_module_setup.md#learning-objectives
+      - 1.2 Azure Pass Subscription: workshops/00_module_setup.md#azure-pass-subscription-setup
+      - 1.3 Create Azure Native setup: workshops/00_module_setup.md#create-azure-native-dynatrace-service-from-marketplace
+      - 1.4 Azure Portal Prep: workshops/00_module_setup.md#azure-portal-prep
+      - 1.5 Setup Dynatrace Environment: workshops/00_module_setup.md#setup-your-dynatrace-environment
+      - 1.6 Collect Inputs: workshops/00_module_setup.md#collect-inputs-for-provision-script
+      - 1.7 Provision the Workshop: workshops/00_module_setup.md#provision-the-workshop
+      - 1.8 Validation: workshops/00_module_setup.md#validate-workshop-provisioning-completed
+      - 1.9 Summary: workshops/00_module_setup.md#summary
 
     # 3. Subsequent labs are siblings of the *Section Title* above.
     #    They are pages and will be collapsed by 'navigation.expand' when not active.
-    - 01. Start Lab 1 - Creating Resource Group: workshops/02_create_resource_group.md
-    - 02. Start Lab2 - Deploying a Basic Web App: workshops/03_deploy_web_app.md
+    - 02. Start Lab 2 - Creating Resource Group: workshops/02_create_resource_group.md
+    - 03. Start Lab3 - Deploying a Basic Web App: workshops/03_deploy_web_app.md
