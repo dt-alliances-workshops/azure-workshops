@@ -42,7 +42,7 @@ theme:
     - search.highlight
     - search.share
     - content.code.copy
-    - navigation.expand
+#    - navigation.expand
 
   
  
