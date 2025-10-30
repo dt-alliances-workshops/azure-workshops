@@ -1,8 +1,5 @@
 --8<-- "snippets/send-bizevent/0-getting-started.js"
----
-hide:
-  - toc
----
+
 # Azure Grail Workshop Lab 1 - Setup
 
 ## 1.1 Learning Objectives
