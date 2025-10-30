@@ -10,8 +10,8 @@ We recommend starting with **Module 1** to ensure your local development environ
 
 | Module | Description | Time Estimate |
 | :---- | :---- | :---- |
-| [00\. Setting up Your Grail Workshop](workshops/00_module_setup.md) | Azure Workshop Setup. | 30 minutes |
+| [01\. Setting up Your Grail Workshop](workshops/01_workshop_setup.md) | Azure Workshop Setup. | 30 minutes |
 | [02\. Creating an Azure Resource Group](workshops/02_create_resource_group.md) | Learn how to logically group resources. | 5 minutes |
 | [03\. Deploying a Basic Web App](workshops/03_deploy_web_app.md) | Deploy your first application to Azure App Service. | 15 minutes |
 
-[Start Workshop Now →](workshops/00_module_setup.md)
+[Start Workshop Now →](workshops/01_workshop_setup.md)

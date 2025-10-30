@@ -5,7 +5,7 @@ hide:
 ---
 # Azure Grail Workshop Lab 1 - Setup
 
-## Learning Objectives
+## 1.1 Learning Objectives
 
 We will now setup Dynatrace, Azure, and the workshop environment. You need all of these in place before you are presented with the lab excercises.
 
@@ -16,7 +16,7 @@ Duration: 2
 
 🔷 Automatically provision workshop environment and sample application
 
-## Azure Pass Subscription Setup
+## 1.2 Azure Pass Subscription Setup
 Duration: 4
 
 To complete this workshop, you will be provided an Azure Pass Promo code.  A workshop staff will provide that code to prior or during the day of the workshop.
@@ -46,7 +46,7 @@ This free Azure subscription will be available to you for the next 5 days or unt
 <aside class="positive"> 🏫 - Please update the Tracking Spreadsheet upon completing this task. </aside>
 -->
 
-## Create Azure Native Dynatrace Service from Marketplace  
+## 1.3 Create Azure Native Dynatrace Service from Marketplace  
 Duration: 3
 
 For this workshop, we will set-up a free Dynatrace Azure SaaS tenant with an temporary license complete with all the features of our all-in-one performance monitoring platform to monitor Azure resources and complete the workshop exercises.
@@ -74,7 +74,7 @@ For this workshop, we will set-up a free Dynatrace Azure SaaS tenant with an tem
         - It will take 3-5 minutes for the deployment to complete.  Once the deployment comples successfully, your screen should reflect as below.  Click on `Go to resource` button
             ![image](img/ands-create-complete.png)
 
-## Azure Portal Prep
+## 1.4 Azure Portal Prep
 Duration: 4
 
 ### Tasks to complete this step
@@ -175,7 +175,7 @@ Duration: 4
 -->
 
 
-## Setup your Dynatrace Environment
+## 1.5 Setup your Dynatrace Environment
 
 In this section, we'll Access the new UI for Grail
 
@@ -229,7 +229,7 @@ All we wanted to do here, is quickly get a Dynatrace token and save it for use i
 
 1. You will use this token in the next step as you setup the lab resources.
 
-## Collect Inputs for Provision Script
+## 1.6 Collect Inputs for Provision Script
 
 The next steps of this guide will have you gather various information from your Dynatrace environment needed to configure your environment and for the lab exercises.
 
@@ -291,7 +291,7 @@ In the code repo you cloned, there is a simple UNIX shell script that prompts fo
     ```
 
 
-## Provision the workshop
+## 1.7 Provision the workshop
 Duration: 15
 
 This step will automatically provision several Azure resources and Dynatrace configuration needed for the workshop via a shell script.  
@@ -351,7 +351,7 @@ The process to provision everything will take ~15-20 minutes.
       =============================================
     ```
 
-## Validate workshop provisioning completed
+## 1.8 Validate workshop provisioning completed
 Duration: 2
 In this step we will verify if all of the Azure resources were provisioned for the workshop
 
@@ -439,7 +439,7 @@ In this step we will verify if all of the Azure resources were provisioned for t
 
 
 
-## Summary
+## 1.9 Summary
 Duration: 2
 
 In this section, you should have completed the following:
@@ -458,4 +458,4 @@ In this section, you should have completed the following:
 <aside class="positive"> 🏫 - Please update the Tracking Spreadsheet upon completing this task.   </aside>
 -->
 
-The next module will focus on [**02\. Creating an Azure Resource Group**](/docs/workshops/02_create_resource_group.md).
+The next module will focus on [**02\. Move to lab2**](workshops/02_create_resource_group.md).
