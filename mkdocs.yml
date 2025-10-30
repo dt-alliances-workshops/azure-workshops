@@ -33,28 +33,14 @@ theme:
     toggle:
       icon: material/brightness-4
       name: Switch to system preference
-#  features:
-#    - navigation.tabs
-#    - navigation.instant
-#    - navigation.sections
-#    - navigation.tabs.sticky
-#    - toc.follow
-#    - search.highlight
-#    - search.share
-#    - content.code.copy
-#    - navigation.expand
-#    - navigation.path
-#    - navigation.indexes
-#    - toc.follow
-#    - toc.integrate
-#    - navigation.top
-#    - navigation.bottom
+
   features:
     - navigation.tabs           # Keep top-level pages as tabs (Home, Azure Workshop)
     - navigation.sections       # CRITICAL: This restores the left sidebar under the active tab
     - navigation.tabs.sticky
     - navigation.expand         # Keeps subsequent labs collapsed
     - toc.follow
+    - toc.integrate
     
     # Utility Features
     - navigation.instant        # Optional: Enable instant page loading
