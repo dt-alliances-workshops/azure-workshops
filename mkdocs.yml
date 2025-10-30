@@ -42,7 +42,13 @@ theme:
     - search.highlight
     - search.share
     - content.code.copy
-#    - navigation.expand
+    - navigation.expand
+    - navigation.path
+    - navigation.indexes
+    - toc.follow
+    - toc.integrate
+    - navigation.top
+    - navigation.bottom
 
   
  
@@ -67,6 +73,7 @@ markdown_extensions:
       alternate_style: true
 plugins:
     - search
+    - tags
 # mkdocs.yml - CORRECTED NAV STRUCTURE
 nav:
   - Home: index.md
