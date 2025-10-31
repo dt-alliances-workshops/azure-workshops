@@ -28,14 +28,16 @@ This free Azure subscription will be available to you for the next 5 days or unt
 3. Use a ***personal email address*** to signin or create a new Microsoft account email.
      ![image](img/azure-pass-signin.png)
 
-      !!! tip If you are signed in on a Azure account via your **corporate email**, please signout and login using your personal account or create a new account shown below.
+      !!! tip 
+        🧮 If you are signed in on a Azure account via your **corporate email**, please signout and login using your personal account or create a new account shown below.
 
       ![image](img/setup-ms-account.png) <br>   
 
 4.  Confirm the email address you want to use for your Azure pass subscription and "promo" code provided to allow for the Azure subscription to be setup.
      ![image](img/azure-pass-emailconfirm.png)
      
-    !!! info ℹ️   Provisioning your Azure subscription can take upto 5 minutes to process.  
+    !!! info 
+        ℹ️ Provisioning your Azure subscription can take upto 5 minutes to process.  
 
 
 ## 1.3 Create Azure Native Dynatrace Service from Marketplace  
@@ -74,17 +76,20 @@ For this workshop, we will set-up a free Dynatrace Azure SaaS tenant with an tem
 2. Click on the Cloud Shell button
     ![image](img/setup-azure-shell-open.png)
 
-    !!! tip If you get this prompt, choose bash. 
+    !!! tip "Bash Shell"
+        🧮If you get this prompt, choose bash. 
 
     ![image](img/setup-azure-shell-bash.png)
 
-    !!! tip If you get the prompt below, choose `Azure Pass - Sponsorship` and then click the `Create Storage` button.
+    !!! tip "Azure Pass"
+        🧮If you get the prompt below, choose `Azure Pass - Sponsorship` and then click the `Create Storage` button.
 
     
     ![image](img/setup-azure-shell-storage.png)
 
     
-    !!! info Creating the storage will take a couple of minutes.
+    !!! info "Storage Account
+        Creating the storage will take a couple of minutes.
 
 3. Once the storage is created, you should see the Unix bash shell.
   ![image](img/setup-azure-shell-prompt.png)
@@ -116,7 +121,8 @@ For this workshop, we will set-up a free Dynatrace Azure SaaS tenant with an tem
       }
     ```
 
-    !!! tip 💻 If the subscription is not `Azure Pass - Sponsorship`, run the command below to see all the subscriptions for your user id. If this is the first time using Azure portal or a trial, then you should only have one subscription. 
+    !!! tip 
+        💻 If the subscription is not `Azure Pass - Sponsorship`, run the command below to see all the subscriptions for your user id. If this is the first time using Azure portal or a trial, then you should only have one subscription. 
 
     ```
     az account list --output table
@@ -216,7 +222,8 @@ All we wanted to do here, is quickly get a Dynatrace token and save it for use i
 
 The next steps of this guide will have you gather various information from your Dynatrace environment needed to configure your environment and for the lab exercises.
 
-!!! tip  📓 The next set of steps assume that your Dynatrace tenant is fully provisioned and you are logged into it.
+!!! tip  
+    📓 The next set of steps assume that your Dynatrace tenant is fully provisioned and you are logged into it.
 
 
 From your Dynatrace environment, you will capture:
@@ -225,9 +232,9 @@ From your Dynatrace environment, you will capture:
 * Dynatrace API token
 
 !!! info
-- The `Base URL` will be in the Dynatrace tenant URL such as: `https://[ENVIRONMENT ID].apps.dynatrace.com/`.
-- The `Access API Token` will the token generated in the previous step when you setup your Dynatrace envrionment.
-- The `Azure Subscription` ID will be Azure Portal -> Search for subscriptions at the top and select the `Azure Pass` subscription.
+    - The `Base URL` will be in the Dynatrace tenant URL such as: `https://[ENVIRONMENT ID].apps.dynatrace.com/`.
+    - The `Access API Token` will the token generated in the previous step when you setup your Dynatrace envrionment.
+    - The `Azure Subscription` ID will be Azure Portal -> Search for subscriptions at the top and select the `Azure Pass` subscription.
 
 
 
@@ -235,7 +242,8 @@ From your Dynatrace environment, you will capture:
 
 In the code repo you cloned, there is a simple UNIX shell script that prompts for values and writes them to a file called `gen/workshop-credentials.json`. Later in the labs, there are a few other simple UNIX shell scripts that will automate the step that reads this file so that you don’t need to type or copy-paste these values over and over again during the workshop.
 
-  !!! info 📓 If you mess up, just click [enter] through the rest of the values and save it at the ending prompt.  You can then just re-run the script and the script will prompt you again to re-enter each value showing you each current value that it saved.
+  !!! info 
+      📓 If you mess up, just click [enter] through the rest of the values and save it at the ending prompt.  You can then just re-run the script and the script will prompt you again to re-enter each value showing you each current value that it saved.
   
 
 ### Lets begin..
@@ -298,7 +306,8 @@ The process to provision everything will take ~15-20 minutes.
 - Add [SLOs](https://www.dynatrace.com/support/help/how-to-use-dynatrace/service-level-objectives/) for a use in custom dashboards
 - Add [Azure Monitor Integration](https://www.dynatrace.com/support/help/setup-and-configuration/setup-on-cloud-platforms/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-integration-service-environment)
 
-!!! tip  📓The Dynatrace configuration scripts use a combination of [Dynatrace Monitoring as Code](https://github.com/dynatrace-oss/dynatrace-monitoring-as-code) framework (a.k.a. monaco) and the [Dynatrace Configuration API](https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/) for those few Dynatrace configurations not yet supported by monaco.
+!!! tip  
+    📓The Dynatrace configuration scripts use a combination of [Dynatrace Monitoring as Code](https://github.com/dynatrace-oss/dynatrace-monitoring-as-code) framework (a.k.a. monaco) and the [Dynatrace Configuration API](https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/) for those few Dynatrace configurations not yet supported by monaco.
 
 
 ### Tasks to complete this step
@@ -331,15 +340,14 @@ The process to provision everything will take ~15-20 minutes.
 In this step we will verify if all of the Azure resources were provisioned for the workshop
 
 !!! info
-📓 Only proceed if the provisioning script completed with this status
-
-  ```
-  ...
-  ...
-  =============================================
-  Provisioning workshop resources COMPLETE
-  =============================================
-  ```
+   📓 Only proceed if the provisioning script completed with this status
+    ```
+    ...
+    ...
+    =============================================
+    Provisioning workshop resources COMPLETE
+    =============================================
+    ```
 
 ### Tasks to complete this step
 1. Go back to the window where you have the Azure Portal screen open
@@ -390,7 +398,8 @@ In this step we will verify if all of the Azure resources were provisioned for t
     ```
     kubectl describe nodes
 
-!!! tip  📓 Ensure you're able to sucessfully run all of the `kubectl` commands above.  This ensures you can sucessfully connectivity to the AKS cluster, which is key in Lab2 when we deploy the sample application to the AKS cluster in Lab2, Step 5
+!!! tip "Kubectl Command" 
+    📓 Ensure you're able to sucessfully run all of the `kubectl` commands above.  This ensures you can sucessfully connectivity to the AKS cluster, which is key in Lab2 when we deploy the sample application to the AKS cluster in Lab2, Step 5
 
 
     
