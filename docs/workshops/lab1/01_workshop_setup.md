@@ -27,12 +27,14 @@ This free Azure subscription will be available to you for the next 5 days or unt
      ![image](img/setup-azure.png)
 3. Use a ***personal email address*** to signin or create a new Microsoft account email.
      ![image](img/azure-pass-signin.png)
+
       !!! tip If you are signed in on a Azure account via your **corporate email**, please signout and login using your personal account or create a new account shown below.
 
       ![image](img/setup-ms-account.png) <br>   
 
 4.  Confirm the email address you want to use for your Azure pass subscription and "promo" code provided to allow for the Azure subscription to be setup.
      ![image](img/azure-pass-emailconfirm.png)
+     
     !!! info ℹ️   Provisioning your Azure subscription can take upto 5 minutes to process.  
 
 
@@ -339,7 +341,6 @@ In this step we will verify if all of the Azure resources were provisioned for t
   =============================================
   ```
 
-
 ### Tasks to complete this step
 1. Go back to the window where you have the Azure Portal screen open
 2. Search for `Resource Groups` from the search bar at the top
@@ -388,9 +389,10 @@ In this step we will verify if all of the Azure resources were provisioned for t
 
     ```
     kubectl describe nodes
-    ```
 
     !!! tip  📓 Ensure you're able to sucessfully run all of the `kubectl` commands above.  This ensures you can sucessfully connectivity to the AKS cluster, which is key in Lab2 when we deploy the sample application to the AKS cluster in Lab2, Step 5
+> [!TIP]
+> 📓 Ensure you're able to sucessfully run all of the `kubectl` commands above. This ensures you can sucessfully connectivity to the AKS cluster, which is key in Lab2 when we deploy the sample application to the AKS cluster in Lab2, Step 5
 
     
 
