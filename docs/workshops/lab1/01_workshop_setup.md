@@ -390,9 +390,8 @@ In this step we will verify if all of the Azure resources were provisioned for t
     ```
     kubectl describe nodes
 
-    !!! tip  📓 Ensure you're able to sucessfully run all of the `kubectl` commands above.  This ensures you can sucessfully connectivity to the AKS cluster, which is key in Lab2 when we deploy the sample application to the AKS cluster in Lab2, Step 5
-> [!TIP]
-> 📓 Ensure you're able to sucessfully run all of the `kubectl` commands above. This ensures you can sucessfully connectivity to the AKS cluster, which is key in Lab2 when we deploy the sample application to the AKS cluster in Lab2, Step 5
+!!! tip  📓 Ensure you're able to sucessfully run all of the `kubectl` commands above.  This ensures you can sucessfully connectivity to the AKS cluster, which is key in Lab2 when we deploy the sample application to the AKS cluster in Lab2, Step 5
+
 
     
 
