@@ -28,8 +28,8 @@ This free Azure subscription will be available to you for the next 5 days or unt
 3. Use a ***personal email address*** to signin or create a new Microsoft account email.
      ![image](img/azure-pass-signin.png)
 
-      !!! tip 
-        🧮 If you are signed in on a Azure account via your **corporate email**, please signout and login using your personal account or create a new account shown below.
+      !!! tip "Email Address"
+          🧮 If you are signed in on a Azure account via your **corporate email**, please signout and login using your personal account or create a new account shown below.
 
       ![image](img/setup-ms-account.png) <br>   
 
@@ -88,7 +88,7 @@ For this workshop, we will set-up a free Dynatrace Azure SaaS tenant with an tem
     ![image](img/setup-azure-shell-storage.png)
 
     
-    !!! info "Storage Account
+    !!! info "Storage Account"
         Creating the storage will take a couple of minutes.
 
 3. Once the storage is created, you should see the Unix bash shell.
