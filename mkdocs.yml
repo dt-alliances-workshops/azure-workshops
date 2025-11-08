@@ -38,8 +38,8 @@ theme:
     - navigation.sections       # CRITICAL: This restores the left sidebar under the active tab
     - navigation.tabs.sticky
     - navigation.expand         # Keeps subsequent labs collapsed
-    #- toc.follow
-    #- toc.integrate
+    - toc.follow
+    - toc.integrate
     
     # Utility Features
     - navigation.instant        # Optional: Enable instant page loading
