@@ -17,5 +17,5 @@ In this section, you should have completed the following:
 
 In Lab3, we'll setup Dynatrace on Azure Kubernetes Service.
 <div class="grid cards" markdown>
-- [Continue to Lab3:octicons-arrow-right-24:](/azure_workshops/workshops/lab3/03_AKS.md)
+- [Continue to Lab3:octicons-arrow-right-24:](/azure_workshops/workshops/lab3/03_AKS)
 </div>

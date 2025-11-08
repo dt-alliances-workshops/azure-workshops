@@ -222,8 +222,8 @@ From your Dynatrace environment, you will capture:
 
 In the code repo you cloned, there is a simple UNIX shell script that prompts for values and writes them to a file called `gen/workshop-credentials.json`. Later in the labs, there are a few other simple UNIX shell scripts that will automate the step that reads this file so that you don’t need to type or copy-paste these values over and over again during the workshop.
 
-    !!! info
-        📓 If you mess up, just click [enter] through the rest of the values and save it at the ending prompt.  You can then just re-run the script and the script will prompt you again to re-enter each value showing you each current value that it saved.
+!!! info
+    📓 If you mess up, just click [enter] through the rest of the values and save it at the ending prompt.  You can then just re-run the script and the script will prompt you again to re-enter each value showing you each current value that it saved.
 
 1. Run the input credentials Unix script
 
@@ -231,7 +231,7 @@ In the code repo you cloned, there is a simple UNIX shell script that prompts fo
     cd ~/azure-modernization-dt-orders-setup/provision-scripts
     ./input-credentials.sh
     ```
-1. Enter in the approprite values for the three inputs
+  1. Enter in the approprite values for the three inputs
     ```
       ==================================================================
       Please enter your Dynatrace credentials as requested below: 
@@ -263,12 +263,11 @@ In the code repo you cloned, there is a simple UNIX shell script that prompts fo
 
 This step will automatically provision several Azure resources and Dynatrace configuration needed for the workshop via a shell script.  
 
-''' tip
+!!! tip
     The process to provision everything will take ~15-20 minutes.
 
 
-
-!!! info "What exactly is this script doing?"
+??? info "What exactly is this script doing?"
 
     ```markdown
     1. Add Azure resources
@@ -381,7 +380,7 @@ In this step we will verify if all of the Azure resources were provisioned for t
 
 
     
-!!! example "Optional Verification of AKS Cluster via Azure Portal"         
+??? example "Optional Verification of AKS Cluster via Azure Portal"         
      - Within the Azure web portal, search for the kubernetes services and then click on the new workshop cluster.
       ![image](img/setup-k8.png)
      - Explore the configuration to view the number of nodes and the kubernetes version.
@@ -394,15 +393,15 @@ In this step we will verify if all of the Azure resources were provisioned for t
 
 In this section, you should have completed the following:
 
-✅ Setup your Azure subscription utlizing the Azure Pass Token
-✅ Provisioned a trial Dynatrace Environment through the Azure Marketplace
-✅ Setup the Azure Cloud Shell to run various UNIX commands
-✅ Captured environment and token info needed for workshop provisioning automation scripts
-✅ Provisioned workshop Azure resources
+- [x]  Setup your Azure subscription utlizing the Azure Pass Token
+- [x] Provisioned a trial Dynatrace Environment through the Azure Marketplace
+- [x] Setup the Azure Cloud Shell to run various UNIX commands
+- [x] Captured environment and token info needed for workshop provisioning automation scripts
+- [x] Provisioned workshop Azure resources
 
 ## Continue...
 
 In Lab2, we'll setup Dynatrace on Azure Kubernetes Service.
 <div class="grid cards" markdown>
-- [Continue to Lab2:octicons-arrow-right-24:](/azure_workshops/workshops/lab2/02_azure_cloud.md)
+- [Continue to Lab2:octicons-arrow-right-24:](/azure_workshops/workshops/lab2/02_azure_cloud)
 </div>

@@ -549,5 +549,5 @@ In this section, you should have completed the following:
 
 In Lab4, we'll dig into Workbooks and Dashboards to analyze dynatrace data.
 <div class="grid cards" markdown>
-- [Continue to Lab4:octicons-arrow-right-24:](/azure_workshops/workshops/lab4/04_dashboards_and_workbooks.md)
+- [Continue to Lab4:octicons-arrow-right-24:](/azure_workshops/workshops/lab4/04_dashboards_and_workbooks)
 </div>
