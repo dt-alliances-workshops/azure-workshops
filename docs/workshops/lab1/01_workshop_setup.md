@@ -162,7 +162,7 @@ For this workshop, we will set-up a free Dynatrace Azure SaaS tenant with an tem
       cd azure-modernization-dt-orders-setup/
       ls -al
     ```
-    1.  You should see an output similar to the one below 
+    1.  You should see an output similar to the one below
         ![image](img/pre-requisites-azure-cli-gitcloneoutput.png)
 
 
@@ -175,34 +175,33 @@ Also, we'll setup a access token within your Dynatrace envrionment that will be 
 
 ### Tasks to complete this step
 
-1. Access the new UI with Grail
-   1. Open up browser and go to Azure Portal - <a href="https://portal.azure.com/" target="_blank">https://portal.azure.com/ </a>
-     - Search for Dynatrace azure resource `dt-trial` from the top search bar     
-        ![image](img/Lab0-Step4-ands-search.png)
-     - Click on Go to Dynatrace Link 
-        ![image](img/Lab0-Step5-ands-gotodt.png)
+1.  Access the new UI with Grail
+    1.  Open up browser and go to Azure Portal - <a href="https://portal.azure.com/" target="_blank">https://portal.azure.com/ </a>
+       - Search for Dynatrace azure resource `dt-trial` from the top search bar     
+         ![image](img/Lab0-Step4-ands-search.png)
+       - Click on Go to Dynatrace Link 
+         ![image](img/Lab0-Step5-ands-gotodt.png)
 
-  1. Login to Dynatrace
-    
-  1. On the Left menu, you'll notice a banner to access the new UI that was introduced with Grail.  
-    - Click on `Take a look` button to access the new UI.
-    ![image](img/lab0-newUI-access-banner.png)
-    - Click on `Try the latest Dynatrace`
-    ![image](img/lab0-newUI-try-latest-dt.png)
-    - Click on `Get started`
-  1.  You are now accessing the new UI with Grail.
-    ![image](img/lab0-newUI-main.png)
+    1. Login to Dynatrace    
+    1.  On the Left menu, you'll notice a banner to access the new UI that was introduced with Grail.  
+        - Click on `Take a look` button to access the new UI.
+        ![image](img/lab0-newUI-access-banner.png)
+        - Click on `Try the latest Dynatrace`
+        ![image](img/lab0-newUI-try-latest-dt.png)
+         - Click on `Get started`
+    1.  You are now accessing the new UI with Grail.
+       ![image](img/lab0-newUI-main.png)
 1.  Create Dynatrace Access Token and save it for use in the Lab setup.  To capture the token, follow these steps:
-  1. Login into Dynatrace
-  1. From the Left menu, click Apps -> Choose the `Access Tokens` app. 
-   ![image](img/dt-access-token.png)
-  1. On the Access token page, click the `Generate new token` button
-  1. On the new token page, Enter a name like `azure-workshop`
-  1. Add `Write API Tokens` to the scope.
-  1. Click on Generate token button on the bottom.
-  1. Since this token is only shown once and you will need it in the next labs, copy this value to a local TEXT file before you leave this page. (For example Notepad, Notepad++, Notes.app)
-   ![image](img/dt-tokens-page-save.png)
-  1. You will use this token in the next step as you setup the lab resources.
+  1.  Login into Dynatrace
+  1.  From the Left menu, click Apps -> Choose the `Access Tokens` app. 
+      ![image](img/dt-access-token.png)
+  1.  On the Access token page, click the `Generate new token` button
+  1.  On the new token page, Enter a name like `azure-workshop`
+  1.  Add `Write API Tokens` to the scope.
+  1.  Click on Generate token button on the bottom.
+  1.  Since this token is only shown once and you will need it in the next labs, copy this value to a local TEXT file before you leave this page. (For example Notepad, Notepad++, Notes.app)
+      ![image](img/dt-tokens-page-save.png)
+  1.  You will use this token in the next step as you setup the lab resources.
 
 ## 1.6 Collect Inputs for Provision Script
 
@@ -231,8 +230,8 @@ In the code repo you cloned, there is a simple UNIX shell script that prompts fo
     cd ~/azure-modernization-dt-orders-setup/provision-scripts
     ./input-credentials.sh
     ```
-  1. Enter in the approprite values for the three inputs
-    ```
+   1. Enter in the approprite values for the three inputs at the prompt
+     ```
       ==================================================================
       Please enter your Dynatrace credentials as requested below: 
       Press <enter> to keep the current value
@@ -241,8 +240,8 @@ In the code repo you cloned, there is a simple UNIX shell script that prompts fo
       Dynatrace Access API Token      (current: ) : 
       Azure Subscription ID           (current: ) : 
       ===================================================================
-    ```
-1. Confirm all of the inputs are correct. 
+     ```
+   1. Confirm all of the inputs are correct. 
     !!! info
         📓 There are some derived values the script generated based on your input.  
 
@@ -263,12 +262,11 @@ In the code repo you cloned, there is a simple UNIX shell script that prompts fo
 
 This step will automatically provision several Azure resources and Dynatrace configuration needed for the workshop via a shell script.  
 
-!!! tip
+!!! tip "Take a break"
     The process to provision everything will take ~15-20 minutes.
 
 
 ??? info "What exactly is this script doing?"
-
     ```markdown
     1. Add Azure resources
       - Add a Resource Group for all the VMs named: `dynatrace-azure-grail-modernize`
@@ -380,10 +378,11 @@ In this step we will verify if all of the Azure resources were provisioned for t
 
 
     
-??? example "Optional Verification of AKS Cluster via Azure Portal"         
-     - Within the Azure web portal, search for the kubernetes services and then click on the new workshop cluster.
+??? example "Optional Verification of AKS Cluster via Azure Portal"
+
+    - Within the Azure web portal, search for the kubernetes services and then click on the new workshop cluster.
       ![image](img/setup-k8.png)
-     - Explore the configuration to view the number of nodes and the kubernetes version.
+    - Explore the configuration to view the number of nodes and the kubernetes version.
        ![image](img/setup-k8-node.png)
      
 
@@ -403,5 +402,5 @@ In this section, you should have completed the following:
 
 In Lab2, we'll setup Dynatrace on Azure Kubernetes Service.
 <div class="grid cards" markdown>
-- [Continue to Lab2:octicons-arrow-right-24:](/azure_workshops/workshops/lab2/02_azure_cloud)
+- [Continue to Lab2:octicons-arrow-right-24:](/azure-workshops/workshops/lab2/02_azure_cloud)
 </div>

@@ -15,4 +15,5 @@ We recommend starting with **Module 1** to ensure your local development environ
 | [03\. Azure Kubernetes Services Observability with Dynatrace](workshops/lab3/03_AKS.md) | Monitor AKS with Dynatrace. | 45 Minutes | 
 | [04\. Dashboards and Workbooks within Dynatrace](workshops/lab4/04_dashboards_and_workbooks.md) | Analyze and Visualize data with Dynatrace using Dashboards and Workbooks. | 30 minutes |
 | [05\. AI Observbaility with Dynatrace](workshops/lab5/05_ai_observability.md) | Observe your AI appplications with Dynatrace |30 minutes |
+| [06\. Cleanup](workshops/lab6/06_cleanup.md) | Cleanup & Resources |5 minutes |
 [Start Workshop Now →](workshops/lab1/01_workshop_setup.md)

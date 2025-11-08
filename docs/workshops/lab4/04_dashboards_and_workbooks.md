@@ -135,5 +135,5 @@ In this section, you should have completed the following:
 
 In Lab5, we'll setup an AI application and monitor it with Dynatrace.
 <div class="grid cards" markdown>
-- [Continue to Lab5:octicons-arrow-right-24:](/azure_workshops/workshops/lab5/05_ai_observability)
+- [Continue to Lab5:octicons-arrow-right-24:](/azure-workshops/workshops/lab5/05_ai_observability)
 </div>

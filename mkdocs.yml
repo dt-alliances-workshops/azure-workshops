@@ -84,3 +84,5 @@ nav:
       - 'Introduction': workshops/lab4/04_dashboards_and_workbooks.md
     - 'Lab 5: AI Observability with Dynatrace and Azure':
       - 'Introduction': workshops/lab5/05_ai_observability.md
+    - 'Lab 6: Cleanup':
+      - 'Introduction': workshops/lab6/06_cleanup.md
