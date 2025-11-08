@@ -3,7 +3,6 @@
 # Azure Grail Workshop Lab 3 - Modernization with AKS
 
 ## Objectives 
-Duration: 2
 
 Re-hosting (also referred to as lift and shift) is a common migration use case. Re-architecture and Re-platform are steps that break the traditional architectures and replace individual components with cloud services and microservices.
 
@@ -17,12 +16,10 @@ We just learned how we can get great information on services, processes and user
 
 🔷 Examine the transformed application using service flows and back traces 
 
-<!--
-<aside class="positive"> 🏫 - Please update the Tracking Spreadsheet upon completing this task. </aside>
--->
+
 
 ## Review - Modernize the Sample App 
-Duration: 3
+
 As we saw earlier, the sample application is a three-tiered application --> frontend, backend, database.
 
 For our lab, another version of the application exists that breaks out each of these backend services into separate services. By putting these services into Docker images, we gain the ability to deploy the service into modern platforms like Azure Kubernetes and Cloud managed services such as the ones from Azure shown below.
