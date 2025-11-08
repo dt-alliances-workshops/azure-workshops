@@ -435,4 +435,6 @@ In this section, you should have completed the following:
 ## Continue...
 
 In Lab2, we'll setup Dynatrace on Azure Kubernetes Service.
+<div class="grid cards" markdown>
 - [Continue to Lab2:octicons-arrow-right-24:](azure_workshops/workshops/lab2/azure_cloud.md)
+</div>
