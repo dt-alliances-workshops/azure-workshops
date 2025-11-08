@@ -7,7 +7,6 @@
 We will now setup Dynatrace, Azure, and the workshop environment. You need all of these in place before you are presented with the lab excercises.
 
 🔷 Setup your temporary Azure subscription from the Azure Pass promo code you received from workshop staff.
-
 🔷 Automatically provision workshop environment and sample application
 
 ## 1.2 Azure Pass Subscription Setup
@@ -23,17 +22,17 @@ This free Azure subscription will be available to you for the next 5 days or unt
 ### Tasks to complete this step
 
 1. To setup your workshop using free Azure Pass subscription, navigate to <a href="https://www.microsoftazurepass.com/" target="_blank">Microsoft's Azure Pass website</a>
-2.  Click on Start.
+1.  Click on Start.
      ![image](img/setup-azure.png)
-3. Use a ***personal email address*** to signin or create a new Microsoft account email.
+1. Use a ***personal email address*** to signin or create a new Microsoft account email.
      ![image](img/azure-pass-signin.png)
 
-      !!! tip "Email Address"
-          🧮 If you are signed in on a Azure account via your **corporate email**, please signout and login using your personal account or create a new account shown below.
+    !!! tip 
+        🧮 If you are signed in on a Azure account via your **corporate email**, please signout and login using your personal account or create a new account shown below.
 
       ![image](img/setup-ms-account.png) <br>   
 
-4.  Confirm the email address you want to use for your Azure pass subscription and "promo" code provided to allow for the Azure subscription to be setup.
+1.  Confirm the email address you want to use for your Azure pass subscription and "promo" code provided to allow for the Azure subscription to be setup.
      ![image](img/azure-pass-emailconfirm.png)
      
     !!! info 
@@ -46,34 +45,34 @@ For this workshop, we will set-up a free Dynatrace Azure SaaS tenant with an tem
 
 ### Tasks to complete this step
 
-1) Open up browser and go to Azure Portal - <a href="https://portal.azure.com/" target="_blank">https://portal.azure.com/ </a>
-    - Search for Marketplace from the top search bar     
+1. Open up browser and go to Azure Portal - <a href="https://portal.azure.com/" target="_blank">https://portal.azure.com/ </a>
+    1.  Search for Marketplace from the top search bar     
         ![image](img/az-marketplace.png)
-    - Once in the Azure Marketplace, search for `Azure Native Dynatrace Service` click on tile when the search displays the results.
+    1.  Once in the Azure Marketplace, search for `Azure Native Dynatrace Service` click on tile when the search displays the results.
         ![image](img/ands.png)
-    - From the drop-down under plan, select `Dynatrace for Azure Trial` and click on subscribe
+    1.  From the drop-down under plan, select `Dynatrace for Azure Trial` and click on subscribe
         ![image](img/ands-subscribe.png)
-    - Click on "Create" a new Dynatrace environment
+    1.  Click on "Create" a new Dynatrace environment
         ![image](img/ands-create.png)
-    - On the create Dynatrace environment screen (Basic's)
-        - Select the `Azure Pass - Sponsorship` subscription
-        - create a new resource group called `azure-native-dynatrace`
-        - fill in the resource name as `dt-trial`
-        - The rest of the settings can take the defaults
-        - Click on "Review + Create" button
+    1.  On the create Dynatrace environment screen (Basic's)
+        1.  Select the `Azure Pass - Sponsorship` subscription
+        1.  create a new resource group called `azure-native-dynatrace`
+        1.  fill in the resource name as `dt-trial`
+        1.  The rest of the settings can take the defaults
+        1.  Click on "Review + Create" button
             ![image](img/ands-create-basics-1.png)
-        - On the next screen click on "Create" button
+        1.  On the next screen click on "Create" button
             ![image](img/Lab0-Step4-ands-validate.png)
-        - It will take 3-5 minutes for the deployment to complete.  Once the deployment comples successfully, your screen should reflect as below.  Click on `Go to resource` button
+        1.  It will take 3-5 minutes for the deployment to complete.  Once the deployment comples successfully, your screen should reflect as below.  Click on `Go to resource` button
             ![image](img/ands-create-complete.png)
 
 ## 1.4 Azure Portal Prep
 
 ### Tasks to complete this step
 
-1. Navigate to <a href="https://portal.azure.com/" target="_blank">https://portal.azure.com/ </a>
+1.  Navigate to <a href="https://portal.azure.com/" target="_blank">https://portal.azure.com/ </a>
 
-2. Click on the Cloud Shell button
+1.  Click on the Cloud Shell button
     ![image](img/setup-azure-shell-open.png)
 
     !!! tip "Bash Shell"
@@ -91,79 +90,79 @@ For this workshop, we will set-up a free Dynatrace Azure SaaS tenant with an tem
     !!! info "Storage Account"
         Creating the storage will take a couple of minutes.
 
-3. Once the storage is created, you should see the Unix bash shell.
-  ![image](img/setup-azure-shell-prompt.png)
+1.  Once the storage is created, you should see the Unix bash shell.
+    ![image](img/setup-azure-shell-prompt.png)
 
-4. Make a dedicated Azure shell Browser tab by clicking this new tab icon.
-  ![image](img/setup-azure-shell-newtab.png)
+1.  Make a dedicated Azure shell Browser tab by clicking this new tab icon.
+    ![image](img/setup-azure-shell-newtab.png)
 
-5. To verify which subscription is configured for the Azure CLI, run this command.
-    ```console
-      az account show
-    ```
+1.  To verify which subscription is configured for the Azure CLI, run this command.
+     ```console
+       az account show
+     ```
 
-- Look for the name in the output. This is example when a promo code was used.
+    1.  Look for the name in the output. This is example when a promo code was used.
 
-    ```
-      {
-        "environmentName": "AzureCloud",
-        "homeTenantId": "xxx-xxx-xxx-xx-xxx",
-        "id": "yyy-yyyy-yyy-yyy-yyy",
-        "isDefault": true,
-        "managedByTenants": [], 
-        "name": "Azure Pass - Sponsorship",   <----- This is the active subscription
-        "state": "Enabled",
-        "tenantId": "zzz-zzz-zzz-zzz-zzz",
-        "user": {
-          "name": "name@company.com",
-          "type": "user"
+        ```
+        {
+          "environmentName": "AzureCloud",
+          "homeTenantId": "xxx-xxx-xxx-xx-xxx",
+          "id": "yyy-yyyy-yyy-yyy-yyy",
+          "isDefault": true,
+          "managedByTenants": [], 
+          "name": "Azure Pass - Sponsorship",   <----- This is the active subscription
+          "state": "Enabled",
+          "tenantId": "zzz-zzz-zzz-zzz-zzz",
+          "user": {
+            "name": "name@company.com",
+            "type": "user"
+          }
         }
-      }
-    ```
+      ```
 
     !!! tip 
         💻 If the subscription is not `Azure Pass - Sponsorship`, run the command below to see all the subscriptions for your user id. If this is the first time using Azure portal or a trial, then you should only have one subscription. 
 
-    ```
-    az account list --output table
-    ```
+      ```
+        az account list --output table
+      ```
 
-- Here is an sample output:
+    1. Here is an sample output:
 
-    ```
-      Name                                     CloudName    SubscriptionId                        State    IsDefault
-      ---------------------------------------  -----------  ------------------------------------  -------  -----------
-      Subscription 1                           AzureCloud   aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa  Enabled  False
-      Subscription 2                           AzureCloud   bbbbbbbb-aaaa-aaaa-aaaa-aaaaaaaaaaaa  Enabled  False
-      Subscription 3                           AzureCloud   cccccccc-aaaa-aaaa-aaaa-aaaaaaaaaaaa  Enabled  False
-      Subscription 4                           AzureCloud   dddddddd-aaaa-aaaa-aaaa-aaaaaaaaaaaa  Enabled  False
-      Azure Pass - Sponsorship                 AzureCloud   eeeeeeee-aaaa-aaaa-aaaa-aaaaaaaaaaaa  Enabled  True
-    ```
+      ```
+        Name                                     CloudName    SubscriptionId                        State    IsDefault
+        ---------------------------------------  -----------  ------------------------------------  -------  -----------
+        Subscription 1                           AzureCloud   aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa  Enabled  False
+        Subscription 2                           AzureCloud   bbbbbbbb-aaaa-aaaa-aaaa-aaaaaaaaaaaa  Enabled  False
+        Subscription 3                           AzureCloud   cccccccc-aaaa-aaaa-aaaa-aaaaaaaaaaaa  Enabled  False
+        Subscription 4                           AzureCloud   dddddddd-aaaa-aaaa-aaaa-aaaaaaaaaaaa  Enabled  False
+        Azure Pass - Sponsorship                 AzureCloud   eeeeeeee-aaaa-aaaa-aaaa-aaaaaaaaaaaa  Enabled  True
+      ```
 
-- If the `Azure Pass - Sponsorship` is not the `IsDefault = True`, then run these command to set and verify.
+    1.  If the `Azure Pass - Sponsorship` is not the `IsDefault = True`, then run these command to set and verify.
 
-    ```
-      # set the subscription
-      az account set --subscription <YOUR PROMO SUBSCRIPTION ID>
+      ```
+        # set the subscription
+        az account set --subscription <YOUR PROMO SUBSCRIPTION ID>
 
-      # verify change
-      az account list --output table
+        # verify change
+        az account list --output table
 
-      # double check with
-      az account show
-    ```
+        # double check with
+        az account show
+      ```
 
-6. Within your Azure Cloud Shell window, run this command to download the workshop scripts:
+1. Within your Azure Cloud Shell window, run this command to download the workshop scripts:
     ```
       git clone https://github.com/dt-alliances-workshops/azure-modernization-dt-orders-setup.git
     ```
-7. To validate all the workshops scripts have download, please run these commands within the Azure Cloud Shell window to display the directories
+1. To validate all the workshops scripts have download, please run these commands within the Azure Cloud Shell window to display the directories
     ```
       cd azure-modernization-dt-orders-setup/
       ls -al
     ```
-- You should see an output similar to the one below 
- ![image](img/pre-requisites-azure-cli-gitcloneoutput.png)
+    1.  You should see an output similar to the one below 
+        ![image](img/pre-requisites-azure-cli-gitcloneoutput.png)
 
 
 
@@ -244,8 +243,8 @@ From your Dynatrace environment, you will capture:
 
 In the code repo you cloned, there is a simple UNIX shell script that prompts for values and writes them to a file called `gen/workshop-credentials.json`. Later in the labs, there are a few other simple UNIX shell scripts that will automate the step that reads this file so that you don’t need to type or copy-paste these values over and over again during the workshop.
 
-  !!! info 
-      📓 If you mess up, just click [enter] through the rest of the values and save it at the ending prompt.  You can then just re-run the script and the script will prompt you again to re-enter each value showing you each current value that it saved.
+  !!! info "Inputs"
+    📓 If you mess up, just click [enter] through the rest of the values and save it at the ending prompt.  You can then just re-run the script and the script will prompt you again to re-enter each value showing you each current value that it saved.
   
 
 #### Lets begin..
@@ -344,14 +343,14 @@ The process to provision everything will take ~15-20 minutes.
 In this step we will verify if all of the Azure resources were provisioned for the workshop
 
 !!! info
-   📓 Only proceed if the provisioning script completed with this status
-    ```
-    ...
-    ...
-    =============================================
-    Provisioning workshop resources COMPLETE
-    =============================================
-    ```
+    📓 Only proceed if the provisioning script completed with this status
+      ```
+        ...
+        ...
+        =============================================
+        Provisioning workshop resources COMPLETE
+        =============================================
+      ```
 
 ### Tasks to complete this step
 1. Go back to the window where you have the Azure Portal screen open
