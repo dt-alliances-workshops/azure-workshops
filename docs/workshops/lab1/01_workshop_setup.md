@@ -193,24 +193,20 @@ Also, we'll setup a access token within your Dynatrace envrionment that will be 
   1.  You are now accessing the new UI with Grail.
     ![image](img/lab0-newUI-main.png)
 1.  Create Dynatrace Access Token and save it for use in the Lab setup.  To capture the token, follow these steps:
-   1. Login into Dynatrace
-   1. From the Left menu, click Apps -> Choose the `Access Tokens` app. 
-    ![image](img/dt-access-token.png)
-   1. On the Access token page, click the `Generate new token` button
-   1. On the new token page, Enter a name like `azure-workshop`
-   1. Add `Write API Tokens` to the scope.
-   1. Click on Generate token button on the bottom.
-   1. Since this token is only shown once and you will need it in the next labs, copy this value to a local TEXT file before you leave this page. (For example Notepad, Notepad++, Notes.app)
-    ![image](img/dt-tokens-page-save.png)
-   1. You will use this token in the next step as you setup the lab resources.
+  1. Login into Dynatrace
+  1. From the Left menu, click Apps -> Choose the `Access Tokens` app. 
+   ![image](img/dt-access-token.png)
+  1. On the Access token page, click the `Generate new token` button
+  1. On the new token page, Enter a name like `azure-workshop`
+  1. Add `Write API Tokens` to the scope.
+  1. Click on Generate token button on the bottom.
+  1. Since this token is only shown once and you will need it in the next labs, copy this value to a local TEXT file before you leave this page. (For example Notepad, Notepad++, Notes.app)
+   ![image](img/dt-tokens-page-save.png)
+  1. You will use this token in the next step as you setup the lab resources.
 
 ## 1.6 Collect Inputs for Provision Script
 
 The next steps of this guide will have you gather various information from your Dynatrace environment needed to configure your environment and for the lab exercises.
-
-!!! tip  
-    📓 The next set of steps assume that your Dynatrace tenant is fully provisioned and you are logged into it.
-
 
 From your Dynatrace environment, you will capture:
 
@@ -224,23 +220,17 @@ From your Dynatrace environment, you will capture:
 
 ### Tasks to complete this step
 
-
-#### Capture Inputs Script
-
 In the code repo you cloned, there is a simple UNIX shell script that prompts for values and writes them to a file called `gen/workshop-credentials.json`. Later in the labs, there are a few other simple UNIX shell scripts that will automate the step that reads this file so that you don’t need to type or copy-paste these values over and over again during the workshop.
 
-    !!! info "Inputs"
-      📓 If you mess up, just click [enter] through the rest of the values and save it at the ending prompt.  You can then just re-run the script and the script will prompt you again to re-enter each value showing you each current value that it saved.
-  
-
-#### Lets begin..
+    !!! info
+        📓 If you mess up, just click [enter] through the rest of the values and save it at the ending prompt.  You can then just re-run the script and the script will prompt you again to re-enter each value showing you each current value that it saved.
 
 1. Run the input credentials Unix script
 
-  ```
-  cd ~/azure-modernization-dt-orders-setup/provision-scripts
-  ./input-credentials.sh
-  ```
+    ```
+    cd ~/azure-modernization-dt-orders-setup/provision-scripts
+    ./input-credentials.sh
+    ```
 1. Enter in the approprite values for the three inputs
     ```
       ==================================================================
@@ -252,9 +242,12 @@ In the code repo you cloned, there is a simple UNIX shell script that prompts fo
       Azure Subscription ID           (current: ) : 
       ===================================================================
     ```
-1. Confirm all of the inputs are correct 
-    - 📓 There are some derived values the script generated based on your input.  
+1. Confirm all of the inputs are correct. 
+    !!! info
+        📓 There are some derived values the script generated based on your input.  
+
 1. Once you confirm, the data is saved off `../gen/workshop-credentials.json` and will be used by the provision script in the next step.
+
 1. Towards the end of the script it will output two things you'll want to save in a notepad session to use in Lab2 later.
     ```
       ========================================================================================================
@@ -270,23 +263,26 @@ In the code repo you cloned, there is a simple UNIX shell script that prompts fo
 
 This step will automatically provision several Azure resources and Dynatrace configuration needed for the workshop via a shell script.  
 
-The process to provision everything will take ~15-20 minutes.
+''' tip
+    The process to provision everything will take ~15-20 minutes.
 
 
 
-!!! tip "What exactly is this script doing?"
+!!! info "What exactly is this script doing?"
 
-    1 . Add Azure resources
+    ```markdown
+    1. Add Azure resources
       - Add a Resource Group for all the VMs named: `dynatrace-azure-grail-modernize`
       - Add VM named: `dt-orders-monolith`. At startup, it installs Docker and the Dynatrace Orders application in the Monolith configuration. OneAgent is installed using Azure extension
       - Add Azure Kubernetes Cluster named `dynatrace-azure-grail-cluster`.
-    2 . Set Dynatrace configuration
+    2. Set Dynatrace configuration
       - Set global [Frequent Issue Detection](https://www.dynatrace.com/support/help/how-to-use-dynatrace/problem-detection-and-analysis/problem-detection/detection-of-frequent-issues/) settings to Off
       - Adjust the [Service Anomaly Detection](https://dynatrace.com/support/help/platform/davis-ai/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-services/) global settings to a fixed error threshold
       - Add [Management Zones](https://www.dynatrace.com/support/help/how-to-use-dynatrace/management-zones/) for the monolith and micro services versions of the application
       - Add [Auto Tagging Rules](https://www.dynatrace.com/support/help/how-to-use-dynatrace/tags-and-metadata/) to drive management zone and SLO settings
       - Add [SLOs](https://www.dynatrace.com/support/help/how-to-use-dynatrace/service-level-objectives/) for a use in custom dashboards
       - Add [Azure Monitor Integration](https://www.dynatrace.com/support/help/setup-and-configuration/setup-on-cloud-platforms/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-integration-service-environment)
+    ```
 
 !!! info  
     📓The Dynatrace configuration scripts use a combination of [Dynatrace Monitoring as Code](https://github.com/dynatrace-oss/dynatrace-monitoring-as-code) framework (a.k.a. monaco) and the [Dynatrace Configuration API](https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/) for those few Dynatrace configurations not yet supported by monaco.
@@ -310,7 +306,7 @@ The process to provision everything will take ~15-20 minutes.
       ===================================================================
       Proceed? (y/n) : 
     ```
-9. Enter **y** at the prompt to begin the provisioning of the workshop.  Once the script is complete you should see output as shown below
+1. Enter **y** at the prompt to begin the provisioning of the workshop.  Once the script is complete you should see output as shown below
     ```
       =============================================
       Provisioning workshop resources COMPLETE
@@ -340,28 +336,28 @@ In this step we will verify if all of the Azure resources were provisioned for t
 ![image](img/pre-requisites-azure-portal-resources-resourcelist.png)
 
 5. Verify AKS Cluster is provisioned
-- In this step we will verify if the Azure Kubernetes Service (AKS) Cluster was provisioned correctly. Also we will download the credentials to manage our AKS cluster via `kubectl` commands.
+  1. In this step we will verify if the Azure Kubernetes Service (AKS) Cluster was provisioned correctly. Also we will download the credentials to manage our AKS cluster via `kubectl` commands.
 
-- The <a href="https://kubernetes.io/docs/reference/kubectl/overview/" target="_blank">kubectl</a> command line tool that lets you control Kubernetes clusters.  For details about each command, including all the supported flags and subcommands, see the <a href="https://kubernetes.io/docs/reference/kubectl/overview/" target="_blank">kubectl</a> reference documentation.
+  1. The <a href="https://kubernetes.io/docs/reference/kubectl/overview/" target="_blank">kubectl</a> command line tool that lets you control Kubernetes clusters.  For details about each command, including all the supported flags and subcommands, see the <a href="https://kubernetes.io/docs/reference/kubectl/overview/" target="_blank">kubectl</a> reference documentation.
 
-1. Run this command in Azure Cloud shell to get familiar with the command line options for kubectl.
+  1. Run this command in Azure Cloud shell to get familiar with the command line options for kubectl.
 
     ```
     kubectl --help
     ```
 
-1. Configure kubectl to connect to the new cluster by downloading the cluster credentials. 
+  1. Configure kubectl to connect to the new cluster by downloading the cluster credentials. 
 
     ```
     az aks get-credentials --resource-group dynatrace-azure-grail-modernize --name dynatrace-azure-grail-cluster    
     ```
-1. Verify you are connected.  You should see `dynatrace-azure-grail-cluster` as the output.
+  1. Verify you are connected.  You should see `dynatrace-azure-grail-cluster` as the output.
 
     ```
     kubectl config current-context
     ```
 
-1. List the nodes in the cluster
+  1. List the nodes in the cluster
 
     ```
     kubectl get nodes
@@ -408,5 +404,5 @@ In this section, you should have completed the following:
 
 In Lab2, we'll setup Dynatrace on Azure Kubernetes Service.
 <div class="grid cards" markdown>
-- [Continue to Lab2:octicons-arrow-right-24:](/azure_workshops/workshops/lab2/azure_cloud.md)
+- [Continue to Lab2:octicons-arrow-right-24:](/azure_workshops/workshops/lab2/02_azure_cloud.md)
 </div>

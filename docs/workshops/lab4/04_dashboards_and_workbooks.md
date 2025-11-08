@@ -131,3 +131,9 @@ In this section, you should have completed the following:
 
 ✅  Reviewed a Notebooks on how to analyze metric and use the forecasting feature.
 
+## Continue...
+
+In Lab5, we'll setup an AI application and monitor it with Dynatrace.
+<div class="grid cards" markdown>
+- [Continue to Lab5:octicons-arrow-right-24:](/azure_workshops/workshops/lab5/05_ai_observability.md)
+</div>

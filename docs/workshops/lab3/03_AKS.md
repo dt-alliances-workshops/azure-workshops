@@ -532,7 +532,6 @@ While migrating to the cloud, you want to evaluate if your migration goes accord
 
 Having the ability to understand service flows enables us to make smarter re-architecture and re-platforming decisions.  With support for new technologies like Kubernetes, you have confidence to modernize with a platform that spans the old and the new. 
 
-### Checklist
 
 In this section, you should have completed the following:
 
@@ -545,8 +544,10 @@ In this section, you should have completed the following:
    ✅ Review how Dynatrace helps with modernization planning
 
 
-<!--
-<aside class="positive"> 🏫 - Please update the Tracking Spreadsheet upon completing this task. </aside>
--->
 
-The next module will focus on [**03\. Move to lab3**](workshops/lab4/04_dashboards_and_workbooks.md).
+## Continue...
+
+In Lab4, we'll dig into Workbooks and Dashboards to analyze dynatrace data.
+<div class="grid cards" markdown>
+- [Continue to Lab4:octicons-arrow-right-24:](/azure_workshops/workshops/lab4/04_dashboards_and_workbooks.md)
+</div>

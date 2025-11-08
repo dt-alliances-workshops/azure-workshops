@@ -3,3 +3,5 @@
 # Azure Grail Workshop Lab 5 - AI Observability
 
 ## Objectives 
+
+
