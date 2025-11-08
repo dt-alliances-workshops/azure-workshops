@@ -387,8 +387,8 @@ In this step we will verify if all of the Azure resources were provisioned for t
     
 !!! example 
    === "Optional Verification of AKS Cluster via Azure Portal"
-
-     ```
+     
+     ``` markdown
      - Within the Azure web portal, search for the kubernetes services and then click on the new workshop cluster.
       ![image](img/setup-k8.png)
      - Explore the configuration to view the number of nodes and the kubernetes version.
