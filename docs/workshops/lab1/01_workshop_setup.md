@@ -427,14 +427,12 @@ In this step we will verify if all of the Azure resources were provisioned for t
 In this section, you should have completed the following:
 
 ✅ Setup your Azure subscription utlizing the Azure Pass Token
-
-✅ Provisioned a trail Dynatrace Grail tenant through the Azure Marketplace
-
+✅ Provisioned a trial Dynatrace Environment through the Azure Marketplace
 ✅ Setup the Azure Cloud Shell to run various UNIX commands
-
 ✅ Captured environment and token info needed for workshop provisioning automation scripts
-
 ✅ Provisioned workshop Azure resources
 
+## Continue...
 
-The next module will focus on [**02\. Move to lab2**](azure_workshops/workshops/lab2/azure_cloud.md).
+In Lab2, we'll setup Dynatrace on Azure Kubernetes Service.
+- [Continue to Lab2:octicons-arrow-right-24:](azure_workshops/workshops/lab2/azure_cloud.md)

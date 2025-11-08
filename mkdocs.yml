@@ -10,6 +10,7 @@ docs_dir: docs
 theme:
   name: material
   custom_dir: docs/overrides
+  toc_depth: 2
   logo: https://cdn.bfldr.com/B686QPH3/at/w5hnjzb32k5wcrcxnwcx4ckg/Dynatrace_signet_RGB_HTML.svg?auto=webp&format=pngg  
   palette:
   # Palette toggle for automatic mode    
@@ -37,8 +38,8 @@ theme:
     - navigation.sections       # CRITICAL: This restores the left sidebar under the active tab
     - navigation.tabs.sticky
     - navigation.expand         # Keeps subsequent labs collapsed
-    - toc.follow
-    - toc.integrate
+    #- toc.follow
+    #- toc.integrate
     
     # Utility Features
     - navigation.instant        # Optional: Enable instant page loading
