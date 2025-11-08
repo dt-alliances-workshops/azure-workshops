@@ -7,5 +7,5 @@
 
 In Lab6, we'll cleanup and share some resources with you....
 <div class="grid cards" markdown>
-- [Continue to Lab6:octicons-arrow-right-24:](/azure-workshops/workshops/lab6/05_cleanup)
+- [Continue to Lab6:octicons-arrow-right-24:](/azure-workshops/workshops/lab6/06_cleanup)
 </div>
