@@ -173,8 +173,9 @@ In this section, we'll Access the new UI for Grail
 
 Also, we'll setup a access token within your Dynatrace envrionment that will be used by the provisioning script to configure Dynatrace automatically via the API.
 
+### Tasks to complete this step
 
-### Access the new UI with Grail
+#### Access the new UI with Grail
 
 1. Open up browser and go to Azure Portal - <a href="https://portal.azure.com/" target="_blank">https://portal.azure.com/ </a>
     - Search for Dynatrace azure resource `dt-trial` from the top search bar     
@@ -194,7 +195,7 @@ Also, we'll setup a access token within your Dynatrace envrionment that will be 
     ![image](img/lab0-newUI-main.png)
 
 
-### Create Dynatrace Access Token
+#### Create Dynatrace Access Token
 
 All we wanted to do here, is quickly get a Dynatrace token and save it for use in the Lab setup.  To capture the token, follow these steps:
 
@@ -236,9 +237,10 @@ From your Dynatrace environment, you will capture:
     - The `Access API Token` will the token generated in the previous step when you setup your Dynatrace envrionment.
     - The `Azure Subscription` ID will be Azure Portal -> Search for subscriptions at the top and select the `Azure Pass` subscription.
 
+### Tasks to complete this step
 
 
-### Capture Inputs Script
+#### Capture Inputs Script
 
 In the code repo you cloned, there is a simple UNIX shell script that prompts for values and writes them to a file called `gen/workshop-credentials.json`. Later in the labs, there are a few other simple UNIX shell scripts that will automate the step that reads this file so that you don’t need to type or copy-paste these values over and over again during the workshop.
 
@@ -246,7 +248,7 @@ In the code repo you cloned, there is a simple UNIX shell script that prompts fo
       📓 If you mess up, just click [enter] through the rest of the values and save it at the ending prompt.  You can then just re-run the script and the script will prompt you again to re-enter each value showing you each current value that it saved.
   
 
-### Lets begin..
+#### Lets begin..
 
 1. Run the input credentials Unix script
 
@@ -285,7 +287,9 @@ This step will automatically provision several Azure resources and Dynatrace con
 
 The process to provision everything will take ~15-20 minutes.
 
-### What exactly is this script doing?
+
+
+!!! tip What exactly is this script doing?
 
 1 . Add Azure resources
 
@@ -433,4 +437,4 @@ In this section, you should have completed the following:
 ✅ Provisioned workshop Azure resources
 
 
-The next module will focus on [**02\. Move to lab2**](/docs/workshops/lab2/02_azure_cloud.md).
+The next module will focus on [**02\. Move to lab2**](azure_workshops/workshops/lab2/azure_cloud.md).
