@@ -72,11 +72,14 @@ plugins:
 # mkdocs.yml - CORRECTED NAV STRUCTURE
 nav:
   - Home: index.md
-  - Azure Workshop:
-    # 1. This is now the SECTION TITLE only (unclickable by itself). 
-    #    The link is defined in the nested 'Page' item below.
-    - 01. Lab1 Setting up Environment:       
-      - Page: workshops/lab1/01_workshop_setup.md # This is the main page link for the section      
-   
-    - 02. Start Lab 2 - Creating Resource Group: workshops/lab2/02_create_resource_group.md
-    - 03. Start Lab3 - Deploying a Basic Web App: workshops/lab3/03_deploy_web_app.md
+  - 'Azure Workshop':
+    - 'Lab 1: Setting up Environment':
+      - 'Introduction': workshops/lab1/01_workshop_setup.md
+    - 'Lab 2: Monitor Azure Cloud Resources':
+      - 'Introduction': workshops/lab2/02_azure_cloud.md
+    - 'Lab 3: Azure Kubernetes Observability with Dynatrace':
+      - 'Introduction': workshops/lab3/03_AKS.md
+    - 'Lab 4: Dashboards and Workbooks':
+      - 'Introduction': workshops/lab4/04_dashboards_and_workbooks.md
+    - 'Lab 5: AI Observability with Dynatrace and Azure':
+      - 'Introduction': workshops/lab5/05_ai_observability.md

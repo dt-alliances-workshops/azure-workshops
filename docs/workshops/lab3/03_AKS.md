@@ -548,3 +548,5 @@ In this section, you should have completed the following:
 <!--
 <aside class="positive"> 🏫 - Please update the Tracking Spreadsheet upon completing this task. </aside>
 -->
+
+The next module will focus on [**03\. Move to lab3**](workshops/lab4/04_dashboards_and_workbooks.md).

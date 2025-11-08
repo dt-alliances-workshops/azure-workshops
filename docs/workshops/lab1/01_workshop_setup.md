@@ -433,4 +433,4 @@ In this section, you should have completed the following:
 ✅ Provisioned workshop Azure resources
 
 
-The next module will focus on [**02\. Move to lab2**](workshops/02_create_resource_group.md).
+The next module will focus on [**02\. Move to lab2**](workshops/lab2/02_azure_cloud.md).
