@@ -192,30 +192,16 @@ Also, we'll setup a access token within your Dynatrace envrionment that will be 
   - Click on `Get started`
 1.  You are now accessing the new UI with Grail.
     ![image](img/lab0-newUI-main.png)
-
-
-#### Create Dynatrace Access Token
-
-All we wanted to do here, is quickly get a Dynatrace token and save it for use in the Lab setup.  To capture the token, follow these steps:
-
-1. Login into Dynatrace
-
-1. From the Left menu, click Apps -> Choose the `Access Tokens` app. 
-
+1.  Create Dynatrace Access Token and save it for use in the Lab setup.  To capture the token, follow these steps:
+   1. Login into Dynatrace
+   1. From the Left menu, click Apps -> Choose the `Access Tokens` app. 
     ![image](img/dt-access-token.png)
-
-1. On the Access token page, click the `Generate new token` button
-
-1. On the new token page, Enter a name like `azure-workshop`
-
-1. Add `Write API Tokens` to the scope.
-
-1. Click on Generate token button on the bottom.
-
+   1. On the Access token page, click the `Generate new token` button
+   1. On the new token page, Enter a name like `azure-workshop`
+   1. Add `Write API Tokens` to the scope.
+   1. Click on Generate token button on the bottom.
 1. Since this token is only shown once and you will need it in the next labs, copy this value to a local TEXT file before you leave this page. (For example Notepad, Notepad++, Notes.app)
-
     ![image](img/dt-tokens-page-save.png)
-
 1. You will use this token in the next step as you setup the lab resources.
 
 ## 1.6 Collect Inputs for Provision Script
@@ -243,8 +229,8 @@ From your Dynatrace environment, you will capture:
 
 In the code repo you cloned, there is a simple UNIX shell script that prompts for values and writes them to a file called `gen/workshop-credentials.json`. Later in the labs, there are a few other simple UNIX shell scripts that will automate the step that reads this file so that you don’t need to type or copy-paste these values over and over again during the workshop.
 
-  !!! info "Inputs"
-    📓 If you mess up, just click [enter] through the rest of the values and save it at the ending prompt.  You can then just re-run the script and the script will prompt you again to re-enter each value showing you each current value that it saved.
+    !!! info "Inputs"
+      📓 If you mess up, just click [enter] through the rest of the values and save it at the ending prompt.  You can then just re-run the script and the script will prompt you again to re-enter each value showing you each current value that it saved.
   
 
 #### Lets begin..
@@ -288,28 +274,21 @@ The process to provision everything will take ~15-20 minutes.
 
 
 
-!!! tip What exactly is this script doing?
+!!! tip "What exactly is this script doing?"
 
-1 . Add Azure resources
+    1 . Add Azure resources
+      - Add a Resource Group for all the VMs named: `dynatrace-azure-grail-modernize`
+      - Add VM named: `dt-orders-monolith`. At startup, it installs Docker and the Dynatrace Orders application in the Monolith configuration. OneAgent is installed using Azure extension
+      - Add Azure Kubernetes Cluster named `dynatrace-azure-grail-cluster`.
+    2 . Set Dynatrace configuration
+      - Set global [Frequent Issue Detection](https://www.dynatrace.com/support/help/how-to-use-dynatrace/problem-detection-and-analysis/problem-detection/detection-of-frequent-issues/) settings to Off
+      - Adjust the [Service Anomaly Detection](https://dynatrace.com/support/help/platform/davis-ai/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-services/) global settings to a fixed error threshold
+      - Add [Management Zones](https://www.dynatrace.com/support/help/how-to-use-dynatrace/management-zones/) for the monolith and micro services versions of the application
+      - Add [Auto Tagging Rules](https://www.dynatrace.com/support/help/how-to-use-dynatrace/tags-and-metadata/) to drive management zone and SLO settings
+      - Add [SLOs](https://www.dynatrace.com/support/help/how-to-use-dynatrace/service-level-objectives/) for a use in custom dashboards
+      - Add [Azure Monitor Integration](https://www.dynatrace.com/support/help/setup-and-configuration/setup-on-cloud-platforms/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-integration-service-environment)
 
-- Add a Resource Group for all the VMs named: `dynatrace-azure-grail-modernize`
-<!--
-- Add Service Principal: `dynatrace-azure-modernize-workshop-sp` needed for the Azure monitor integration.
-- Add VM named: `dt-orders-active-gate`. At startup, it installs the Dynatrace ActiveGate process needed for the Azure monitor integration.
--->
-- Add VM named: `dt-orders-monolith`. At startup, it installs Docker and the Dynatrace Orders application in the Monolith configuration. OneAgent is installed using Azure extension
-- Add Azure Kubernetes Cluster named `dynatrace-azure-grail-cluster`.
-
-2 . Set Dynatrace configuration
-
-- Set global [Frequent Issue Detection](https://www.dynatrace.com/support/help/how-to-use-dynatrace/problem-detection-and-analysis/problem-detection/detection-of-frequent-issues/) settings to Off
-- Adjust the [Service Anomaly Detection](https://dynatrace.com/support/help/platform/davis-ai/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-services/) global settings to a fixed error threshold
-- Add [Management Zones](https://www.dynatrace.com/support/help/how-to-use-dynatrace/management-zones/) for the monolith and micro services versions of the application
-- Add [Auto Tagging Rules](https://www.dynatrace.com/support/help/how-to-use-dynatrace/tags-and-metadata/) to drive management zone and SLO settings
-- Add [SLOs](https://www.dynatrace.com/support/help/how-to-use-dynatrace/service-level-objectives/) for a use in custom dashboards
-- Add [Azure Monitor Integration](https://www.dynatrace.com/support/help/setup-and-configuration/setup-on-cloud-platforms/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-integration-service-environment)
-
-!!! tip  
+!!! info  
     📓The Dynatrace configuration scripts use a combination of [Dynatrace Monitoring as Code](https://github.com/dynatrace-oss/dynatrace-monitoring-as-code) framework (a.k.a. monaco) and the [Dynatrace Configuration API](https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/) for those few Dynatrace configurations not yet supported by monaco.
 
 
@@ -342,7 +321,7 @@ The process to provision everything will take ~15-20 minutes.
 ## 1.8 Validate workshop provisioning completed
 In this step we will verify if all of the Azure resources were provisioned for the workshop
 
-!!! info
+!!! tip
     📓 Only proceed if the provisioning script completed with this status
       ```
         ...
@@ -360,7 +339,7 @@ In this step we will verify if all of the Azure resources were provisioned for t
 4. Once you're within the resource group, you will see all of the different types of resources we've automatically provisioned for this workshop
 ![image](img/pre-requisites-azure-portal-resources-resourcelist.png)
 
-### Verify AKS Cluster is provisioned
+5. Verify AKS Cluster is provisioned
 - In this step we will verify if the Azure Kubernetes Service (AKS) Cluster was provisioned correctly. Also we will download the credentials to manage our AKS cluster via `kubectl` commands.
 
 - The <a href="https://kubernetes.io/docs/reference/kubectl/overview/" target="_blank">kubectl</a> command line tool that lets you control Kubernetes clusters.  For details about each command, including all the supported flags and subcommands, see the <a href="https://kubernetes.io/docs/reference/kubectl/overview/" target="_blank">kubectl</a> reference documentation.
@@ -401,23 +380,20 @@ In this step we will verify if all of the Azure resources were provisioned for t
     ```
     kubectl describe nodes
 
-!!! tip "Kubectl Command" 
+!!! tip "Kubectl Command Check" 
     📓 Ensure you're able to sucessfully run all of the `kubectl` commands above.  This ensures you can sucessfully connectivity to the AKS cluster, which is key in Lab2 when we deploy the sample application to the AKS cluster in Lab2, Step 5
 
 
     
+!!! example 
+   === "Optional Verification of AKS Cluster via Azure Portal"
 
-### Optional Verification of AKS Cluster via Azure Portal
-
-- Within the Azure web portal, search for the kubernetes services and then click on the new workshop cluster.
-
-![image](img/setup-k8.png)
-
-- Explore the configuration to view the number of nodes and the kubernetes version.
-
-![image](img/setup-k8-node.png)
-</details>
-
+     ```
+     - Within the Azure web portal, search for the kubernetes services and then click on the new workshop cluster.
+      ![image](img/setup-k8.png)
+     - Explore the configuration to view the number of nodes and the kubernetes version.
+       ![image](img/setup-k8-node.png)
+     ```
 
 
 
