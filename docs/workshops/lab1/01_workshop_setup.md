@@ -6,8 +6,9 @@
 
 We will now setup Dynatrace, Azure, and the workshop environment. You need all of these in place before you are presented with the lab excercises.
 
-🔷 Setup your temporary Azure subscription from the Azure Pass promo code you received from workshop staff.
-🔷 Automatically provision workshop environment and sample application
+- [x] Setup your temporary Azure subscription from the Azure Pass promo code you received from workshop staff.
+
+- [x] Automatically provision workshop environment and sample application
 
 ## 1.2 Azure Pass Subscription Setup
 
