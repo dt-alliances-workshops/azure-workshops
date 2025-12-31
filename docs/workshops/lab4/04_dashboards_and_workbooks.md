@@ -3,7 +3,6 @@
 # Azure Grail Workshop Lab 4 - Dashboards & Notebooks
 
 ## Dashboards Overview
-Duration: 5
 
 Get your first fully functional dashboard up and running in minutes with this quick guided tour. We’ll show you how to add queries, external data, markdown, and variables—without long explanations or tutorials.
 
@@ -14,12 +13,10 @@ With Dashboards, you can:
 - Annotate all your visualizations with markdown to enrich them with context.
 - Add variables to filter your results and make your dashboard dynamic.
 
-<aside class="positive">
+!!! tip 
+    🧮 Want to know more about the Dynatrace Query Language?
+    🎓 <a href="https://dt-url.net/learndql">Learn DQL </a> at the Dynatrace playground. 🎓
 
-Want to know more about the Dynatrace Query Language?
-🎓 <a href="https://dt-url.net/learndql">Learn DQL </a> at the Dynatrace playground. 🎓
-
-</aside>
 
 ### Tasks to complete this step
 1. Open the Dashboards app from the Left Menu
@@ -70,8 +67,9 @@ In each notebook, you can add sections of Query, Code, and Markdown. On this pag
 1. Now, let’s say you want summarize number of records by process group.        
         - In the `dt.entity.process_group` column, click on column header.
             ![image](img/lab4-notebooks3.gif)
-    <aside class="positive"> 📓If you want to go further and learn more about using DQL to refine queries in Notebooks, visit <a href="https://www.dynatrace.com/support/help/observe-and-explore/query-data/dynatrace-query-language" target="_blank">Dynatrace Query Language</a>. 
-    </aside>
+    !!! info 
+        ℹ️ 📓If you want to go further and learn more about using DQL to refine queries in Notebooks, visit <a href="https://www.dynatrace.com/support/help/observe-and-explore/query-data/dynatrace-query-language" target="_blank">Dynatrace Query Language</a>. 
+    
 3. Visualize your data in different ways
     - When you’re working with complex data, you’ll find it useful to see a record list, which is a simple list of records that contains all the fields.
 
