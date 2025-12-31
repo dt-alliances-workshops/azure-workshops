@@ -42,7 +42,7 @@ The picture below shows how the components of the sample application interact wi
 
 **#6 . Kubernetes Dashboard** - The Kubernetes page provides an overview of all Kubernetes clusters showing monitoring data like the clusters’ sizing and utilization.
 
-!!! info 
+??? info 
     📓 Beyond the Lab, over time, you can imagine that this sample application will be further changed to add in other technologies like Azures serverless and other PaaS services like Azures SQL or Cosmo DB databases and virtual networking Application gateways as shown in the picture below.
 
     ![image](img/lab4-app-architecture-future.png)
@@ -114,7 +114,7 @@ In this step we'll walk through deploying the sample app that is now "modernized
 
 We'll use a shell script to deploy the sample application.  Below you'll learn some details around what that shell script is doing and YAML file parmeters that Dynatrace uses to define and configure your application in Kubernetes.
 
-!!! info 
+??? info 
     ℹ️ **📓`Shell Script to deploy sample app to Kubernetes`**
      By now you understand the various automation files, lets go ahead and open up the <a href="https://github.com/dt-alliances-workshops/azure-modernization-dt-orders-setup/blob/master/app-scripts/start-k8.sh" target="_blank"> `start-k8.sh` </a> to review what the script did for you:
 
@@ -129,11 +129,11 @@ We'll use a shell script to deploy the sample application.  Below you'll learn s
 
 
 
-!!! info 
-    ℹ️**📓 `Sample App YAML file for deploymenent`**
+??? info 
+    ℹ️**📓 Sample App YAML file for deploymenent**
     <br>To review what is configured for the sample application, go ahead and click on the link for YAML file: <a href="https://github.com/dt-alliances-workshops/azure-modernization-dt-orders-setup/tree/master/app-scripts/manifests/frontend.yml" target="_blank">frontend.yml</a> 
 
-    `Notice the labels and annotations:`
+    Notice the labels and annotations:
 
          ```
          metadata:
@@ -170,8 +170,8 @@ We'll use a shell script to deploy the sample application.  Below you'll learn s
 
 
 
-!!! info
-    ℹ️**📓 `Kubernetes Role Binding`**
+??? info
+    ℹ️**📓 Kubernetes Role Binding**
 
         In Kubernetes, every pod is associated with a service account which is used to authenticate the pod's requests to the Kubernetes API. If not otherwise specified the pod uses the default service account of its namespace.
 
@@ -261,8 +261,8 @@ The frontend service is exposed as a public IP and is accessible in a browser.
             * Order List = order/list.html
             * Order Form = order/form.html
 
-!!! info 
-    ℹ️ 📓 The application looks like this monolith, but notice how the home page shows the versions of the three running backend services. You will see these version updated automatically as we deploy new versions of the backend services.
+    ??? info 
+        ℹ️ 📓 The application looks like this monolith, but notice how the home page shows the versions of the three running backend services. You will see these version updated automatically as we deploy new versions of the backend services.
          
          
 
@@ -300,7 +300,7 @@ In this step we will walk through the different Dynatrace dashboards that are av
    -  From the menu on the left, click `Apps --> Deployment status` to review OneAgent Deployment status
    - Within the `Deployment status` page, next click on the `ActiveGate` option to review the Active Gate. <br>
 
-    !!! info 
+    ??? info 
         ℹ️📓 From Dynatrace menu on the left, go to Manage -> Deployment Status -> ActiveGates, you will notice there is a `dynatrace-workshop-cluster-activegate-0` connected to your Dynatrace environment now.  This actigate gate routes all the agent traffic from apps that are running on that AKS cluster.**
 
      
