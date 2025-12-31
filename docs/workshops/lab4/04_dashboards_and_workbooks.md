@@ -36,7 +36,7 @@ With Dashboards, you can:
     ![image](img/dashboards-app-getting-started.gif)
 
 ## Notebooks Overview
-Duration: 5
+
 Want to explore data and create powerful, data-driven documents for sharing and collaboration? You're in the right place. If you're already familiar with Notebooks, you can get going with an empty notebook. If you ever want to revisit this page, you’ll find it under Getting started in the (?) menu.
 
 With Notebooks, you can:
@@ -87,7 +87,6 @@ At other times, a chart or graph may be more effective for communicating a trend
         ![image](img/lab1-add-code.jpg)
 
 ## Use DQL in Notebooks to analyze logs
-Duration: 10
 
 ### Tasks to complete this step
 1. Download this sample notebook we will use to analyze logs
@@ -104,7 +103,6 @@ Duration: 10
 5. Follow the instructions in the notebook to analyze log data from a Hipster shop sample app.
 
 ## Use DQL in Notebooks to analyze metrics
-Duration: 8
 
 ### Tasks to complete this step
 1. Download this sample notebook we will use to analyze logs
@@ -119,7 +117,6 @@ Duration: 8
 5. Follow the instructions in the notebook to analyze metrics for your hosts.
 
 ## Summary
-Duration: 2
 
 In this section, you should have completed the following:
 

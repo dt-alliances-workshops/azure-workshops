@@ -3,7 +3,7 @@
 
 # Azure Grail Workshop Lab 2 - Azure Cloud Observability
 
-## Intro
+## 2.1 Intro
 
 In order to do more with less and scale, organizations must transcend IT silos, foster collaboration and improve productivity. Automation and a common data model are key components of this, but it takes platforms that support operational teams and workflows.
 
@@ -16,7 +16,7 @@ With [Azure Native Dynatrace Services](https://www.dynatrace.com/news/blog/using
 
 🔷 Review how Azure monitor metrics can be configured as [Metric events for alerts](https://www.dynatrace.com/support/help/how-to-use-dynatrace/problem-detection-and-analysis/problem-detection/metric-events-for-alerting/)
 
-## Review - Azure Monitor Setup
+## 2.2 Review - Azure Monitor Setup
 
 Referring to the picture below, here are the components for this lab.
 
@@ -61,17 +61,17 @@ Notice the following details:
 ![image](img/lab4-host-detail.png)
 
     !!! tip 
-        🧮💻📓 See the [Dynatrace Docs](https://www.dynatrace.com/support/help/setup-and-configuration/setup-on-cloud-platforms/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-integration-service-environment) for more details on the setup.
+       🧮💻📓 See the [Dynatrace Docs](https://www.dynatrace.com/support/help/setup-and-configuration/setup-on-cloud-platforms/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-integration-service-environment) for more details on the setup.
 
 
     !!! tip 
-        🧮 **👍 How this helps**
+       🧮 **👍 How this helps**
         
-        Dynatrace brings value by enriching the data from Azure Monitor/App Insights and extending observability into the platform with additional metrics for cloud infrastructure, load balancers, API Management Services, and more.​
+       Dynatrace brings value by enriching the data from Azure Monitor/App Insights and extending observability into the platform with additional metrics for cloud infrastructure, load balancers, API Management Services, and more.​
         
-        These metrics are managed by Dynatrace's AI engine automatically and this extended observability improves operations, reduces MTTR and increases innovation. 
+       These metrics are managed by Dynatrace's AI engine automatically and this extended observability improves operations, reduces MTTR and increases innovation. 
 
-## Cloud App Review
+## 2.3 Cloud App Review
 
 The Dynatrace Clouds app, a novel way for observing multiple resources across multiple clouds. It provides a single, centralized dashboard that displays all resources across multiple clouds, and significantly enhances multicloud resource tracking and governance.
 
@@ -95,7 +95,7 @@ Check out this [blog](https://www.dynatrace.com/news/blog/maximizing-the-potenti
 1. Notice all of the other ways you can filter the cloud services by service type, regions, or service names, clouds, etc to look for details on specific metric.
     ![image](img/lab3-cloudapps-allservices-filters.png)
 
-## Custom Metric Event Setup
+## 2.4 Custom Metric Event Setup
 
 Dynatrace Davis automatically analyzes abnormal situations within your IT infrastructure and attempts to identify any relevant impact and root cause. Davis relies on a wide spectrum of information sources, such as a transactional view of your services and applications, as well as on events raised on individual nodes within your Smartscape topology.
 
@@ -116,7 +116,7 @@ events that are independent of any metric (for example, process crashes, deploym
         3.  Metric key `Azure CPU usage` from dropdown
             ![image](img/lab4-vm-alert-upd.png)
             !!! info 
-                💡There are similar CPU percentage metrics, please make sure you select the right one 
+               💡There are similar CPU percentage metrics, please make sure you select the right one 
         4.  Agregation `Average` from dropdown
         5.  Management zone `dt-orders-monolith`
         6.  under `Entities` click on `>` to see `Advanced dimension definition` and select `Azure VM` from dropdown
@@ -140,7 +140,7 @@ events that are independent of any metric (for example, process crashes, deploym
     * Save your changes and the list should look as shown below.
         ![image](img/lab4-custom-alert-list-upd.png)
 
-## Trigger CPU Problem on VM
+## 2.5 Trigger CPU Problem on VM
 
 
 ### Tasks to complete this step
@@ -174,11 +174,10 @@ events that are independent of any metric (for example, process crashes, deploym
 
         ![image](img/lab4-custom-alert-problems-upd.png)
 
-            !!! info 
-            
-                ℹ️ Look at the <a href="https://www.dynatrace.com/support/help/how-to-use-dynatrace/problem-detection-and-analysis/problem-detection/metric-events-for-alerting/" target="_blank"> Dynatrace Docs </a> for more details on the setup.
+            !!! info            
+               ℹ️ Look at the <a href="https://www.dynatrace.com/support/help/how-to-use-dynatrace/problem-detection-and-analysis/problem-detection/metric-events-for-alerting/" target="_blank"> Dynatrace Docs </a> for more details on the setup.
 
-                Alert configuration is available through the <a href="https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-metric-events/" target="_blank"> Anomaly detection—metric events API </a> Using the API, you can list, update, create, and delete configurations.
+               Alert configuration is available through the <a href="https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-metric-events/" target="_blank"> Anomaly detection—metric events API </a> Using the API, you can list, update, create, and delete configurations.
 
         
 

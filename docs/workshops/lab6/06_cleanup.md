@@ -8,11 +8,9 @@ If you plan to keep the workshop resources running in Azure for a few more days 
 
 * Your free Azure Subscription credits will expire after 5 days or until the $100 credit is utilized by Azure Resources **(whichever comes first)**
 
-    <aside class="positive"> 
-
-     💡 To check how many credits are still left over on your Azure subscription, please go to site [Azure Sponsorship Balance Site](https://www.microsoftazuresponsorships.com/Balance).
-     
-    </aside>
+    !!! tip 
+        🧮💡 To check how many credits are still left over on your Azure subscription, please go to site [Azure Sponsorship Balance Site](https://www.microsoftazuresponsorships.com/Balance).
+        
 
 * Your Dynatrace Environment will disabled after 7 calendar days of your workshop.
 

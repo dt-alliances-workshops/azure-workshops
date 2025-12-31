@@ -210,7 +210,7 @@ We'll use a shell script to deploy the sample application.  Below you'll learn s
       ```
 
 ## Review Sample application on Kubernetes
-Duration: 7
+
 
 In this step we will review the Sample app that we modernized and deployed to Kubernetes.  Refer to this picture for a more detailed description of our setup. 
 
@@ -291,7 +291,7 @@ For full observability into your Kubernetes events, automatic Davis analysis, an
 1. To navigate back to your cluster overview screen, click on `Kubernetes Classic` app from the left navigation menu.
 
 ## Review Kubernetes within Dynatrace
-Duration: 10
+
 
 In this step we will walk through the different Dynatrace dashboards that are available out of the box for monitoring Kubernetes.
 
@@ -351,7 +351,7 @@ In this step we will walk through the different Dynatrace dashboards that are av
             📓**Note:** If you expand the `Properties and Tag` Section, you'll notice the various Kubernetes information that is also available for this service.
 
 ## Analyze Service Backtrace on Kubernetes
-Duration: 5
+
 
 Now that we've modernized the application and installed it on Kubernetes, we still need to trace the application transactions from front to back.  
 
@@ -390,7 +390,6 @@ Dynatrace also gives you insight into what Kubernetes cluster, node, workload, a
          ![image](img/lab4-k8-service-backflow.png)
 
 ## Analyze Service flow on Kubernetes
-Duration: 5
 
 In this step we will walk through the Service Flow view within Dynatrace  and see what's different now that its deployed on Kubernetes.
 
@@ -434,7 +433,6 @@ In this step we will walk through the Service Flow view within Dynatrace  and se
 
 
 ## Summary
-Duration: 3
 
 While migrating to the cloud, you want to evaluate if your migration goes according to the plan, whether the services are still performing well or even better than before, and whether your new architecture is as efficient as the blueprint suggested. Dynatrace helps you validate all these steps automatically, which helps speed up the migration and validation process.
 
