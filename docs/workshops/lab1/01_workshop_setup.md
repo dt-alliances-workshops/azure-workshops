@@ -36,7 +36,7 @@ This free Azure subscription will be available to you for the next 5 days or unt
 1.  Confirm the email address you want to use for your Azure pass subscription and "promo" code provided to allow for the Azure subscription to be setup.
      ![image](img/azure-pass-emailconfirm.png)
      
-    !!! info 
+    ??? info 
         ℹ️ Provisioning your Azure subscription can take upto 5 minutes to process.  
 
 
@@ -88,7 +88,7 @@ For this workshop, we will set-up a free Dynatrace Azure SaaS tenant with an tem
     ![image](img/setup-azure-shell-storage.png)
 
     
-    !!! info "Storage Account"
+    ??? info "Storage Account"
         Creating the storage will take a couple of minutes.
 
 1.  Once the storage is created, you should see the Unix bash shell.
@@ -212,7 +212,7 @@ From your Dynatrace environment, you will capture:
 * Dynatrace Base URL
 * Dynatrace API token
 
-!!! info
+??? info
     - The `Base URL` will be in the Dynatrace tenant URL such as: `https://[ENVIRONMENT ID].apps.dynatrace.com/`.
     - The `Access API Token` will the token generated in the previous step when you setup your Dynatrace envrionment.
     - The `Azure Subscription` ID will be Azure Portal -> Search for subscriptions at the top and select the `Azure Pass` subscription.
@@ -221,7 +221,7 @@ From your Dynatrace environment, you will capture:
 
 In the code repo you cloned, there is a simple UNIX shell script that prompts for values and writes them to a file called `gen/workshop-credentials.json`. Later in the labs, there are a few other simple UNIX shell scripts that will automate the step that reads this file so that you don’t need to type or copy-paste these values over and over again during the workshop.
 
-!!! info
+??? info
     📓 If you mess up, just click [enter] through the rest of the values and save it at the ending prompt.  You can then just re-run the script and the script will prompt you again to re-enter each value showing you each current value that it saved.
 
 1. Run the input credentials Unix script
@@ -242,7 +242,7 @@ In the code repo you cloned, there is a simple UNIX shell script that prompts fo
       ===================================================================
      ```
    1. Confirm all of the inputs are correct. 
-    !!! info
+    ??? info
         📓 There are some derived values the script generated based on your input.  
 
 1. Once you confirm, the data is saved off `../gen/workshop-credentials.json` and will be used by the provision script in the next step.
@@ -281,7 +281,7 @@ This step will automatically provision several Azure resources and Dynatrace con
       - Add [Azure Monitor Integration](https://www.dynatrace.com/support/help/setup-and-configuration/setup-on-cloud-platforms/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-integration-service-environment)
     ```
 
-!!! info  
+??? info  
     📓The Dynatrace configuration scripts use a combination of [Dynatrace Monitoring as Code](https://github.com/dynatrace-oss/dynatrace-monitoring-as-code) framework (a.k.a. monaco) and the [Dynatrace Configuration API](https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/) for those few Dynatrace configurations not yet supported by monaco.
 
 

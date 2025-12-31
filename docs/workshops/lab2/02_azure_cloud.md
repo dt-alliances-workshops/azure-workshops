@@ -177,7 +177,7 @@ events that are independent of any metric (for example, process crashes, deploym
 
         ![image](img/lab4-custom-alert-problems-upd.png)
 
-    !!! info            
+    ??? info            
         ℹ️ Look at the <a href="https://www.dynatrace.com/support/help/how-to-use-dynatrace/problem-detection-and-analysis/problem-detection/metric-events-for-alerting/" target="_blank"> Dynatrace Docs </a> for more details on the setup.
 
         Alert configuration is available through the <a href="https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-metric-events/" target="_blank"> Anomaly detection—metric events API </a> Using the API, you can list, update, create, and delete configurations.
