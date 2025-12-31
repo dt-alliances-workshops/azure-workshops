@@ -57,21 +57,22 @@ Notice the following details:
 
     !!! info
         📓Notice the following details:
+
         1. Expand the properties to see more details
-        1. All the Azure monitor metrics are viewable as time-series data
+        2. All the Azure monitor metrics are viewable as time-series data
 
 ![image](img/lab4-host-detail.png)
 
-    !!! tip 
-        🧮💻📓 See the <a href="https://www.dynatrace.com/support/help/setup-and-configuration/setup-on-cloud-platforms/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-integration-service-environment" target="_blank"> Dynatrace Docs </a> for more details on the setup.
+!!! tip 
+    🧮💻📓 See the <a href="https://www.dynatrace.com/support/help/setup-and-configuration/setup-on-cloud-platforms/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-integration-service-environment" target="_blank"> Dynatrace Docs </a> for more details on the setup.
 
 
-    !!! tip 
-        🧮 **👍 How this helps**
+!!! tip 
+    🧮 **👍 How this helps**
             
-        * Dynatrace brings value by enriching the data from Azure Monitor/App Insights and extending observability into the platform with additional metrics for cloud infrastructure, load balancers, API Management Services, and more.​
+    * Dynatrace brings value by enriching the data from Azure Monitor/App Insights and extending observability into the platform with additional metrics for cloud infrastructure, load balancers, API Management Services, and more.​
             
-        * These metrics are managed by Dynatrace's AI engine automatically and this extended observability improves operations, reduces MTTR and increases innovation. 
+    * These metrics are managed by Dynatrace's AI engine automatically and this extended observability improves operations, reduces MTTR and increases innovation. 
 
 ## 2.3 Cloud App Review
 

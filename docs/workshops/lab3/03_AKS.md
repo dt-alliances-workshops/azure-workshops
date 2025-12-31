@@ -43,20 +43,19 @@ The picture below shows how the components of the sample application interact wi
 **#6 . Kubernetes Dashboard** - The Kubernetes page provides an overview of all Kubernetes clusters showing monitoring data like the clusters’ sizing and utilization.
 
 !!! info 
-   ### 📓 Beyond the Lab
-   Over time, you can imagine that this sample application will be further changed to add in other technologies like Azures serverless and other PaaS services like Azures SQL or Cosmo DB databases and virtual networking Application gateways as shown in the picture below.
+    📓 Beyond the Lab, over time, you can imagine that this sample application will be further changed to add in other technologies like Azures serverless and other PaaS services like Azures SQL or Cosmo DB databases and virtual networking Application gateways as shown in the picture below.
 
-   ![image](img/lab4-app-architecture-future.png)
+    ![image](img/lab4-app-architecture-future.png)
 
  
 ## Deploy the Dynatrace Kubernetes Operator via Azure Portal
 
-    !!! tip 
-        🧮 Before starting this step, please ensure you completed the <b>Step 8</b> in <b>Lab 0</b> to <a href="/codelabs/azure-grail-lab0/index.html?index=..%2F..azure#5"target="_blank"> `Verify AKS cluster is provisioned` correctly!</a>
+!!! tip 
+    🧮 Before starting this step, please ensure you completed the <b>Step 8</b> in <b>Lab 0</b> to <a href="/codelabs/azure-grail-lab0/index.html?index=..%2F..azure#5"target="_blank"> `Verify AKS cluster is provisioned` correctly!</a>
 
 
-    !!! tip 
-        🧮In <b>Step 6</b> of <b>Lab 0</b>, you should have also save off <a href="/codelabs/azure-grail-lab0/index.html?index=..%2F..azure#5"target="_blank">two values </a> in a notepad session.  You will now need to input those values in this step.
+!!! tip 
+    🧮In <b>Step 6</b> of <b>Lab 0</b>, you should have also save off <a href="/codelabs/azure-grail-lab0/index.html?index=..%2F..azure#5"target="_blank">two values </a> in a notepad session.  You will now need to input those values in this step.
 
 
 
@@ -86,11 +85,12 @@ Organizations will often customize the Dynatrace Operator installation and you c
    ![image](img/lab2-aks-dt-extension-install3.png)
 
 1. On the `Dynatrace Operator Configuration` here are the values to fill in
-       !!! tip 
-        🧮 Bring up the notepad where you save off the values for Dynatrace Operator & Data Ingest token during the provisioning step of the input-credentials script.
-
-        Both the Dynatrace Operator and Data Ingest token values are the same.
+!!! tip 
+    🧮 Bring up the notepad where you save off the values for Dynatrace Operator & Data Ingest token during the provisioning step of the input-credentials script.
+    
+    Both the Dynatrace Operator and Data Ingest token values are the same.
    
+
       - `AKS extension resource name`: dynatraceazuregrail
       - `Dynatrace operator token`: token value from notepad saved from earlier step
       - `Data ingest token`: token value from notepad saved from earlier step
@@ -114,27 +114,26 @@ In this step we'll walk through deploying the sample app that is now "modernized
 
 We'll use a shell script to deploy the sample application.  Below you'll learn some details around what that shell script is doing and YAML file parmeters that Dynatrace uses to define and configure your application in Kubernetes.
 
-    !!! info 
-        ℹ️ **📓`Shell Script to deploy sample app to Kubernetes`**
+!!! info 
+    ℹ️ **📓`Shell Script to deploy sample app to Kubernetes`**
+     By now you understand the various automation files, lets go ahead and open up the <a href="https://github.com/dt-alliances-workshops/azure-modernization-dt-orders-setup/blob/master/app-scripts/start-k8.sh" target="_blank"> `start-k8.sh` </a> to review what the script did for you:
 
-         By now you understand the various automation files, lets go ahead and open up the <a href="https://github.com/dt-alliances-workshops/azure-modernization-dt-orders-setup/blob/master/app-scripts/start-k8.sh" target="_blank"> `start-k8.sh` </a> to review what the script did for you:
+     This script automates a number of `kubectl` commands for the following:
 
-         This script automates a number of `kubectl` commands for the following:
+     1. Create a namespace called `staging` where all these resources will reside
+     1. Grant the Kubernetes default service account a viewer role into the `staging` namespace
+     1. Create both the `deployment` and `service` Kubernetes objects for each of the sample
 
-         1. Create a namespace called `staging` where all these resources will reside
-         1. Grant the Kubernetes default service account a viewer role into the `staging` namespace
-         1. Create both the `deployment` and `service` Kubernetes objects for each of the sample
-
-         - You can read more details on the Kubernetes installation in the <a href="https://dynatrace.com/support/help/platform-modules/infrastructure-monitoring/container-platform-monitoring/kubernetes-monitoring/leverage-tags-defined-in-kubernetes-deployments" target="_blank"> Dynatrace Documentation </a>
-
+     - You can read more details on the Kubernetes installation in the <a href="https://dynatrace.com/support/help/platform-modules/infrastructure-monitoring/container-platform-monitoring/kubernetes-monitoring/leverage-tags-defined-in-kubernetes-deployments" target="_blank"> Dynatrace Documentation </a>
 
 
 
-    !!! info 
-        ℹ️**📓 `Sample App YAML file for deploymenent`**
-         <br>To review what is configured for the sample application, go ahead and click on the link for YAML file: <a href="https://github.com/dt-alliances-workshops/azure-modernization-dt-orders-setup/tree/master/app-scripts/manifests/frontend.yml" target="_blank">frontend.yml</a> 
 
-         `Notice the labels and annotations:`
+!!! info 
+    ℹ️**📓 `Sample App YAML file for deploymenent`**
+    <br>To review what is configured for the sample application, go ahead and click on the link for YAML file: <a href="https://github.com/dt-alliances-workshops/azure-modernization-dt-orders-setup/tree/master/app-scripts/manifests/frontend.yml" target="_blank">frontend.yml</a> 
+
+    `Notice the labels and annotations:`
 
          ```
          metadata:
@@ -171,16 +170,16 @@ We'll use a shell script to deploy the sample application.  Below you'll learn s
 
 
 
-    !!! info 
-        ℹ️**📓 `Kubernetes Role Binding`**
+!!! info
+    ℹ️**📓 `Kubernetes Role Binding`**
 
-         In Kubernetes, every pod is associated with a service account which is used to authenticate the pod's requests to the Kubernetes API. If not otherwise specified the pod uses the default service account of its namespace.
+        In Kubernetes, every pod is associated with a service account which is used to authenticate the pod's requests to the Kubernetes API. If not otherwise specified the pod uses the default service account of its namespace.
 
-         * Every namespace has its own set of service accounts and thus also its own namespace-scoped default service account. The labels of each pod for which the service account has view permissions will be imported into Dynatrace automatically.
+        * Every namespace has its own set of service accounts and thus also its own namespace-scoped default service account. The labels of each pod for which the service account has view permissions will be imported into Dynatrace automatically.
 
-         * In order for Dynatrace to read the Kubernetes properties and annotations, you need to grant the Kubernetes default service account a viewer role into the `staging` namespace to enable this. We only have one namespace, but you will need to repeat these steps for all service accounts and namespaces you want to enable for Dynatrace within your environments.
+        * In order for Dynatrace to read the Kubernetes properties and annotations, you need to grant the Kubernetes default service account a viewer role into the `staging` namespace to enable this. We only have one namespace, but you will need to repeat these steps for all service accounts and namespaces you want to enable for Dynatrace within your environments.
 
-         For the workshop, we already updated the required file with the `staging` namespace. Next you will run the setup script that will apply it to your cluster. Go ahead and open this folder and look at the <a href="https://github.com/dt-alliances-workshops/azure-modernization-dt-orders-setup/blob/master/app-scripts/manifests/dynatrace-oneagent-metadata-viewer.yaml" target="_blank"> dynatrace-oneagent-metadata-viewer.yaml </a> file.  
+        For the workshop, we already updated the required file with the `staging` namespace. Next you will run the setup script that will apply it to your cluster. Go ahead and open this folder and look at the <a href="https://github.com/dt-alliances-workshops/azure-modernization-dt-orders-setup/blob/master/app-scripts/manifests/dynatrace-oneagent-metadata-viewer.yaml" target="_blank"> dynatrace-oneagent-metadata-viewer.yaml </a> file.  
 
 
 
@@ -262,8 +261,8 @@ The frontend service is exposed as a public IP and is accessible in a browser.
             * Order List = order/list.html
             * Order Form = order/form.html
 
-             !!! info 
-                ℹ️ 📓 The application looks like this monolith, but notice how the home page shows the versions of the three running backend services. You will see these version updated automatically as we deploy new versions of the backend services.
+!!! info 
+    ℹ️ 📓 The application looks like this monolith, but notice how the home page shows the versions of the three running backend services. You will see these version updated automatically as we deploy new versions of the backend services.
          
          
 
@@ -301,8 +300,8 @@ In this step we will walk through the different Dynatrace dashboards that are av
    -  From the menu on the left, click `Apps --> Deployment status` to review OneAgent Deployment status
    - Within the `Deployment status` page, next click on the `ActiveGate` option to review the Active Gate. <br>
 
-         !!! info 
-            ℹ️📓 From Dynatrace menu on the left, go to Manage -> Deployment Status -> ActiveGates, you will notice there is a `dynatrace-workshop-cluster-activegate-0` connected to your Dynatrace environment now.  This actigate gate routes all the agent traffic from apps that are running on that AKS cluster.**
+    !!! info 
+        ℹ️📓 From Dynatrace menu on the left, go to Manage -> Deployment Status -> ActiveGates, you will notice there is a `dynatrace-workshop-cluster-activegate-0` connected to your Dynatrace environment now.  This actigate gate routes all the agent traffic from apps that are running on that AKS cluster.**
 
      
 2. Review Kubernetes Dashboards are accessible from the left-side menu in Dynatrace choose `Apps --> Kubernetes Classic` and navigate to the Kubernetes cluster page as shown below: <br>
@@ -362,9 +361,9 @@ The backtrace tree view represents the sequence of services that led to this ser
 Dynatrace also gives you insight into what Kubernetes cluster, node, workload, and namespace that service is running on.
 
 !!! tip 
-        🧮 **👍 How this helps**
+    🧮 **👍 How this helps**
 
-         The service flow and service backtrace give you a complete picture of interdependency to the rest of the environment architecture at host, processes, services, and application perspectives.
+    The service flow and service backtrace give you a complete picture of interdependency to the rest of the environment architecture at host, processes, services, and application perspectives.
 
 
 ### Tasks to complete this step
@@ -424,9 +423,9 @@ In this step we will walk through the Service Flow view within Dynatrace  and se
       2.	Click on the boxes to expand the metrics to see the number of requests and average response times going to each service
 
 !!! tip 
-        🧮 **👍 How this helps**
+    🧮 **👍 How this helps**
 
-         Reviewing the architecture before and after changes is now as easy as a few clicks!
+    Reviewing the architecture before and after changes is now as easy as a few clicks!
 
 
 
