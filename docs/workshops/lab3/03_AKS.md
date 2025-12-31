@@ -2,23 +2,13 @@
 
 # Azure Grail Workshop Lab 3 - Modernization with AKS
 
-## Intro 
+## 3.1 Intro 
 
 Re-hosting (also referred to as lift and shift) is a common migration use case. Re-architecture and Re-platform are steps that break the traditional architectures and replace individual components with cloud services and microservices.
 
 We just learned how we can get great information on services, processes and user requests using Dynatrace and OneAgent. This helps us now decide what individual features or complete applications based on business benefits we need to migrate and modernize. The idea here is to focus on feature-based business benefit with functional migration. 
 
-### Objectives of this Lab 
-
-🔷 Install the Dynatrace Operator and sample application
-
-🔷 Review how the sample application went from a simple architecture to multiple services 
-
-🔷 Examine the transformed application using service flows and back traces 
-
-
-
-## Review - Modernize the Sample App 
+### Review - Modernize the Sample App 
 
 As we saw earlier, the sample application is a three-tiered application --> frontend, backend, database.
 
@@ -47,8 +37,17 @@ The picture below shows how the components of the sample application interact wi
 
     ![image](img/lab4-app-architecture-future.png)
 
+### Objectives of this Lab 
+
+🔷 Install the Dynatrace Operator and sample application
+
+🔷 Review how the sample application went from a simple architecture to multiple services 
+
+🔷 Examine the transformed application using service flows and back traces 
+
+
  
-## Deploy the Dynatrace Kubernetes Operator via Azure Portal
+## 3.2 Deploy the Dynatrace Kubernetes Operator via Azure Portal
 
 !!! tip 
     🧮 Before starting this step, please ensure you completed the <b>Step 8</b> in <b>Lab 0</b> to <a href="/codelabs/azure-grail-lab0/index.html?index=..%2F..azure#5"target="_blank"> `Verify AKS cluster is provisioned` correctly!</a>
@@ -107,7 +106,7 @@ Organizations will often customize the Dynatrace Operator installation and you c
 
 
 
-## Deploy sample application
+## 3.3 Deploy sample application
 
 
 In this step we'll walk through deploying the sample app that is now "modernized" into a microservices based app to the Azure Kubernetes cluster.  
@@ -175,9 +174,9 @@ We'll use a shell script to deploy the sample application.  Below you'll learn s
 
       In Kubernetes, every pod is associated with a service account which is used to authenticate the pod's requests to the Kubernetes API. If not otherwise specified the pod uses the default service account of its namespace.
 
-        * Every namespace has its own set of service accounts and thus also its own namespace-scoped default service account. The labels of each pod for which the service account has view permissions will be imported into Dynatrace automatically.
+      * Every namespace has its own set of service accounts and thus also its own namespace-scoped default service account. The labels of each pod for which the service account has view permissions will be imported into Dynatrace automatically.
 
-        * In order for Dynatrace to read the Kubernetes properties and annotations, you need to grant the Kubernetes default service account a viewer role into the `staging` namespace to enable this. We only have one namespace, but you will need to repeat these steps for all service accounts and namespaces you want to enable for Dynatrace within your environments.
+      * In order for Dynatrace to read the Kubernetes properties and annotations, you need to grant the Kubernetes default service account a viewer role into the `staging` namespace to enable this. We only have one namespace, but you will need to repeat these steps for all service accounts and namespaces you want to enable for Dynatrace within your environments.
 
       For the workshop, we already updated the required file with the `staging` namespace. Next you will run the setup script that will apply it to your cluster. Go ahead and open this folder and look at the <a href="https://github.com/dt-alliances-workshops/azure-modernization-dt-orders-setup/blob/master/app-scripts/manifests/dynatrace-oneagent-metadata-viewer.yaml" target="_blank"> dynatrace-oneagent-metadata-viewer.yaml </a> file.  
 
@@ -208,7 +207,7 @@ We'll use a shell script to deploy the sample application.  Below you'll learn s
       order-6d4cd477cb-9bvn4             1/1     Running   0          2d8h
       ```
 
-## Review Sample application on Kubernetes
+## 3.4 Review Sample application on Kubernetes
 
 
 In this step we will review the Sample app that we modernized and deployed to Kubernetes.  Refer to this picture for a more detailed description of our setup. 
@@ -266,30 +265,7 @@ The frontend service is exposed as a public IP and is accessible in a browser.
          
          
 
-## Enable Kubernetes Log & Events for Dynatrace
-
-
-### Kubernetes events monitoring for analysis and alerting
-For full observability into your Kubernetes events, automatic Davis analysis, and custom alerting, you need to enable Kubernetes event monitoring & Log ingest into Dynatrace
-
-### Tasks to complete this step
-1. In the Dynatrace UI, Go to Apps list from menu on the left and open up `Kubernetes Classic" 
-   ![image](img/lab2-k8classic-app.png)
-1. Open up the AKS Cluster
-   ![image](img/lab2-k8classic-cluster-view.png)
-1. Once you're in Overview of Kubernetes cluster, scroll down to bottom to Events and Logs section
-   ![image](img/lab2-k8classic-cluster-view-eventslogs.png)
-1. Click on the button first to `Enable Kuberenetes Events`.  On the next screen click on Monitor events and click Save bottom.
-   ![image](img/lab2-k8classic-events-config.png)
-1. To navigate back to your cluster overview screen, click on cluster name at the breadcumb menu at the top
-   ![image](img/lab2-k8classic-events-config-breadcrumb.png)   
-1. Scroll down to the bottom to Events and Logs section.  This time click on link `Set up log ingest` to capture log data for the cluster.
-   ![image](img/lab2-k8classic-cluster-view-eventslogs.png)
-1. Scroll to the top of the log ingest screen and enable `Ingest all detected log sources`.  
-   ![image](img/lab2-k8classic-logingest.png)
-1. To navigate back to your cluster overview screen, click on `Kubernetes Classic` app from the left navigation menu.
-
-## Review Kubernetes within Dynatrace
+## 3.5 Review Kubernetes within Dynatrace
 
 
 In this step we will walk through the different Dynatrace dashboards that are available out of the box for monitoring Kubernetes.
@@ -349,7 +325,7 @@ In this step we will walk through the different Dynatrace dashboards that are av
             ![image](img/aks-layer7-service-upd.png)
             📓**Note:** If you expand the `Properties and Tag` Section, you'll notice the various Kubernetes information that is also available for this service.
 
-## Analyze Service Backtrace on Kubernetes
+## 3.6 Analyze Service Backtrace on Kubernetes
 
 
 Now that we've modernized the application and installed it on Kubernetes, we still need to trace the application transactions from front to back.  
@@ -388,7 +364,7 @@ Dynatrace also gives you insight into what Kubernetes cluster, node, workload, a
       1. My web application is the default application that Dynatrace creates
          ![image](img/lab4-k8-service-backflow.png)
 
-## Analyze Service flow on Kubernetes
+## 3.7 Analyze Service flow on Kubernetes
 
 In this step we will walk through the Service Flow view within Dynatrace  and see what's different now that its deployed on Kubernetes.
 
