@@ -398,7 +398,7 @@ In this section, you should have completed the following:
 - [x] Captured environment and token info needed for workshop provisioning automation scripts
 - [x] Provisioned workshop Azure resources
 
-## Continue...
+## Next Lab...
 
 In Lab2, we'll setup Dynatrace on Azure Kubernetes Service.
 <div class="grid cards" markdown>

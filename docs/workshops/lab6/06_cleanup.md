@@ -1,4 +1,4 @@
---8<-- "snippets/send-bizevent/5-ai-observability-lab.js"
+--8<-- "snippets/send-bizevent/cleanup.js"
 
 # Azure Grail Workshop Lab 6 - Cleanup & Reminder
 
@@ -12,7 +12,7 @@ If you plan to keep the workshop resources running in Azure for a few more days 
         🧮💡 To check how many credits are still left over on your Azure subscription, please go to site [Azure Sponsorship Balance Site](https://www.microsoftazuresponsorships.com/Balance).
         
 
-* Your Dynatrace Environment will disabled after 7 calendar days of your workshop.
+* Your Dynatrace Environment will disabled after 30 calendar days of your workshop.
 
 ## Workshop Cleanup
 

@@ -426,7 +426,7 @@ In this section, you should have completed the following:
 
 
 
-## Continue...
+## Next Lab...
 
 In Lab4, we'll dig into Workbooks and Dashboards to analyze dynatrace data.
 <div class="grid cards" markdown>

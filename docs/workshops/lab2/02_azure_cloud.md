@@ -118,7 +118,7 @@ events that are independent of any metric (for example, process crashes, deploym
         2.  Type:  `Metric key` from dropdown
         3.  Metric key `Azure CPU usage` from dropdown
             ![image](img/lab4-vm-alert-upd.png)
-        !!! info 
+        ??? info 
             💡There are similar CPU percentage metrics, please make sure you select the right one 
         4.  Agregation `Average` from dropdown
         5.  Management zone `dt-orders-monolith`
@@ -177,12 +177,11 @@ events that are independent of any metric (for example, process crashes, deploym
 
         ![image](img/lab4-custom-alert-problems-upd.png)
 
-!!! info            
-    ℹ️ Look at the <a href="https://www.dynatrace.com/support/help/how-to-use-dynatrace/problem-detection-and-analysis/problem-detection/metric-events-for-alerting/" target="_blank"> Dynatrace Docs </a> for more details on the setup.
+    !!! info            
+        ℹ️ Look at the <a href="https://www.dynatrace.com/support/help/how-to-use-dynatrace/problem-detection-and-analysis/problem-detection/metric-events-for-alerting/" target="_blank"> Dynatrace Docs </a> for more details on the setup.
 
-    Alert configuration is available through the <a href="https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-metric-events/" target="_blank"> Anomaly detection—metric events API </a> Using the API, you can list, update, create, and delete configurations.
-
-        
+        Alert configuration is available through the <a href="https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-metric-events/" target="_blank"> Anomaly detection—metric events API </a> Using the API, you can list, update, create, and delete configurations.
+       
 
     * Review Problem Notifications Settings
         -  Navigate to `Settings --> Integrations --> Problem Notifications` 
@@ -226,7 +225,7 @@ In this section, you should have completed the following:
 
 ✅ Reviewed how Azure monitor metrics can be configured as Metric events for alerts 
 
-## Continue...
+## Next Lab...
 
 In Lab3, we'll setup Dynatrace on Azure Kubernetes Service.
 <div class="grid cards" markdown>

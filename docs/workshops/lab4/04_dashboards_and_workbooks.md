@@ -127,7 +127,7 @@ In this section, you should have completed the following:
 
 ✅  Reviewed a Notebooks on how to analyze metric and use the forecasting feature.
 
-## Continue...
+## Next Lab...
 
 In Lab5, we'll setup an AI application and monitor it with Dynatrace.
 <div class="grid cards" markdown>
