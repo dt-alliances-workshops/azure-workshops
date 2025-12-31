@@ -149,7 +149,7 @@ We'll use a shell script to deploy the sample application.  Below you'll learn s
                chat-channel: dev-team-frontend 
          ```
 
-         Notice the defined container and version.  These containers are stored in <a href="https://hub.docker.com/u/dtdemos" target="_blank"> DockerHub </a>.
+      Notice the defined container and version.  These containers are stored in <a href="https://hub.docker.com/u/dtdemos" target="_blank"> DockerHub </a>.
 
          ```
          spec:
@@ -158,7 +158,7 @@ We'll use a shell script to deploy the sample application.  Below you'll learn s
             image: dtdemos/dt-orders-frontend:1
          ```
 
-         Notice the `DT_CUSTOM_PROPS` environment variable:
+      Notice the `DT_CUSTOM_PROPS` environment variable:
 
          ```
          env:
@@ -166,7 +166,7 @@ We'll use a shell script to deploy the sample application.  Below you'll learn s
                value: "project=dt-orders service=frontend"
          ```
 
-         The `DT_CUSTOM_PROPS` is a special Dynatrace feature, that the OneAgent will automatically recognize and make Dynatrace tags for the process. You can read more details in the <a href="https://www.dynatrace.com/support/help/shortlink/process-group-properties#anchor_variables" target="_blank"> Dynatrace Documentation </a>
+      The `DT_CUSTOM_PROPS` is a special Dynatrace feature, that the OneAgent will automatically recognize and make Dynatrace tags for the process. You can read more details in the <a href="https://www.dynatrace.com/support/help/shortlink/process-group-properties#anchor_variables" target="_blank"> Dynatrace Documentation </a>
 
 
 
