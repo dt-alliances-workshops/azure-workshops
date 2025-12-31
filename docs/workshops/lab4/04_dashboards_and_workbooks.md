@@ -2,7 +2,7 @@
 
 # Azure Grail Workshop Lab 4 - Dashboards & Notebooks
 
-## Dashboards Overview
+## 4.1 Dashboards Overview
 
 Get your first fully functional dashboard up and running in minutes with this quick guided tour. We’ll show you how to add queries, external data, markdown, and variables—without long explanations or tutorials.
 
@@ -35,7 +35,7 @@ With Dashboards, you can:
 1. Select Select visualization tab to display the results differently.
     ![image](img/dashboards-app-getting-started.gif)
 
-## Notebooks Overview
+## 4.2 Notebooks Overview
 
 Want to explore data and create powerful, data-driven documents for sharing and collaboration? You're in the right place. If you're already familiar with Notebooks, you can get going with an empty notebook. If you ever want to revisit this page, you’ll find it under Getting started in the (?) menu.
 
@@ -67,7 +67,7 @@ In each notebook, you can add sections of Query, Code, and Markdown. On this pag
 1. Now, let’s say you want summarize number of records by process group.        
         - In the `dt.entity.process_group` column, click on column header.
             ![image](img/lab4-notebooks3.gif)
-            
+
     ??? info 
         ℹ️ 📓If you want to go further and learn more about using DQL to refine queries in Notebooks, visit <a href="https://www.dynatrace.com/support/help/observe-and-explore/query-data/dynatrace-query-language" target="_blank">Dynatrace Query Language</a>. 
     
@@ -87,7 +87,7 @@ At other times, a chart or graph may be more effective for communicating a trend
         - Give the different templates a try. They’ll save you time and effort.
         ![image](img/lab1-add-code.jpg)
 
-## Use DQL in Notebooks to analyze logs
+## 4.3 Use DQL in Notebooks to analyze logs
 
 ### Tasks to complete this step
 1. Download this sample notebook we will use to analyze logs
@@ -103,7 +103,7 @@ At other times, a chart or graph may be more effective for communicating a trend
 4. Click on upload and browse to the notebook JSON file where you saved.
 5. Follow the instructions in the notebook to analyze log data from a Hipster shop sample app.
 
-## Use DQL in Notebooks to analyze metrics
+## 4.4 Use DQL in Notebooks to analyze metrics
 
 ### Tasks to complete this step
 1. Download this sample notebook we will use to analyze logs
