@@ -67,6 +67,7 @@ In each notebook, you can add sections of Query, Code, and Markdown. On this pag
 1. Now, let’s say you want summarize number of records by process group.        
         - In the `dt.entity.process_group` column, click on column header.
             ![image](img/lab4-notebooks3.gif)
+            
     ??? info 
         ℹ️ 📓If you want to go further and learn more about using DQL to refine queries in Notebooks, visit <a href="https://www.dynatrace.com/support/help/observe-and-explore/query-data/dynatrace-query-language" target="_blank">Dynatrace Query Language</a>. 
     
