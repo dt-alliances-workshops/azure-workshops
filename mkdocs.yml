@@ -5,6 +5,12 @@ repo_url: https://github.com/dt-alliances-workshops/azure-workshops
 extra_css:
   - stylesheets/extra.css
 
+extra_javascript:
+  - javascripts/progress.js
+
+extra:
+  generator: false  # Removes "Made with Material for MkDocs" from footer
+
 # The MkDocs structure is defined by the 'docs' folder, 
 # which should contain all your Markdown files.
 docs_dir: docs
@@ -38,11 +44,11 @@ theme:
       name: Switch to system preference
 
   features:
-    - navigation.tabs           # Keep top-level pages as tabs (Home, Azure Workshop)
     - navigation.sections
     - navigation.tracking       # CRITICAL: This restores the left sidebar under the active tab
     - navigation.footer         # Adds prev/next navigation links at page bottom
     - navigation.top            # Back-to-top button when scrolling
+    - navigation.path           # Breadcrumbs showing: Home > Azure Workshop > Lab 2
     - toc.integrate
     - toc.autohide
 
@@ -75,15 +81,57 @@ markdown_extensions:
   - footnotes
   - pymdownx.tabbed:
       alternate_style: true
+  - pymdownx.keys              # Render keyboard keys like ++ctrl+c++
+  - pymdownx.mark              # Highlight text with ==marked==
 plugins:
     - search
     - tags
 nav:
   - Home: index.md
   - 'Azure Workshop':
-    - 'Lab 1: Setting up Environment' : workshops/lab1/01_workshop_setup.md
-    - 'Lab 2: Monitor Azure Cloud Resources' : workshops/lab2/02_azure_cloud.md
-    - 'Lab 3: Azure Kubernetes Observability with Dynatrace': workshops/lab3/03_AKS.md
-    - 'Lab 4: Dashboards and Workbooks': workshops/lab4/04_dashboards_and_workbooks.md
-    - 'Lab 5: AI Observability with Dynatrace and Azure': workshops/lab5/05_ai_observability.md
-    - 'Lab 6: Cleanup': workshops/lab6/06_cleanup.md
+    - 'Lab 1: Setting up Environment':
+      - '1.1 Intro': workshops/lab1/index.md
+      - '1.2 Azure Pass Setup': workshops/lab1/02_azure_pass.md
+      - '1.3 Create ANDS': workshops/lab1/03_ands.md
+      - '1.4 Azure Portal Prep': workshops/lab1/04_portal_prep.md
+      - '1.5 Dynatrace Setup': workshops/lab1/05_dynatrace_setup.md
+      - '1.6 Collect Inputs': workshops/lab1/06_collect_inputs.md
+      - '1.7 Provision Workshop': workshops/lab1/07_provision.md
+      - '1.8 Validate Setup': workshops/lab1/08_validate.md
+      - '1.9 Summary': workshops/lab1/09_summary.md
+    - 'Lab 2: Monitor Azure Cloud Resources':
+      - '2.1 Intro': workshops/lab2/index.md
+      - '2.2 Azure Monitor Flow': workshops/lab2/02_azure_monitor_flow.md
+      - '2.3 Clouds App': workshops/lab2/03_clouds_app.md
+      - '2.4 Log Analysis': workshops/lab2/04_log_analysis.md
+      - '2.5 Compare Metrics': workshops/lab2/05_compare_metrics.md
+      - '2.6 Summary': workshops/lab2/06_summary.md
+    - 'Lab 3: Azure Kubernetes Observability':
+      - '3.1 Intro': workshops/lab3/index.md
+      - '3.2 Deploy Operator': workshops/lab3/02_deploy_operator.md
+      - '3.3 Deploy App': workshops/lab3/03_deploy_app.md
+      - '3.4 Review App': workshops/lab3/04_review_app.md
+      - '3.5 Cluster Health': workshops/lab3/05_cluster_health.md
+      - '3.6 Resource Optimization': workshops/lab3/06_resource_optimization.md
+      - '3.7 Troubleshooting': workshops/lab3/07_troubleshooting.md
+      - '3.8 Security': workshops/lab3/08_security.md
+      - '3.9 Summary': workshops/lab3/09_summary.md
+    - 'Lab 4: Dashboards & Notebooks':
+      - '4.1 Intro': workshops/lab4/index.md
+      - '4.2 Dashboards': workshops/lab4/02_dashboards.md
+      - '4.3 Notebooks': workshops/lab4/03_notebooks.md
+      - '4.4 Analyze Data': workshops/lab4/04_analyze_data.md
+      - '4.5 Summary': workshops/lab4/05_summary.md
+    - 'Lab 5: AI Observability':
+      - '5.1 Intro': workshops/lab5/index.md
+      - '5.2 AI Observability App': workshops/lab5/02_ai_obs_app.md
+      - '5.3 Service Health': workshops/lab5/03_service_health.md
+      - '5.4 Cost & Tokens': workshops/lab5/04_cost_tokens.md
+      - '5.5 Latency': workshops/lab5/05_latency.md
+      - '5.6 Traces': workshops/lab5/06_traces.md
+      - '5.7 Summary': workshops/lab5/07_summary.md
+    - 'Lab 6: Cleanup':
+      - '6.1 Workshop Complete': workshops/lab6/index.md
+      - '6.2 Environment Reminder': workshops/lab6/02_environment_reminder.md
+      - '6.3 Cleanup': workshops/lab6/03_cleanup.md
+      - '6.4 Resources': workshops/lab6/04_resources.md

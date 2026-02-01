@@ -1,31 +1,342 @@
-/* 1. Highlight the active Section (H2) or Task (H3) in the sidebar */
-.md-nav__link--active, 
-.md-nav__link--passed {
-  color: #0078d4 !important; /* Azure Blue */
-  font-weight: 700;
+/* ==========================================================
+   CodeLab-Style Progress Tracking for Workshop Labs
+   ========================================================== */
+
+/* 1. Non-active nav items - standard readable color */
+.md-nav__link {
+  color: #444 !important;
 }
 
-/* 2. Create the "Progress Rail" (vertical line) for the integrated TOC */
-/* This targets the list that appears under your Lab filename */
-.md-nav__item--active > .md-nav__list {
+[data-md-color-scheme="slate"] .md-nav__link {
+  color: #bbb !important;
+}
+
+/* 1b. Highlight the ACTIVE section - make it very obvious */
+.md-nav__link--active {
+  color: #0078d4 !important; /* Azure Blue */
+  font-weight: 700 !important;
+  background-color: rgba(0, 120, 212, 0.1);
+  border-radius: 4px;
+  padding: 2px 6px;
+  margin: -2px -6px;
+}
+
+[data-md-color-scheme="slate"] .md-nav__link--active {
+  background-color: rgba(0, 120, 212, 0.2);
+}
+
+/* 1c. Visited sections - green to show completion */
+.md-nav__link--visited {
+  color: #107c10 !important; /* Green */
+}
+
+.md-nav__link--visited::before {
+  content: "✓ ";
+  font-size: 0.8em;
+}
+
+[data-md-color-scheme="slate"] .md-nav__link--visited {
+  color: #4caf50 !important; /* Lighter green for dark mode */
+}
+
+/* 2. Create the "Progress Rail" (vertical line) for integrated TOC */
+/* Targets the nested nav list under active items (where TOC sections appear) */
+.md-nav--integrated .md-nav__list .md-nav__list,
+.md-nav__item--nested > .md-nav > .md-nav__list {
+  position: relative;
   border-left: 2px solid #e2e2e2;
-  margin-left: 0.8rem;
-  padding-left: 0.5rem;
-  margin-bottom: 0.5rem;
+  margin-left: 0.6rem;
+  padding-left: 0.6rem;
 }
 
 /* 3. Style the H3 Task headers within the page content */
 .md-typeset h3 {
   border-bottom: 1px solid #f0f0f0;
   padding-bottom: 0.3rem;
-  color: #333;
 }
 
-/* 4. Optional: Add a small dot to the active step in the rail */
-.md-nav__link--active::before {
-  content: "•";
-  position: absolute;
-  left: -0.95rem;
-  color: #0078d4;
-  font-size: 1.2rem;
+/* 4. Position for dot indicator */
+.md-nav__link {
+  position: relative;
 }
+
+/* 5. Add a dot indicator to the active step in the rail */
+.md-nav__link--active::before {
+  content: "";
+  position: absolute;
+  left: -0.85rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  background-color: #0078d4;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+
+/* 6. Smooth transitions for TOC navigation */
+.md-nav__link {
+  transition: color 0.2s ease;
+}
+
+/* 7. Dark mode support */
+[data-md-color-scheme="slate"] .md-nav--integrated .md-nav__list .md-nav__list,
+[data-md-color-scheme="slate"] .md-nav__item--nested > .md-nav > .md-nav__list {
+  border-left-color: #404040;
+}
+
+[data-md-color-scheme="slate"] .md-typeset h3 {
+  border-bottom-color: #404040;
+}
+
+[data-md-color-scheme="slate"] .md-nav__link--active::before {
+  border-color: #1e1e1e;
+}
+
+/* ==========================================================
+   Additional Progress Enhancements
+   ========================================================== */
+
+/* 8. Highlight the active section header in the content */
+.md-typeset h2:target,
+.md-typeset h3:target {
+  animation: highlight-flash 2s ease-out;
+}
+
+@keyframes highlight-flash {
+  0% { background-color: rgba(0, 120, 212, 0.2); }
+  100% { background-color: transparent; }
+}
+
+/* 9. Style the Summary section checkmarks */
+.md-typeset li:has(> p:first-child:starts-with("✅")),
+.md-typeset p:first-child:has(✅) {
+  color: #107c10; /* Green for completed items */
+}
+
+/* 10. Make Objectives stand out */
+.md-typeset li:has(> p:first-child:starts-with("🔷")) {
+  margin-bottom: 0.5rem;
+}
+
+/* 11. Better visual separation between major sections */
+.md-typeset h2 {
+  border-top: 3px solid #0078d4;
+  padding-top: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+/* Don't add border to the first h2 */
+.md-typeset h2:first-of-type {
+  border-top: none;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+/* 12. Style the "Tasks to complete" headers */
+.md-typeset h3:has(+ ol),
+.md-typeset h3:has(+ ul) {
+  color: #0078d4;
+}
+
+/* 13. Number styling for task lists */
+.md-typeset ol > li::marker {
+  color: #0078d4;
+  font-weight: 700;
+}
+
+/* 14. Add subtle left border to current content section */
+.md-typeset h2:target + *,
+.md-typeset h2:target + * + *,
+.md-typeset h2:target + * + * + * {
+  border-left: 3px solid #0078d4;
+  padding-left: 1rem;
+  margin-left: -1rem;
+}
+
+/* 15. Style admonition tips more prominently */
+.md-typeset .admonition.tip {
+  border-left-width: 4px;
+}
+
+/* 16. Progress indicator for prev/next footer navigation */
+.md-footer__link {
+  background: linear-gradient(90deg, #0078d4 0%, #0078d4 100%);
+  background-size: 0% 3px;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  transition: background-size 0.3s ease;
+}
+
+.md-footer__link:hover {
+  background-size: 100% 3px;
+}
+
+/* ==========================================================
+   Workshop Task Checkboxes - More Visible for Progress Tracking
+   ========================================================== */
+
+/* 17. Interactive task checkboxes */
+.md-typeset .task-list-item input[type="checkbox"] {
+  width: 1.2em;
+  height: 1.2em;
+  accent-color: #0078d4;
+  cursor: pointer;
+}
+
+.md-typeset .task-list-item {
+  list-style: none;
+  margin-left: -0.4em;
+}
+
+/* 18. Checked items show green completion style */
+.md-typeset .task-list-item input[type="checkbox"]:checked {
+  accent-color: #107c10; /* Green checkmark */
+}
+
+.md-typeset .task-list-item input[type="checkbox"]:checked + * {
+  color: #107c10; /* Green text */
+}
+
+[data-md-color-scheme="slate"] .md-typeset .task-list-item input[type="checkbox"]:checked + * {
+  color: #4caf50; /* Lighter green for dark mode visibility */
+}
+
+/* ==========================================================
+   Command Block Styling - Make Executable Code Stand Out
+   ========================================================== */
+
+/* 19. Inline code styling */
+.md-typeset code {
+  background-color: #f5f5f5;
+  padding: 0.1em 0.3em;
+  border-radius: 3px;
+}
+
+[data-md-color-scheme="slate"] .md-typeset code {
+  background-color: #2d2d2d;
+}
+
+/* 20. Keyboard key styling */
+.md-typeset kbd {
+  background: linear-gradient(180deg, #f5f5f5 0%, #e0e0e0 100%);
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 0 #999;
+  padding: 0.1em 0.4em;
+  font-size: 0.85em;
+}
+
+[data-md-color-scheme="slate"] .md-typeset kbd {
+  background: linear-gradient(180deg, #404040 0%, #303030 100%);
+  border-color: #555;
+  box-shadow: 0 2px 0 #222;
+}
+
+/* ==========================================================
+   Footer Styling - Match Header Color
+   ========================================================== */
+
+.md-footer {
+  background-color: var(--md-primary-fg-color);
+}
+
+.md-footer-meta {
+  background-color: var(--md-primary-fg-color--dark);
+}
+
+/* ==========================================================
+   Reset Progress Buttons - Fixed Upper Right
+   ========================================================== */
+
+.reset-progress-wrapper {
+  position: fixed;
+  top: 4.5rem; /* Below the header */
+  right: 1rem;
+  z-index: 100;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.reset-progress-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  padding: 0.4rem 0.6rem;
+  font-size: 0.65rem;
+  font-weight: 500;
+  color: #666;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
+}
+
+.reset-progress-btn:hover {
+  background-color: #fff;
+  border-color: #0078d4;
+  color: #0078d4;
+  box-shadow: 0 2px 12px rgba(0, 120, 212, 0.2);
+}
+
+.reset-progress-btn:active {
+  background-color: #e8f4fd;
+}
+
+.reset-progress-btn .reset-icon {
+  font-size: 0.85rem;
+  line-height: 1;
+}
+
+/* Reset All button - slightly different style to indicate broader action */
+.reset-progress-btn--all {
+  color: #888;
+  background-color: #f8f8f8;
+}
+
+.reset-progress-btn--all:hover {
+  border-color: #d32f2f;
+  color: #d32f2f;
+  box-shadow: 0 2px 12px rgba(211, 47, 47, 0.2);
+}
+
+[data-md-color-scheme="slate"] .reset-progress-btn {
+  background-color: #2d2d2d;
+  border-color: #404040;
+  color: #aaa;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+[data-md-color-scheme="slate"] .reset-progress-btn:hover {
+  background-color: #333;
+  border-color: #0078d4;
+  color: #0078d4;
+}
+
+[data-md-color-scheme="slate"] .reset-progress-btn--all {
+  background-color: #252525;
+}
+
+[data-md-color-scheme="slate"] .reset-progress-btn--all:hover {
+  border-color: #d32f2f;
+  color: #ef5350;
+}
+
+[data-md-color-scheme="slate"] .reset-progress-btn:active {
+  background-color: #1a3a4d;
+}
+
+/* Responsive - stack vertically on smaller screens */
+@media screen and (max-width: 76.1875em) {
+  .reset-progress-wrapper {
+    top: auto;
+    bottom: 1rem;
+    right: 1rem;
+    flex-direction: column;
+  }
+}
+
