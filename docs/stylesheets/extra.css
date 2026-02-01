@@ -1,0 +1,31 @@
+/* 1. Highlight the active Section (H2) or Task (H3) in the sidebar */
+.md-nav__link--active, 
+.md-nav__link--passed {
+  color: #0078d4 !important; /* Azure Blue */
+  font-weight: 700;
+}
+
+/* 2. Create the "Progress Rail" (vertical line) for the integrated TOC */
+/* This targets the list that appears under your Lab filename */
+.md-nav__item--active > .md-nav__list {
+  border-left: 2px solid #e2e2e2;
+  margin-left: 0.8rem;
+  padding-left: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* 3. Style the H3 Task headers within the page content */
+.md-typeset h3 {
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 0.3rem;
+  color: #333;
+}
+
+/* 4. Optional: Add a small dot to the active step in the rail */
+.md-nav__link--active::before {
+  content: "•";
+  position: absolute;
+  left: -0.95rem;
+  color: #0078d4;
+  font-size: 1.2rem;
+}
