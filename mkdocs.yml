@@ -15,7 +15,7 @@ theme:
   name: material
   custom_dir: docs/overrides
   #toc_depth: 1
-  logo: https://cdn.bfldr.com/B686QPH3/at/w5hnjzb32k5wcrcxnwcx4ckg/Dynatrace_signet_RGB_HTML.svg?auto=webp&format=pngg  
+  logo: https://cdn.bfldr.com/B686QPH3/at/w5hnjzb32k5wcrcxnwcx4ckg/Dynatrace_signet_RGB_HTML.svg?auto=webp&format=png
   palette:
   # Palette toggle for automatic mode    
   - media: "(prefers-color-scheme)"
@@ -39,19 +39,21 @@ theme:
 
   features:
     - navigation.tabs           # Keep top-level pages as tabs (Home, Azure Workshop)
-    - navigation.sections     
-    - navigation.tracking      # CRITICAL: This restores the left sidebar under the active tab
-    #- navigation.tabs.sticky
-    # navigation.expand         # Keeps subsequent labs collapsed
-    #- toc.follow
+    - navigation.sections
+    - navigation.tracking       # CRITICAL: This restores the left sidebar under the active tab
+    - navigation.footer         # Adds prev/next navigation links at page bottom
+    - navigation.top            # Back-to-top button when scrolling
     - toc.integrate
     - toc.autohide
-    
+
     # Utility Features
-    - navigation.instant        # Optional: Enable instant page loading
+    - navigation.instant        # Enable instant page loading
     - content.code.copy
+    - content.code.annotate     # Code annotations with (1) markers
+    - content.tabs.link         # Sync content tabs across pages
     - search.highlight
     - search.share
+    - search.suggest            # Search suggestions as you type
   
  
 markdown_extensions:
@@ -68,7 +70,6 @@ markdown_extensions:
   - pymdownx.snippets:
       base_path: ["docs"]
   - attr_list
-  - pymdownx.details
   - pymdownx.tasklist:
       custom_checkbox: true
   - footnotes
@@ -77,7 +78,6 @@ markdown_extensions:
 plugins:
     - search
     - tags
-# mkdocs.yml - CORRECTED NAV STRUCTURE
 nav:
   - Home: index.md
   - 'Azure Workshop':
