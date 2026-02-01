@@ -17,10 +17,6 @@ We recommend starting with **Lab 1** to ensure your environment is set up correc
 | [Lab 5: AI Observability](workshops/lab5/index.md) | Monitor AI/LLM applications with Dynatrace | 7 sections |
 | [Lab 6: Cleanup](workshops/lab6/index.md) | Cleanup workshop resources | 4 sections |
 
-## **Get Started**
-
-[Start Lab 1 →](workshops/lab1/index.md){ .md-button .md-button--primary }
-
 ## **What You'll Learn**
 
 By completing this workshop, you will:
@@ -31,3 +27,7 @@ By completing this workshop, you will:
 - **Troubleshoot with AI** - Use Davis AI to automatically detect and diagnose issues
 - **Build Dashboards** - Create custom visualizations using DQL queries
 - **Monitor AI Applications** - Explore AI Observability for LLM-powered services
+
+## **Get Started**
+
+[Start Lab 1 →](workshops/lab1/index.md){ .md-button .md-button--primary }
