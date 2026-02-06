@@ -10,7 +10,7 @@ We recommend starting with **Lab 1** to ensure your environment is set up correc
 
 | Lab | Description | Sections |
 | :---- | :---- | :---- |
-| [Lab 1: Setting up Environment](workshops/lab1/index.md) | Azure and Dynatrace environment setup | 9 sections |
+| [Lab 1: Setting up Environment](workshops/lab1/index.md) | Set up Azure and Dynatrace environment | 7 sections |
 | [Lab 2: Monitor Azure Cloud](workshops/lab2/index.md) | Learn how to monitor Azure Cloud resources | 6 sections |
 | [Lab 3: Azure Kubernetes Observability](workshops/lab3/index.md) | Monitor AKS with Dynatrace | 9 sections |
 | [Lab 4: Dashboards & Notebooks](workshops/lab4/index.md) | Visualize data with Dashboards and Notebooks | 5 sections |
