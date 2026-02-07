@@ -2,14 +2,17 @@
 
 ## 1.5 Setup Workshop Resources
 
-In this section, you will run the automated provisioning script to create all the Azure resources needed for the workshop. The script will create a resource group, virtual machine, AKS cluster, and AI Foundry resources.
+In this section, you will run the setup script to verify and configure the Azure resources needed for the workshop.
+
+!!! info "Pre-Provisioned Environment"
+    The workshop resources may already be created for you. The script will first check if the resources exist. If they do, it will verify they are running correctly and skip to configuration. If resources are not found, the script will prompt you for inputs to create them.
 
 !!! info "Script Location"
     The script is located in the repository you cloned in Step 1.2. Make sure you're in the Azure Cloud Shell and have navigated to the `provision-scripts` directory.
 
-### Resources Created
+### Workshop Resources
 
-The provisioning script will create the following Azure resources:
+The following Azure resources are required for this workshop:
 
 | Resource | Name | Description |
 |----------|------|-------------|
@@ -32,7 +35,10 @@ The provisioning script will create the following Azure resources:
     ./setup-azure-workshop.sh
     ```
 
-3. The script will prompt you for the following inputs:
+3. The script will check if the workshop resources already exist:
+
+    - **If resources exist:** The script will verify they are running correctly and skip to configuration. You can proceed to step 6.
+    - **If resources do not exist:** The script will prompt you for the following inputs to create them:
 
     | Input | Description | Action |
     |-------|-------------|--------|
@@ -40,7 +46,7 @@ The provisioning script will create the following Azure resources:
     | **Resource Group Name** | Name for the resource group | Press Enter to accept default: `dynatrace-azure-workshop` |
     | **Azure Location** | Azure region for resources | Press Enter to accept default: `eastus` |
 
-4. Review the configuration summary and confirm by entering `y`:
+4. (Only if creating resources) Review the configuration summary and confirm by entering `y`:
 
     ```
     -------------------------------------------------------------------
@@ -57,7 +63,7 @@ The provisioning script will create the following Azure resources:
     Proceed with provisioning? (y/n): y
     ```
 
-5. Wait for the script to complete. The provisioning process will:
+5. (Only if creating resources) Wait for the script to complete. The provisioning process will:
     - Register required Azure resource providers
     - Create the resource group
     - Create and configure the virtual machine
