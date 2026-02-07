@@ -99,3 +99,11 @@ In this section, you will configure the Azure Cloud Shell and download the works
     ```
     1.  You should see an output similar to the one below
         ![image](img/pre-requisites-azure-cli-gitcloneoutput.png)
+
+!!! success "Checkpoint"
+    Before proceeding to the next section, verify:
+
+    - Azure Cloud Shell is open and working
+    - You are using the correct Azure subscription
+    - The workshop repository has been cloned successfully
+    - You can see the `provision-scripts` and `app-scripts` directories

@@ -34,3 +34,11 @@ In this section, we'll access the new UI for Grail and set up an access token wi
     1.  Since this token is only shown once and you will need it in the next labs, copy this value to a local TEXT file before you leave this page. (For example Notepad, Notepad++, Notes.app)
         ![image](img/dt-tokens-page-save.png)
     1.  You will use this token in the next step as you setup the lab resources.
+
+!!! success "Checkpoint"
+    Before proceeding to the next section, verify:
+
+    - You can access the Dynatrace environment via Azure Portal
+    - You are using the new Dynatrace UI (Grail)
+    - You have created an API token with `Write API Tokens` scope
+    - You have saved the token value to a local text file

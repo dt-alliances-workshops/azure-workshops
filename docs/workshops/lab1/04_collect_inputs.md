@@ -53,3 +53,10 @@ In the code repo you cloned, there is a simple UNIX shell script that prompts fo
       API URL for Dynatrace Tenant            :       https://dtenvid.live.dynatrace.com/api
       =========================================================================================================
     ```
+
+!!! success "Checkpoint"
+    Before proceeding to the next section, verify:
+
+    - The `input-credentials.sh` script completed successfully
+    - The `workshop-credentials.json` file was created in the `gen` folder
+    - You saved the **Dynatrace Operator Token** and **API URL** values for Lab 3
