@@ -2,55 +2,109 @@
 
 ## 3.2 Deploy the Dynatrace Kubernetes Operator via Azure Portal
 
-!!! tip
-    🧮 Before starting this step, please ensure you completed **Section 1.8** in **Lab 1** to verify the AKS cluster is provisioned correctly.
-
-
-!!! tip
-    🧮 In **Section 1.6** of **Lab 1**, you should have saved two values in a notepad session. You will now need to input those values in this step.
-
-
-
 One key Dynatrace advantage is ease of activation via Azure Portal. OneAgent technology simplifies deployment across large enterprises and relieves engineers of the burden of instrumenting their applications by hand. As Kubernetes adoption continues to grow, it becomes more important than ever to simplify the activation of observability across workloads without sacrificing the deployment automation that Kubernetes provides. Observability should be as cloud-native as Kubernetes itself.
 
-In our workshop, we will install the Dynatrace Operator that streamlines lifecycle management.  You can read more about it here in this <a href="https://www.dynatrace.com/news/blog/new-dynatrace-operator-elevates-cloud-native-observability-for-kubernetes/" target="_blank"> Dynatrace Blog </a>
-
-Organizations will often customize the Dynatrace Operator installation and you can read more about the options in the <a href="https://docs.dynatrace.com/docs/setup-and-configuration/setup-on-k8s/installation" target="_blank"> Dynatrace Doc</a> but, we are going to use a single command that we can get from the Dynatrace interface to show how easy it is to get started.
-
+With Azure Native Dynatrace Service, you can install the Dynatrace Operator directly from the Dynatrace resource in Azure Portal - no tokens or manual configuration required.
 
 ### Tasks to complete this step
 
-1. Open up the Azure Portal and search for the AKS Cluster from the top search bar and select it once it displays under resources
-      ![image](img/lab2-aks-search.png)
+#### Step 1: Install Dynatrace Extension on AKS
 
-1. Once you're on the AKS cluster, from the left navigation, go to `Settings -> Extensions + Applications`
+1. Open the **Azure Portal** and search for `Dynatrace` in the top search bar
 
-1. Click on `Install an extension`.
-   ![image](img/lab2-aks-dt-extension-install1.png)
+2. Select your **Azure Native Dynatrace Service** resource (e.g., `dt-trial`)
 
-1. Search Dynatrace in search bar.  Click on Dynatrace Operator tile once its displayed.
-   ![image](img/lab2-aks-dt-extension-install2.png)
+3. From the left navigation menu, scroll down and click on **Azure Kubernetes Services** under the Dynatrace environment config section
 
-1. Click create at the next screen
+4. You will see a list of AKS clusters. Find and select the checkbox next to **dynatrace-azure-workshop-cluster**
 
-1. On the `Basics` tab, the subscription and resource group should already be pre-selected. Just select the AKS Cluster from the drop down.
-   ![image](img/lab2-aks-dt-extension-install3.png)
+    !!! tip
+        The cluster should show as "Running" in the Resource Status column and "Not Installed" in the Agent Status column.
 
-1. On the `Dynatrace Operator Configuration` here are the values to fill in
-!!! tip
-    🧮 Bring up the notepad where you saved the values for Dynatrace Operator & Data Ingest token during the provisioning step of the input-credentials script.
+5. Click **Install Extension** from the top toolbar
 
-    Both the Dynatrace Operator and Data Ingest token values are the same.
+    ![Install Extension](img/lab3_section2_installoperator.png)
 
-      - `AKS extension resource name`: dynatraceazuregrail
-      - `Dynatrace operator token`: token value from notepad saved from earlier step
-      - `Data ingest token`: token value from notepad saved from earlier step
-      - `API URL`: URL value from notepad saved from earlier step
-      - `OneAgent Deployment Type`: cloud native full stack
+6. Wait for the installation to complete. The Agent Status will change to "Installed" once finished.
 
-   ![image](img/lab2-aks-dt-extension-install4.png)
+    !!! warning "Installation Time"
+        The extension installation typically takes 2-5 minutes. You can click **Refresh** to check the status.
 
-1. Click on `Review + Create` and click `Create` on the next screen.
-1. After the deployment is complete, go into Dynatrace -> From the left menu select `Apps` and bring up `Kubernetes Classic` app.
-   - Within a couple of minutes, you will cluster and some of the metrics start to show up.
-      ![image](img/lab2-aks-dt-extension-install5.png)
+#### Step 2: Activate the Cluster in Dynatrace
+
+Once the extension is installed, you need to activate the cluster in Dynatrace to start monitoring.
+
+1. Open your **Dynatrace environment** (click "Go to Dynatrace" from Azure Portal or navigate directly)
+
+2. From the left menu, click on **Kubernetes** app
+
+3. At the top of the page, you'll see a banner showing **"Activation pending: 1 of X clusters"** - click on this banner
+
+4. In the activation pending dialog, find **dynatrace-azure-workshop-cluster** and click the **Activate** button next to it
+
+    ![Activate Cluster](img/lab3_section2_activate.png)
+
+5. After activation, return to the **Kubernetes** app. Within a few minutes, you should see your cluster with metrics, nodes, namespaces, and workload data.
+
+6. Toggle on **New Kubernetes experience*** 
+    ![New K8 Experience](img/lab3_section2_newK8.png)
+
+7. Click **Save changes** to apply the setting
+
+8. From the left navigation menu, click on **Kubernetes** app again to return to the cluster view with the new experience enabled
+
+    !!! tip
+        The New Kubernetes experience provides enhanced visualizations, improved navigation, and additional insights for your Kubernetes workloads.
+
+!!! success "Checkpoint"
+    Before proceeding, verify:
+
+    - The Dynatrace extension shows as "Installed" in Azure Portal
+    - The cluster is activated in the Dynatrace Kubernetes app
+    - You can see cluster nodes and basic metrics in Dynatrace
+
+??? info "Alternative Install Method: Manual Operator Installation"
+
+    If you prefer to install the Dynatrace Operator manually (or if the Azure extension method is unavailable), you can use the following steps:
+
+    **Prerequisites:**
+
+    - You will need the **Dynatrace Operator Token** and **API URL** values saved from Lab 1
+
+    **Manual Installation Steps:**
+
+    1. Open up the Azure Portal and search for the AKS Cluster from the top search bar and select it once it displays under resources
+
+        ![Search AKS](img/lab2-aks-search.png)
+
+    2. Once you're on the AKS cluster, from the left navigation, go to `Settings -> Extensions + Applications`
+
+    3. Click on `Install an extension`
+
+        ![Extensions](img/lab2-aks-dt-extension-install1.png)
+
+    4. Search "Dynatrace" in the search bar. Click on the Dynatrace Operator tile once it's displayed.
+
+        ![Search Dynatrace](img/lab2-aks-dt-extension-install2.png)
+
+    5. Click Create at the next screen
+
+    6. On the `Basics` tab, the subscription and resource group should already be pre-selected. Just select the AKS Cluster from the drop down.
+
+        ![Basics Tab](img/lab2-aks-dt-extension-install3.png)
+
+    7. On the `Dynatrace Operator Configuration` tab, fill in the following values:
+
+        - `AKS extension resource name`: dynatraceazureworkshop
+        - `Dynatrace operator token`: token value from notepad saved from Lab 1
+        - `Data ingest token`: token value from notepad saved from Lab 1
+        - `API URL`: URL value from notepad saved from Lab 1
+        - `OneAgent Deployment Type`: cloud native full stack
+
+        ![Operator Config](img/lab2-aks-dt-extension-install4.png)
+
+    8. Click on `Review + Create` and click `Create` on the next screen.
+
+    9. After the deployment is complete, follow Step 2 above to activate the cluster in Dynatrace.
+
+        ![Kubernetes Classic](img/lab2-aks-dt-extension-install5.png)
