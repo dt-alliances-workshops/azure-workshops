@@ -96,8 +96,7 @@ nav:
       - '1.3 Dynatrace Setup': workshops/lab1/03_dynatrace_setup.md
       - '1.4 Collect Inputs': workshops/lab1/04_collect_inputs.md
       - '1.5 Setup Workshop': workshops/lab1/05_setup_workshop.md
-      - '1.6 Validate Setup': workshops/lab1/06_validate.md
-      - '1.7 Summary': workshops/lab1/07_summary.md
+      - '1.6 Summary': workshops/lab1/06_summary.md
     - 'Lab 2: Monitor Azure Cloud Resources':
       - '2.1 Intro': workshops/lab2/index.md
       - '2.2 Azure Monitor Flow': workshops/lab2/02_azure_monitor_flow.md

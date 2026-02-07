@@ -39,10 +39,6 @@ The provisioning script will create the following Azure resources:
     | **Azure Subscription ID** | Your subscription ID | Press Enter to accept the current value |
     | **Resource Group Name** | Name for the resource group | Press Enter to accept default: `dynatrace-azure-workshop` |
     | **Azure Location** | Azure region for resources | Press Enter to accept default: `eastus` |
-    | **Dynatrace Environment ID** | Optional - for event tracking | Enter your Dynatrace environment ID or press Enter to skip |
-
-    !!! tip "Finding Your Dynatrace Environment ID"
-        Your Dynatrace Environment ID is the first part of your Dynatrace URL. For example, if your URL is `https://abc12345.apps.dynatrace.com`, your environment ID is `abc12345`.
 
 4. Review the configuration summary and confirm by entering `y`:
 

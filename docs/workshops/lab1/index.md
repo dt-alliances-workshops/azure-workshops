@@ -25,8 +25,6 @@ By the end of this lab, you will have a fully functional environment with:
 
 🔷 Provision all Azure resources needed for the workshop
 
-🔷 Validate the provisioned resources are working correctly
-
 ### Lab Sections
 
 This lab is divided into the following sections:
@@ -37,5 +35,4 @@ This lab is divided into the following sections:
 | 1.3 Dynatrace Setup | Access Dynatrace UI and create API token |
 | 1.4 Collect Inputs | Gather credentials for provisioning |
 | 1.5 Setup Workshop | Run the provisioning script to create Azure resources |
-| 1.6 Validate Setup | Verify all resources are working |
-| 1.7 Summary | Review what you accomplished |
+| 1.6 Summary | Review what you accomplished |
