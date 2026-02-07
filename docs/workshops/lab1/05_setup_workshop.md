@@ -5,10 +5,7 @@
 In this section, you will run the setup script to verify and configure the Azure resources needed for the workshop.
 
 !!! info "Pre-Provisioned Environment"
-    The workshop resources may already be created for you. The script will first check if the resources exist. If they do, it will verify they are running correctly and skip to configuration. If resources are not found, the script will prompt you for inputs to create them.
-
-!!! info "Script Location"
-    The script is located in the repository you cloned in Step 1.2. Make sure you're in the Azure Cloud Shell and have navigated to the `provision-scripts` directory.
+    The workshop resources may already be created for you. The script will first check if the resources exist. If they do, it will skip provisioning and proceed directly to configuration. If resources are not found, the script will prompt you for inputs to create them.
 
 ### Workshop Resources
 
@@ -37,8 +34,61 @@ The following Azure resources are required for this workshop:
 
 3. The script will check if the workshop resources already exist:
 
-    - **If resources exist:** The script will verify they are running correctly and skip to configuration. You can proceed to step 6.
-    - **If resources do not exist:** The script will prompt you for the following inputs to create them:
+    ```
+    ===========================================================================
+    Checking for Existing Workshop Resources
+    ===========================================================================
+
+    Using default resource names:
+      Resource Group: dynatrace-azure-workshop
+      VM:             dt-orders-monolith
+      AKS Cluster:    dynatrace-azure-workshop-cluster
+      AI Foundry:     dynatrace-azure-workshop-aifoundry
+    ```
+
+    Based on the results, you'll see one of two scenarios:
+
+    === "Resources Already Exist"
+
+        If all resources are found, you'll see:
+
+        ```
+        Resource Group [dynatrace-azure-workshop]: ✓ EXISTS
+        Virtual Machine [dt-orders-monolith]: ✓ EXISTS
+        AKS Cluster [dynatrace-azure-workshop-cluster]: ✓ EXISTS
+        AI Foundry [dynatrace-azure-workshop-aifoundry]: ✓ EXISTS
+
+        ===========================================================================
+        All Resources Already Exist
+        ===========================================================================
+
+        ✓ All Azure resources are already provisioned!
+
+        Proceeding to configure the workshop environment...
+
+        Continue with workshop configuration? (y/n):
+        ```
+
+        Enter `y` to continue. The script will skip to **Step 6** (Workshop Configuration).
+
+    === "Resources Need Provisioning"
+
+        If resources are not found, you'll see:
+
+        ```
+        Resource Group [dynatrace-azure-workshop]: ⚠ NOT FOUND
+
+        ===========================================================================
+        Resources Need to be Provisioned
+        ===========================================================================
+
+        Some or all workshop resources need to be created.
+        Please provide the required inputs:
+        ```
+
+        Continue to **Step 4** to provide inputs and create the resources.
+
+4. **(Only if creating resources)** Provide the requested inputs:
 
     | Input | Description | Action |
     |-------|-------------|--------|
@@ -46,7 +96,7 @@ The following Azure resources are required for this workshop:
     | **Resource Group Name** | Name for the resource group | Press Enter to accept default: `dynatrace-azure-workshop` |
     | **Azure Location** | Azure region for resources | Press Enter to accept default: `eastus` |
 
-4. (Only if creating resources) Review the configuration summary and confirm by entering `y`:
+5. **(Only if creating resources)** Review the configuration summary and confirm by entering `y`:
 
     ```
     -------------------------------------------------------------------
@@ -63,33 +113,43 @@ The following Azure resources are required for this workshop:
     Proceed with provisioning? (y/n): y
     ```
 
-5. (Only if creating resources) Wait for the script to complete. The provisioning process will:
-    - Register required Azure resource providers
-    - Create the resource group
-    - Create and configure the virtual machine
-    - Create the AKS cluster (this step takes several minutes)
-    - Create the AI Foundry resources
+    The script will then create the resources:
+
+    - Step 01: Register required Azure resource providers
+    - Step 02: Create Resource Group
+    - Step 03: Create Virtual Machine
+    - Step 04: Create AKS Cluster (this takes several minutes)
+    - Step 05: Create AI Foundry
 
     !!! warning "Provisioning Time"
         The full provisioning process takes approximately **15-20 minutes**. The AKS cluster creation is the longest step. Do not close your Cloud Shell session during this time.
 
-6. When the script completes successfully, you should see output similar to:
+6. After resources are verified or created, the script will configure the workshop environment:
 
     ```
     ===========================================================================
-    ✓ Provisioning Complete!
+    Configuring Workshop Environment
     ===========================================================================
 
-    Resources created:
-      - Resource Group: dynatrace-azure-workshop
-      - Virtual Machine: dt-orders-monolith (IP: xx.xx.xx.xx)
-      - AKS Cluster: dynatrace-azure-workshop-cluster
-      - AI Foundry: dynatrace-azure-workshop-aifoundry
+    This will perform the following steps:
+      1. Configure VM with workshop repository, Docker, and start monolith app
+      2. Save AI Foundry credentials to workshop-credentials.json
+      3. Update Travel Advisor manifest with AI Foundry and OTEL credentials
+    ```
+
+    Wait for configuration to complete. You'll see status updates for each step.
+
+7. When the script completes successfully, you should see:
+
+    ```
+    ===========================================================================
+    Workshop Setup Complete!
+    ===========================================================================
     ```
 
 !!! success "Checkpoint"
     Before proceeding to the next step, ensure:
 
     - The script completed without errors
-    - All resources show as successfully created
-    - You noted the VM public IP address (you'll need this later)
+    - All resources show as `✓ READY` or `✓ EXISTS`
+    - The VM configuration completed successfully
