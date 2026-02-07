@@ -38,3 +38,10 @@ For more details, see the <a href="https://docs.dynatrace.com/docs/platform-modu
 1. Review resource relationships
     - Select any resource and click on the **Related Resources** tab
     - Notice how Dynatrace maps the connections between Azure resources (e.g., VM → Network Interface → NSG)
+
+!!! success "Checkpoint"
+    Before proceeding to the next section, verify:
+
+    - You can access the Clouds App and see Azure resources
+    - You found the `dt-orders-monolith` VM and reviewed its metrics
+    - You experimented with filters to find resources by type, region, or tags

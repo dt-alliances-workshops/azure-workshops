@@ -44,3 +44,10 @@ In this section, you'll import pre-built notebooks that demonstrate how to analy
     4. Click on upload and browse to the notebook JSON file for Metrics
 
     5. Follow the instructions in the notebook to analyze metrics for your hosts
+
+!!! success "Checkpoint"
+    Before proceeding to the next section, verify:
+
+    - You downloaded and imported at least one pre-built notebook
+    - You successfully ran the queries in the imported notebook
+    - You understand how to use DQL to analyze logs and metrics

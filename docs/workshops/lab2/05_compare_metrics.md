@@ -74,3 +74,11 @@ Understanding when to use each view helps SREs and CloudOps teams choose the rig
 
     ??? info
         ℹ️ **Unified Observability:** Dynatrace automatically correlates data from Azure Monitor and OneAgent, providing a complete picture. You don't have to choose one or the other—both data sources enrich the same entity in Dynatrace.
+
+!!! success "Checkpoint"
+    Before proceeding to the next section, verify:
+
+    - You viewed the same VM in both Clouds App and Infrastructure & Operations
+    - You understand the difference between Azure Monitor metrics and OneAgent metrics
+    - You explored process-level visibility available only via OneAgent
+    - You viewed the Smartscape topology for the host

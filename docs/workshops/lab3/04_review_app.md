@@ -54,3 +54,10 @@ The frontend service is exposed as a public IP and is accessible in a browser.
 
     ??? info
         ℹ️ 📓 The application looks like this monolith, but notice how the home page shows the versions of the three running backend services. You will see these version updated automatically as we deploy new versions of the backend services.
+
+!!! success "Checkpoint"
+    Before proceeding to the next section, verify:
+
+    - You can access the sample application via the external IP address
+    - The application frontend loads in your browser
+    - You explored different pages (Customer, Catalog, Order)

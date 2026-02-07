@@ -32,3 +32,10 @@ With Dashboards, you can:
 1. Select Run Query. For logs, your results will be generated in a table by default.
 1. Select Select visualization tab to display the results differently.
     ![image](img/dashboards-app-getting-started.gif)
+
+!!! success "Checkpoint"
+    Before proceeding to the next section, verify:
+
+    - You created a new dashboard
+    - You added a DQL query tile and ran it successfully
+    - You explored different visualization options for the query results

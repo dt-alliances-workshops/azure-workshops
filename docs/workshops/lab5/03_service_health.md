@@ -46,3 +46,11 @@ Understanding service and model health is critical for maintaining reliable AI a
     ```
 
     ![image](img/lab5-service-health-dql.png)
+
+!!! success "Checkpoint"
+    Before proceeding to the next section, verify:
+
+    - You reviewed service health indicators (success rate, failure rate, throughput)
+    - You analyzed model-specific metrics for at least one model
+    - You checked for any Davis AI anomalies
+    - (Optional) You ran a DQL query to summarize AI service health

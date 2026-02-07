@@ -48,3 +48,10 @@ Maximize your cluster resources and reduce costs by identifying and optimizing u
     ```
 
     ![image](img/akslevelup-lab1-k8app-notebook-limitsdql.gif)
+
+!!! success "Checkpoint"
+    Before proceeding to the next section, verify:
+
+    - You accessed the workloads list and applied filters
+    - You identified underutilized workloads (e.g., checkoutservice)
+    - You understand how to use DQL to find workloads missing resource requests/limits

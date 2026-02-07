@@ -35,3 +35,11 @@ In this section, we'll explore the `travel-advisor` service—a sample AI applic
     - Click on the **Models** tab to see which LLM models are being used
     - Note the model distribution (e.g., GPT-4, GPT-3.5-turbo)
     - Review per-model metrics for comparison
+
+!!! success "Checkpoint"
+    Before proceeding to the next section, verify:
+
+    - You navigated to the AI Observability app
+    - You located the travel-advisor service
+    - You reviewed key metrics (request count, error rate, latency, tokens)
+    - You explored the Models tab to see LLM usage

@@ -35,3 +35,11 @@ In this lab, we will explore problems that exist in our sample app and see how t
     - Show 1 trace and code level hierarchy, errors, method hotspots
 
 6. Let's review the problem card that shows root cause of the issue
+
+!!! success "Checkpoint"
+    Before proceeding to the next section, verify:
+
+    - You found the order workload with the failure rate problem
+    - You navigated to the Services app to view error details
+    - You explored Service Flow, Smartscape, and trace details
+    - You reviewed the Davis AI problem card showing root cause

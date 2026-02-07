@@ -105,3 +105,10 @@ With Azure Native Dynatrace Service, logs from your Azure resources are automati
 
     !!! tip
         **CloudOps Best Practice:** Run these governance queries regularly or build dashboards to track compliance and resource utilization over time. This helps identify cost savings opportunities and ensures adherence to organizational policies.
+
+!!! success "Checkpoint"
+    Before proceeding to the next section, verify:
+
+    - You accessed logs for the VM from the Clouds App
+    - You created a Notebook with DQL queries for logs and metrics
+    - You can run DQL queries and visualize the results

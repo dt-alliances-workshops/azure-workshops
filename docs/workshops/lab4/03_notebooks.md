@@ -51,3 +51,11 @@ At other times, a chart or graph may be more effective for communicating a trend
         - Under Code, select Fetch external data.
         - Give the different templates a try. They'll save you time and effort.
         ![image](img/lab1-add-code.jpg)
+
+!!! success "Checkpoint"
+    Before proceeding to the next section, verify:
+
+    - You created a new notebook
+    - You added a DQL query and ran it successfully
+    - You applied filters to refine your query results
+    - You changed the visualization type (e.g., to a bar chart)

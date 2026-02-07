@@ -37,3 +37,11 @@ We will use the Kubernetes app to gain clear insights into cluster health, helpi
 
 8. We can quickly view other metadata about this node as well, such as what OS, K8s version, Labels, Annotations, etc
     ![image](img/akslevelup-lab1-k8app-rednode-info-detail.png)
+
+!!! success "Checkpoint"
+    Before proceeding to the next section, verify:
+
+    - You can access the Kubernetes app and see your cluster
+    - You reviewed the cluster Overview, Logs, and Events screens
+    - You identified unhealthy nodes and understood the root cause
+    - You explored node metadata (OS, K8s version, labels)

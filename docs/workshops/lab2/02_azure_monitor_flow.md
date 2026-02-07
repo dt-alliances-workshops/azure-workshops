@@ -20,3 +20,9 @@ This integration provides:
 - **Resource topology** — Automatic discovery of Azure resource relationships
 - **Tags and metadata** — Azure tags flow into Dynatrace for filtering and access control
 - **Unified telemetry** — Metrics, logs, and configuration data in a single platform
+
+!!! success "Checkpoint"
+    Before proceeding to the next section, verify you understand:
+
+    - How Azure Monitor data flows to Dynatrace via Azure Native Dynatrace Service
+    - The benefits of the native integration vs traditional approaches

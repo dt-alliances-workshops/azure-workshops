@@ -51,3 +51,11 @@ Token consumption directly impacts cost when using cloud-based LLM services. Und
 
     !!! tip
         **Cost Optimization Tip:** If you notice high token usage on expensive models like GPT-4, consider whether those requests could be routed to GPT-3.5-turbo for simpler queries while reserving GPT-4 for complex reasoning tasks.
+
+!!! success "Checkpoint"
+    Before proceeding to the next section, verify:
+
+    - You viewed token consumption metrics (input, output, total tokens)
+    - You analyzed token usage trends over time
+    - You compared token usage across different models
+    - You identified any expensive queries with high token counts

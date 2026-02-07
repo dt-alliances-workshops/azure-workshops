@@ -57,3 +57,11 @@ Distributed tracing provides deep visibility into individual AI requests, includ
 
     ??? info
         ℹ️ Dynatrace captures prompts and responses for observability and compliance purposes. This provides a complete audit trail of AI interactions, which is essential for regulated industries and responsible AI governance.
+
+!!! success "Checkpoint"
+    Before proceeding to the next lab, verify:
+
+    - You navigated to the distributed traces view
+    - You examined a trace waterfall showing the AI request flow
+    - You viewed prompt and response details in an AI span
+    - You analyzed at least one failed or slow trace to understand the issue

@@ -40,3 +40,11 @@ Slow LLM responses can significantly impact user experience. Dynatrace helps you
 
     !!! tip
         **Performance Tip:** If latency is critical, consider implementing streaming responses or using faster models for time-sensitive interactions.
+
+!!! success "Checkpoint"
+    Before proceeding to the next section, verify:
+
+    - You reviewed the latency distribution (average, P95, P99)
+    - You filtered for slow requests exceeding acceptable thresholds
+    - You compared latency across different models
+    - You identified patterns correlating latency with time, tokens, or prompt types

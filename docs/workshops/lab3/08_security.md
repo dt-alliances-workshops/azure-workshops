@@ -31,3 +31,10 @@ Due to the widespread increase in the usage of open-source libraries, modern app
     - **Affected processes** - Which workloads/processes are running the vulnerable library
     - **Public exploit availability** - Whether known exploits exist in the wild
     - **Remediation guidance** - Recommended actions and patched versions
+
+!!! success "Checkpoint"
+    Before proceeding to the next section, verify:
+
+    - You viewed vulnerabilities associated with the cluster
+    - You filtered to find critical vulnerabilities
+    - You reviewed vulnerability details including risk assessment and remediation guidance
