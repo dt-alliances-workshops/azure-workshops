@@ -318,6 +318,10 @@
     // Check if buttons already exist
     if (document.getElementById('reset-progress-wrapper')) return;
 
+    // Find the article content area to insert buttons
+    const article = document.querySelector('article.md-content__inner');
+    if (!article) return;
+
     const wrapper = document.createElement('div');
     wrapper.id = 'reset-progress-wrapper';
     wrapper.className = 'reset-progress-wrapper';
@@ -353,8 +357,8 @@
     wrapper.appendChild(resetPageBtn);
     wrapper.appendChild(resetAllBtn);
 
-    // Fixed position in upper right corner
-    document.body.appendChild(wrapper);
+    // Insert at the beginning of the article content
+    article.insertBefore(wrapper, article.firstChild);
   }
 
   // Initialize

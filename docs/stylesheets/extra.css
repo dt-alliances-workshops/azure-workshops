@@ -246,16 +246,16 @@
 }
 
 /* ==========================================================
-   Reset Progress Buttons - Fixed Upper Right
+   Reset Progress Buttons - Inline at Top of Content
    ========================================================== */
 
 .reset-progress-wrapper {
-  position: fixed;
-  top: 4.5rem; /* Below the header */
-  right: 1rem;
-  z-index: 100;
   display: flex;
+  justify-content: flex-end;
   gap: 0.5rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e0e0e0;
 }
 
 .reset-progress-btn {
@@ -272,7 +272,7 @@
   border-radius: 4px;
   cursor: pointer;
   transition: all 0.2s ease;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
   white-space: nowrap;
 }
 
@@ -280,7 +280,7 @@
   background-color: #fff;
   border-color: #0078d4;
   color: #0078d4;
-  box-shadow: 0 2px 12px rgba(0, 120, 212, 0.2);
+  box-shadow: 0 2px 6px rgba(0, 120, 212, 0.15);
 }
 
 .reset-progress-btn:active {
@@ -301,14 +301,18 @@
 .reset-progress-btn--all:hover {
   border-color: #d32f2f;
   color: #d32f2f;
-  box-shadow: 0 2px 12px rgba(211, 47, 47, 0.2);
+  box-shadow: 0 2px 6px rgba(211, 47, 47, 0.15);
+}
+
+[data-md-color-scheme="slate"] .reset-progress-wrapper {
+  border-bottom-color: #404040;
 }
 
 [data-md-color-scheme="slate"] .reset-progress-btn {
   background-color: #2d2d2d;
   border-color: #404040;
   color: #aaa;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 [data-md-color-scheme="slate"] .reset-progress-btn:hover {
@@ -330,13 +334,11 @@
   background-color: #1a3a4d;
 }
 
-/* Responsive - stack vertically on smaller screens */
-@media screen and (max-width: 76.1875em) {
+/* Responsive - stack buttons on smaller screens */
+@media screen and (max-width: 600px) {
   .reset-progress-wrapper {
-    top: auto;
-    bottom: 1rem;
-    right: 1rem;
     flex-direction: column;
+    align-items: flex-end;
   }
 }
 
