@@ -37,9 +37,10 @@ In this section, you will configure the Azure Cloud Shell and download the works
        az account show
      ```
 
-    1.  Look for the name in the output. This is example when a promo code was used.
+    ??? info "Verifying and Changing Your Azure Subscription"
+        Look for the `name` field in the output. This is an example when a promo code was used:
 
-        ```
+        ```json
         {
           "environmentName": "AzureCloud",
           "homeTenantId": "xxx-xxx-xxx-xx-xxx",
@@ -54,39 +55,36 @@ In this section, you will configure the Azure Cloud Shell and download the works
             "type": "user"
           }
         }
-      ```
+        ```
 
-    !!! tip
-        💻 If the subscription is not `Azure Pass - Sponsorship`, run the command below to see all the subscriptions for your user id. If this is the first time using Azure portal or a trial, then you should only have one subscription.
+        **If the subscription is not correct**, run this command to see all subscriptions for your user:
 
-      ```
+        ```
         az account list --output table
-      ```
+        ```
 
-    1. Here is an sample output:
+        Sample output:
 
-      ```
+        ```
         Name                                     CloudName    SubscriptionId                        State    IsDefault
         ---------------------------------------  -----------  ------------------------------------  -------  -----------
         Subscription 1                           AzureCloud   aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa  Enabled  False
         Subscription 2                           AzureCloud   bbbbbbbb-aaaa-aaaa-aaaa-aaaaaaaaaaaa  Enabled  False
-        Subscription 3                           AzureCloud   cccccccc-aaaa-aaaa-aaaa-aaaaaaaaaaaa  Enabled  False
-        Subscription 4                           AzureCloud   dddddddd-aaaa-aaaa-aaaa-aaaaaaaaaaaa  Enabled  False
         Azure Pass - Sponsorship                 AzureCloud   eeeeeeee-aaaa-aaaa-aaaa-aaaaaaaaaaaa  Enabled  True
-      ```
+        ```
 
-    1.  If the `Azure Pass - Sponsorship` is not the `IsDefault = True`, then run these command to set and verify.
+        **To change your default subscription**, run these commands:
 
-      ```
+        ```bash
         # set the subscription
-        az account set --subscription <YOUR PROMO SUBSCRIPTION ID>
+        az account set --subscription <YOUR SUBSCRIPTION ID>
 
         # verify change
         az account list --output table
 
         # double check with
         az account show
-      ```
+        ```
 
 1. Within your Azure Cloud Shell window, run this command to download the workshop scripts:
     ```
