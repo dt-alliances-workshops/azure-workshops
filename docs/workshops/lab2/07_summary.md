@@ -1,14 +1,18 @@
 # Lab 2: Monitor Azure Cloud Resources
 
-## 2.6 Summary
+## 2.7 Summary
 
 Congratulations! You have completed Lab 2 and learned how to monitor Azure cloud resources with Dynatrace.
 
 In this section, you should have completed the following:
 
+✅ Understood the Modern Cloud Operations framework (Prevent, Remediate, Optimize)
+
 ✅ Reviewed how Dynatrace integrates with Azure Monitor
 
 ✅ Explored the Clouds App for multi-cloud resource visibility
+
+✅ Investigated resource configurations and Smartscape topology
 
 ✅ Analyzed logs directly from cloud resources in context
 
@@ -18,7 +22,19 @@ In this section, you should have completed the following:
 
 ✅ Compared Azure Monitor metrics with OneAgent metrics to understand when to use each
 
-✅ Learned how Dynatrace provides unified observability across data sources
+✅ Used Davis AI forecasting to predict resource utilization
+
+✅ Learned how Workflows can automate prevention and remediation
+
+### Key Concepts Covered
+
+| Concept | Description |
+|---------|-------------|
+| **Modern Cloud Operations** | Transform from reactive monitoring to proactive operations with Prevent, Remediate, and Optimize |
+| **Clouds App** | Unified visibility across all cloud resources with logs, metrics, and configuration in context |
+| **Smartscape** | Real-time topology graph showing relationships between resources |
+| **Davis AI Forecasting** | Predict future resource utilization to prevent issues before they occur |
+| **Automated Prevention** | Use Workflows to automatically respond to predicted issues |
 
 ### What's Next?
 

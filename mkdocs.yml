@@ -103,7 +103,8 @@ nav:
       - '2.3 Clouds App': workshops/lab2/03_clouds_app.md
       - '2.4 Log Analysis': workshops/lab2/04_log_analysis.md
       - '2.5 Compare Metrics': workshops/lab2/05_compare_metrics.md
-      - '2.6 Summary': workshops/lab2/06_summary.md
+      - '2.6 Forecasting & Prevention': workshops/lab2/06_forecasting.md
+      - '2.7 Summary': workshops/lab2/07_summary.md
     - 'Lab 3: Azure Kubernetes Observability':
       - '3.1 Intro': workshops/lab3/index.md
       - '3.2 Deploy Operator': workshops/lab3/02_deploy_operator.md
