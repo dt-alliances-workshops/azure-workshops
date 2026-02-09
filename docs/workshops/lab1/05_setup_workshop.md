@@ -69,7 +69,7 @@ The following Azure resources are required for this workshop:
         Continue with workshop configuration? (y/n):
         ```
 
-        Enter `y` to continue. The script will skip to **Step 6** (Workshop Configuration).
+        Enter `y` to continue. The script will proceed to **Workshop Configuration** (Step 4).
 
     === "Resources Need Provisioning"
 
@@ -86,45 +86,43 @@ The following Azure resources are required for this workshop:
         Please provide the required inputs:
         ```
 
-        Continue to **Step 4** to provide inputs and create the resources.
+        **Provide the requested inputs:**
 
-4. **(Only if creating resources)** Provide the requested inputs:
+        | Input | Description | Action |
+        |-------|-------------|--------|
+        | **Azure Subscription ID** | Your subscription ID | Press Enter to accept the current value |
+        | **Resource Group Name** | Name for the resource group | Press Enter to accept default: `dynatrace-azure-workshop` |
+        | **Azure Location** | Azure region for resources | Press Enter to accept default: `eastus` |
 
-    | Input | Description | Action |
-    |-------|-------------|--------|
-    | **Azure Subscription ID** | Your subscription ID | Press Enter to accept the current value |
-    | **Resource Group Name** | Name for the resource group | Press Enter to accept default: `dynatrace-azure-workshop` |
-    | **Azure Location** | Azure region for resources | Press Enter to accept default: `eastus` |
+        **Review the configuration summary and confirm by entering `y`:**
 
-5. **(Only if creating resources)** Review the configuration summary and confirm by entering `y`:
+        ```
+        -------------------------------------------------------------------
+        Configuration Summary:
+        -------------------------------------------------------------------
+          Subscription:      xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+          Resource Group:    dynatrace-azure-workshop
+          Location:          eastus
+          VM Name:           dt-orders-monolith
+          AKS Cluster:       dynatrace-azure-workshop-cluster
+          AI Foundry:        dynatrace-azure-workshop-aifoundry
+        -------------------------------------------------------------------
 
-    ```
-    -------------------------------------------------------------------
-    Configuration Summary:
-    -------------------------------------------------------------------
-      Subscription:      xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
-      Resource Group:    dynatrace-azure-workshop
-      Location:          eastus
-      VM Name:           dt-orders-monolith
-      AKS Cluster:       dynatrace-azure-workshop-cluster
-      AI Foundry:        dynatrace-azure-workshop-aifoundry
-    -------------------------------------------------------------------
+        Proceed with provisioning? (y/n): y
+        ```
 
-    Proceed with provisioning? (y/n): y
-    ```
+        The script will then create the resources:
 
-    The script will then create the resources:
+        - Step 01: Register required Azure resource providers
+        - Step 02: Create Resource Group
+        - Step 03: Create Virtual Machine
+        - Step 04: Create AKS Cluster (this takes several minutes)
+        - Step 05: Create AI Foundry
 
-    - Step 01: Register required Azure resource providers
-    - Step 02: Create Resource Group
-    - Step 03: Create Virtual Machine
-    - Step 04: Create AKS Cluster (this takes several minutes)
-    - Step 05: Create AI Foundry
+        !!! warning "Provisioning Time"
+            The full provisioning process takes approximately **15-20 minutes**. The AKS cluster creation is the longest step. Do not close your Cloud Shell session during this time.
 
-    !!! warning "Provisioning Time"
-        The full provisioning process takes approximately **15-20 minutes**. The AKS cluster creation is the longest step. Do not close your Cloud Shell session during this time.
-
-6. After resources are verified or created, the script will configure the workshop environment:
+4. After resources are verified or created, the script will configure the workshop environment:
 
     ```
     ===========================================================================
@@ -139,7 +137,7 @@ The following Azure resources are required for this workshop:
 
     Wait for configuration to complete. You'll see status updates for each step.
 
-7. When the script completes successfully, you should see:
+5. When the script completes successfully, you should see:
 
     ```
     ===========================================================================
