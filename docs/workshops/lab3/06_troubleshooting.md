@@ -1,6 +1,6 @@
 # Lab 3: Azure Kubernetes Observability with Dynatrace
 
-## 3.7 Troubleshoot Workloads with Application Observability
+## 3.6 Troubleshoot Workloads with Application Observability
 
 ### Overview
 

@@ -1,6 +1,6 @@
 # Lab 3: Azure Kubernetes Observability with Dynatrace
 
-## 3.6 Workload Resource Optimization
+## 3.5 Workload Resource Optimization
 
 ### Overview
 

@@ -2,6 +2,22 @@
 
 ## 2.3 Explore the Clouds App
 
+!!! warning "Shared Workshop Environment"
+    **For this section only (2.3), you will use a shared Dynatrace environment** instead of your own. This is because the Clouds App is currently in **private preview** and requires special access.
+
+    **Shared Environment URL:** [TODO: INSERT DYNATRACE ENVIRONMENT LINK]
+
+    Please log in to the shared environment now before continuing with the tasks below.
+
+!!! info "Why a Different Environment?"
+    The Clouds App provides a unified view of cloud resources across Azure, AWS, and GCP. Since this feature is in private preview, we've set up a shared environment pre-configured with:
+
+    - Access to the Clouds App (private preview)
+    - Sample Azure resources for you to explore
+    - Pre-ingested metrics and logs from Azure Monitor
+
+    You will return to your own Dynatrace environment in section 2.4.
+
 The <a href="https://www.dynatrace.com/hub/detail/clouds/?query=clouds&filter=all" target="_blank">Dynatrace Clouds App</a> provides a centralized view of all your cloud resources across multiple providers. Instead of switching between Azure Portal, AWS Console, and GCP Console, you can monitor everything from a single interface.
 
 **Key capabilities:**
@@ -33,7 +49,7 @@ For more details, see the <a href="https://docs.dynatrace.com/docs/platform-modu
         - **Service type** (e.g., Virtual Machines, Load Balancers, Storage Accounts)
         - **Region** (e.g., East US, West Europe)
         - **Tags** (e.g., Owner:azure-modernize-workshop)
-    ![image](img/lab3-cloudapps-allservices-filters.png)
+    ![image](img/lab3-cloudapps-allservices-filters.gif)
 
 1. Review resource relationships
     - Select any resource and click on the **Related Resources** tab
@@ -56,7 +72,7 @@ For more details, see the <a href="https://docs.dynatrace.com/docs/platform-modu
         - **Compliance** — Are roles shared across resources appropriately?
         - **Cost Optimization** — Identify overprovisioned resources
 
-1. Navigate to Smartscape view
+1. Navigate to Smartscape view (**REMOVE - Might not be available in time**)
     - From the resource details panel, click **Go to Smartscape** (or look for the topology icon)
     - Smartscape is a dynamic, real-time map of your tech environment that automatically discovers infrastructure, services, processes, and applications
     - Explore the relationships between your Azure resources
@@ -69,7 +85,7 @@ For more details, see the <a href="https://docs.dynatrace.com/docs/platform-modu
         - **Leverage DQL** to combine entity and signal data
         - Use attributes you're used to from Azure, AWS, or GCP
 
-1. Find resources with problems
+1. Find resources with problems (**REMOVE - Might not be available in time**)
     - In the Clouds App, look at the **Alert status** filter in the left sidebar
     - Filter for resources with **Critical** or **Warning** alerts
     - Click on a resource with an alert to investigate the issue

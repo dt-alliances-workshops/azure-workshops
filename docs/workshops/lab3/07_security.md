@@ -1,6 +1,6 @@
 # Lab 3: Azure Kubernetes Observability with Dynatrace
 
-## 3.8 Detect Application Security Vulnerabilities in Workloads
+## 3.7 Detect Application Security Vulnerabilities in Workloads
 
 ### Overview
 

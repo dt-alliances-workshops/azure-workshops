@@ -96,7 +96,8 @@ nav:
       - '1.3 Dynatrace Setup': workshops/lab1/03_dynatrace_setup.md
       - '1.4 Collect Inputs': workshops/lab1/04_collect_inputs.md
       - '1.5 Setup Workshop': workshops/lab1/05_setup_workshop.md
-      - '1.6 Summary': workshops/lab1/06_summary.md
+      - '1.6 Deploy OneAgent': workshops/lab1/06_deploy_oneagent.md
+      - '1.7 Summary': workshops/lab1/07_summary.md
     - 'Lab 2: Monitor Azure Cloud Resources':
       - '2.1 Intro': workshops/lab2/index.md
       - '2.2 Azure Monitor Flow': workshops/lab2/02_azure_monitor_flow.md
@@ -109,12 +110,11 @@ nav:
       - '3.1 Intro': workshops/lab3/index.md
       - '3.2 Deploy Operator': workshops/lab3/02_deploy_operator.md
       - '3.3 Deploy App': workshops/lab3/03_deploy_app.md
-      - '3.4 Review App': workshops/lab3/04_review_app.md
-      - '3.5 Cluster Health': workshops/lab3/05_cluster_health.md
-      - '3.6 Resource Optimization': workshops/lab3/06_resource_optimization.md
-      - '3.7 Troubleshooting': workshops/lab3/07_troubleshooting.md
-      - '3.8 Security': workshops/lab3/08_security.md
-      - '3.9 Summary': workshops/lab3/09_summary.md
+      - '3.4 Cluster Health': workshops/lab3/04_cluster_health.md
+      - '3.5 Resource Optimization': workshops/lab3/05_resource_optimization.md
+      - '3.6 Troubleshooting': workshops/lab3/06_troubleshooting.md
+      - '3.7 Security': workshops/lab3/07_security.md
+      - '3.8 Summary': workshops/lab3/08_summary.md
     - 'Lab 4: Dashboards & Notebooks':
       - '4.1 Intro': workshops/lab4/index.md
       - '4.2 Dashboards': workshops/lab4/02_dashboards.md

@@ -2,6 +2,11 @@
 
 ## 2.4 Log Analysis via Clouds App
 
+!!! success "Return to Your Own Environment"
+    **You should now return to your own Dynatrace environment** for this section and the remaining labs. The shared environment was only needed for section 2.3 to access the Clouds App private preview.
+
+    **Your Environment URL:** Use the Dynatrace environment URL you were provided at the start of the workshop.
+
 Understanding logs in the context of your cloud resources is essential for effective troubleshooting. The Dynatrace Clouds App provides seamless access to logs directly from any cloud resource, eliminating the need to switch between tools or manually correlate data.
 
 With Azure Native Dynatrace Service, logs from your Azure resources are automatically streamed to Dynatrace, where they're indexed and available for analysis alongside metrics and topology data.

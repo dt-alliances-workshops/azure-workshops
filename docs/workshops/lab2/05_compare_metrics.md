@@ -2,6 +2,9 @@
 
 ## 2.5 Compare Cloud Metrics vs OneAgent Metrics
 
+!!! info "Continue Using Your Own Environment"
+    You should be logged into **your own Dynatrace environment** that you returned to in section 2.4. This section compares metrics from Azure Monitor (via Clouds App) with OneAgent metrics (via Infrastructure & Operations).
+
 Dynatrace provides two complementary perspectives for monitoring your Azure infrastructure:
 
 | Data Source | Collected Via | Best For |

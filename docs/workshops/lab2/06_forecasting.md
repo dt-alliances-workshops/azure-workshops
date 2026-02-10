@@ -2,6 +2,9 @@
 
 ## 2.6 Forecasting & Auto-Prevention
 
+!!! info "Continue Using Your Own Environment"
+    You should still be logged into **your own Dynatrace environment**. The Forecasting and Workflows features covered in this section work with your Azure VMs monitored by OneAgent.
+
 ### Overview
 
 One of the key pillars of Modern Cloud Operations is **Prevention** — automating DevOps and SRE tasks with preventive automation and reacting to health changes before they impact your users.

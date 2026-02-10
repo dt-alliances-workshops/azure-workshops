@@ -41,8 +41,6 @@ The picture below shows how the components of the sample application interact wi
 
 🔷 Install the Dynatrace Operator and sample application on AKS
 
-🔷 Review how the sample application went from a simple architecture to multiple microservices
-
 🔷 Use the Kubernetes app to analyze cluster health and troubleshoot unhealthy nodes
 
 🔷 Identify underutilized workloads and optimize resource allocation using DQL
@@ -57,9 +55,8 @@ The picture below shows how the components of the sample application interact wi
 |---------|-------------|
 | 3.2 Deploy Operator | Install Dynatrace Operator via Azure Portal |
 | 3.3 Deploy App | Deploy the sample application to AKS |
-| 3.4 Review App | Explore the modernized application |
-| 3.5 Cluster Health | Assess cluster health and performance |
-| 3.6 Resource Optimization | Identify underutilized workloads |
-| 3.7 Troubleshooting | Use Application Observability and Davis AI |
-| 3.8 Security | Detect application security vulnerabilities |
-| 3.9 Summary | Review what you accomplished |
+| 3.4 Cluster Health | Assess cluster health and performance |
+| 3.5 Resource Optimization | Identify underutilized workloads |
+| 3.6 Troubleshooting | Use Application Observability and Davis AI |
+| 3.7 Security | Detect application security vulnerabilities |
+| 3.8 Summary | Review what you accomplished |

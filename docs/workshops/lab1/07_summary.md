@@ -1,6 +1,6 @@
 # Lab 1: Setting up Environment
 
-## 1.6 Summary
+## 1.7 Summary
 
 Congratulations! You have successfully completed Lab 1 and set up your workshop environment.
 
@@ -15,6 +15,8 @@ In this lab, you completed the following:
 ✅ Collected environment credentials needed for the workshop
 
 ✅ Provisioned all Azure resources using the setup script
+
+✅ Deployed OneAgent to the Azure VM for deep observability
 
 ### What's Next?
 

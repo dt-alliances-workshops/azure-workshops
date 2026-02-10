@@ -1,6 +1,6 @@
 # Lab 3: Azure Kubernetes Observability with Dynatrace
 
-## 3.5 Assess Cluster Health & Performance
+## 3.4 Assess Cluster Health & Performance
 
 ### Overview
 
