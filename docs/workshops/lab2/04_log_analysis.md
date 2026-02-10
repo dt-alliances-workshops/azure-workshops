@@ -13,16 +13,7 @@ With Azure Native Dynatrace Service, logs from your Azure resources are automati
 
 ### Tasks to complete this step
 
-1. Navigate to the Clouds App
-    - In Dynatrace, from the menu on the left, select `Apps -> Clouds`
-    - Click on `All Services` and locate the `dt-orders-monolith` Azure VM
-
-2. Access logs for the VM
-    - Click on the VM to open its detail view
-    - Select the `Logs` tab to view all logs associated with this resource
-    ![image](img/lab2-clouds-logs-tab.png)
-
-3. Query logs and metrics in a Notebook
+1. Query logs and metrics in a Notebook
     - From the left menu, select `Apps -> Notebooks`
     - Create a new notebook by clicking `+ Notebook`
     - Add three sections with the following queries:
@@ -68,7 +59,7 @@ With Azure Native Dynatrace Service, logs from your Azure resources are automati
     ??? info
         ℹ️ DQL (Dynatrace Query Language) is the native query language for Grail. It allows you to query logs, metrics, and events using a unified syntax. Learn more in the <a href="https://docs.dynatrace.com/docs/platform/grail/dynatrace-query-language" target="_blank">DQL Documentation</a>.
 
-4. **Optional: Cloud Governance Queries for SRE/CloudOps**
+1. **Optional: Cloud Governance Queries for SRE/CloudOps**
 
     These additional DQL queries demonstrate how Dynatrace can support governance and cost optimization use cases.
 
