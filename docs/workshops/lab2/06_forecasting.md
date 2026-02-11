@@ -41,10 +41,9 @@ Davis AI enables you to forecast utilization of cloud resources and foresee pote
         - Accept the defaults that are in there for data points to predict and forecast offset
     - The chart will now display predicted values as a dashed line extending beyond your current data
 
-    ![image](img/forecasting-notebook.png)
+    ![image](img/lab2-forecasting-notebook.png)
 
-    - Look for any VMs where CPU usage is predicted to spike above a critical threshold
-
+    
     !!! tip "Davis AI Forecasting"
         Davis AI forecasting uses machine learning to predict future values based on historical patterns. The forecast appears as a shaded band on your time series chart, helping you visualize potential issues before they occur. Note that forecasting works best with metrics that have variance and patterns - CPU usage typically shows clear patterns that Davis AI can use for predictions.
 
