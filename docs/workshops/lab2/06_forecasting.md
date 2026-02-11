@@ -9,33 +9,28 @@
 
 One of the key pillars of Modern Cloud Operations is **Prevention** — automating DevOps and SRE tasks with preventive automation and reacting to health changes before they impact your users.
 
-Davis AI enables you to forecast utilization of cloud resources and foresee potential issues like disk full events before they impact your users.
+Davis AI enables you to forecast utilization of cloud resources and foresee potential issues like CPU spikes or resource exhaustion before they impact your users.
 
 ### Tasks to complete this step
 
-#### Forecast VM Disk Storage in a Notebook
+#### Forecast VM CPU Usage in a Notebook
 
 1. Open the Notebooks app
     - In Dynatrace, from the menu on the left, select `Apps -> Notebooks`
     - Create a new notebook or open an existing one
 
-1. Add a DQL section to query disk metrics
+1. Add a DQL section to query CPU metrics
     - Click **+ Add section** and select **DQL**
-    - Copy and paste the following query to analyze disk free space:
+    - Copy and paste the following query to analyze CPU usage:
 
-    ```dql title="Forecast disk free space for Azure VMs"
-    timeseries avg(dt.host.disk.free), by:{dt.entity.host}
+    ```dql title="Forecast CPU usage for Azure VMs"
+    timeseries usage = avg(dt.host.cpu.user), by:{dt.entity.host}
     | lookup [fetch dt.entity.host | fields id, entity.name, cloudType], sourceField:dt.entity.host, lookupField:id, prefix:"host."
     | filter host.cloudType == "AZURE"
-    | lookup [
-        fetch dt.entity.azure_vm
-        | fieldsAdd hostId = runs[dt.entity.host]
-        | fields id, entity.name, hostId
-      ], sourceField:dt.entity.host, lookupField:hostId, prefix:"vm."
-    | fieldsRemove dt.entity.host, host.id, host.entity.name, host.cloudType, vm.id, vm.hostId
+    | fieldsRemove host.cloudType, dt.entity.host
     ```
 
-    - Click **Run** to see the current disk utilization for your Azure VMs
+    - Click **Run** to see the current CPU utilization for your Azure VMs
 
 1. Add Davis AI forecasting via visualization
     - After running your query, click on **Options** and the **Visualizations** section
@@ -48,10 +43,10 @@ Davis AI enables you to forecast utilization of cloud resources and foresee pote
 
     ![image](img/forecasting-notebook.png)
 
-    - Look for any VMs where disk free space is predicted to drop below a critical threshold
+    - Look for any VMs where CPU usage is predicted to spike above a critical threshold
 
     !!! tip "Davis AI Forecasting"
-        Davis AI forecasting uses machine learning to predict future values based on historical patterns. The forecast appears as a dashed line on your time series chart, helping you visualize potential issues before they occur.
+        Davis AI forecasting uses machine learning to predict future values based on historical patterns. The forecast appears as a shaded band on your time series chart, helping you visualize potential issues before they occur. Note that forecasting works best with metrics that have variance and patterns - CPU usage typically shows clear patterns that Davis AI can use for predictions.
 
 ### Key Takeaways
 
@@ -64,6 +59,6 @@ Davis AI enables you to forecast utilization of cloud resources and foresee pote
 !!! success "Checkpoint"
     Before proceeding to the next section, verify:
 
-    - You created a DQL query to analyze disk utilization
+    - You created a DQL query to analyze CPU utilization
     - You added Davis AI forecasting to predict future values
-    - You can identify VMs where disk space may become critical
+    - You can identify VMs where CPU usage may spike or require attention

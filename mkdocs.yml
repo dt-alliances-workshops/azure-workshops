@@ -102,8 +102,8 @@ nav:
       - '2.1 Intro': workshops/lab2/index.md
       - '2.2 Azure Monitor Flow': workshops/lab2/02_azure_monitor_flow.md
       - '2.3 Clouds App': workshops/lab2/03_clouds_app.md
-      - '2.4 Log Analysis': workshops/lab2/04_log_analysis.md
-      - '2.5 Compare Metrics': workshops/lab2/05_compare_metrics.md
+      - '2.4 Cloud Resource Analysis': workshops/lab2/04_log_analysis.md
+      - '2.5 Compare Cloud & Host Metrics': workshops/lab2/05_compare_metrics.md
       - '2.6 Forecasting & Prevention': workshops/lab2/06_forecasting.md
       - '2.7 Summary': workshops/lab2/07_summary.md
     - 'Lab 3: Azure Kubernetes Observability':

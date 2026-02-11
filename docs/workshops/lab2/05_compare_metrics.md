@@ -1,9 +1,9 @@
 # Lab 2: Monitor Azure Cloud Resources
 
-## 2.5 Compare Cloud Metrics vs OneAgent Metrics
+## 2.5 Compare Cloud & Host Metrics
 
 !!! info "Continue Using Your Own Environment"
-    You should be logged into **your own Dynatrace environment** that you returned to in section 2.4. This section compares metrics from Azure Monitor (via Clouds App) with OneAgent metrics (via Infrastructure & Operations).
+    You should be logged into **your own Dynatrace environment** that you returned to in section 2.4.
 
 Dynatrace provides two complementary perspectives for monitoring your Azure infrastructure:
 

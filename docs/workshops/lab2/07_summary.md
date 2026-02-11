@@ -24,17 +24,15 @@ In this section, you should have completed the following:
 
 ✅ Used Davis AI forecasting to predict resource utilization
 
-✅ Learned how Workflows can automate prevention and remediation
-
 ### Key Concepts Covered
 
 | Concept | Description |
 |---------|-------------|
 | **Modern Cloud Operations** | Transform from reactive monitoring to proactive operations with Prevent, Remediate, and Optimize |
 | **Clouds App** | Unified visibility across all cloud resources with logs, metrics, and configuration in context |
+| **Infrastructure & Operations** | Deep visibility into hosts, processes, and services via OneAgent |
 | **Smartscape** | Real-time topology graph showing relationships between resources |
 | **Davis AI Forecasting** | Predict future resource utilization to prevent issues before they occur |
-| **Automated Prevention** | Use Workflows to automatically respond to predicted issues |
 
 ### What's Next?
 

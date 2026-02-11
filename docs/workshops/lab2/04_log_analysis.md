@@ -1,15 +1,13 @@
 # Lab 2: Monitor Azure Cloud Resources
 
-## 2.4 Log Analysis via Clouds App
+## 2.4 Cloud Resource Analysis with DQL
 
 !!! success "Return to Your Own Environment"
     **You should now return to your own Dynatrace environment** for this section and the remaining labs. The shared environment was only needed for section 2.3 to access the Clouds App private preview.
 
     **Your Environment URL:** Use the Dynatrace environment URL you were provided at the start of the workshop.
 
-Understanding logs in the context of your cloud resources is essential for effective troubleshooting. The Dynatrace Clouds App provides seamless access to logs directly from any cloud resource, eliminating the need to switch between tools or manually correlate data.
-
-With Azure Native Dynatrace Service, logs from your Azure resources are automatically streamed to Dynatrace, where they're indexed and available for analysis alongside metrics and topology data.
+Dynatrace Query Language (DQL) provides a powerful way to analyze logs, metrics, and entity data from your Azure cloud resources. With Azure Native Dynatrace Service, telemetry from your Azure resources is automatically streamed to Dynatrace, where it's indexed and available for analysis in Notebooks.
 
 ### Tasks to complete this step
 
@@ -92,9 +90,32 @@ With Azure Native Dynatrace Service, logs from your Azure resources are automati
         Find hosts with low CPU utilization:
 
         ```dql title="Find underutilized hosts"
-        timeseries cpu = avg(dt.host.cpu.usage), by: {dt.entity.host}
-        | filter cpu < 10
-        | fieldsAdd host_name = entityName(dt.entity.host)
+        timeseries cpuUsage = avg(dt.host.cpu.usage), by:{dt.entity.host}
+        | lookup [
+            fetch dt.entity.host
+            | fieldsAdd regionId = belongs_to[dt.entity.azure_region]
+            | fields id, entity.name, cloudType, logicalCpuCores, physicalMemory, regionId
+          ], sourceField:dt.entity.host, lookupField:id, prefix:"host."
+        | filter host.cloudType == "AZURE"
+        | filter arrayMax(cpuUsage) <= 30
+        | lookup [
+            fetch dt.entity.azure_vm
+            | fieldsAdd hostId = runs[dt.entity.host]
+            | fieldsAdd parts = splitString(azureResourceId, "/")
+            | fieldsAdd subscriptionId = parts[2]
+            | fieldsAdd resourceGroup = parts[4]
+            | fields id, subscriptionId, resourceGroup, hostId
+          ], sourceField:dt.entity.host, lookupField:hostId, prefix:"vm."
+        | lookup [
+            fetch dt.entity.azure_region
+            | fields id, entity.name
+          ], sourceField:host.regionId, lookupField:id, prefix:"region."
+        | fieldsAdd vmSizeCategory = if(host.logicalCpuCores <= 2, "small (1-2 vCPU)",
+            else: if(host.logicalCpuCores <= 4, "medium (3-4 vCPU)",
+            else: if(host.logicalCpuCores <= 8, "large (5-8 vCPU)",
+            else: "xlarge (8+ vCPU)")))
+        | summarize count = count(), by:{vmSizeCategory, vm.subscriptionId, vm.resourceGroup, region.entity.name}
+        | sort count desc
         ```
 
         Identifies potentially underutilized hosts that could be candidates for rightsizing or decommissioning.
@@ -105,6 +126,6 @@ With Azure Native Dynatrace Service, logs from your Azure resources are automati
 !!! success "Checkpoint"
     Before proceeding to the next section, verify:
 
-    - You accessed logs for the VM from the Clouds App
     - You created a Notebook with DQL queries for logs and metrics
     - You can run DQL queries and visualize the results
+    - You understand how to query Azure resource entities with DQL
