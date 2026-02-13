@@ -46,12 +46,6 @@ Once the extension is installed, you need to activate the cluster in Dynatrace t
 
 5. After activation, return to the **Kubernetes** app. Within a few minutes, you should see your cluster with metrics, nodes, namespaces, and workload data.
 
-6. Toggle on **New Kubernetes experience*** 
-    ![New K8 Experience](img/lab3_section2_newK8.png)
-
-7. Click **Save changes** to apply the setting
-
-8. From the left navigation menu, click on **Kubernetes** app again to return to the cluster view with the new experience enabled
 
     !!! tip
         The New Kubernetes experience provides enhanced visualizations, improved navigation, and additional insights for your Kubernetes workloads.

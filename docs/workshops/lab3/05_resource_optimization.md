@@ -9,16 +9,16 @@ Maximize your cluster resources and reduce costs by identifying and optimizing u
 ### Tasks to complete this step
 
 1. In Kubernetes app, go to the explorer view and then select the `dtaksworkshop` cluster click on `View workloads list`
-    ![image](img/akslevelup-lab1-k8app-cluster-workloads.png)
+    ![image](img/lab3-k8app-cluster-workloads.png)
 
-2. Let's apply a couple of filters: one to look at only healthy workloads, second to look at workloads from the `hipstershop` namespace
-    ![image](img/akslevelup-lab1-k8app-healthyfilter.gif)
+2. Let's apply a couple of filters: one to look at only healthy workloads, second to look at workloads from the `easyTrade` namespace
+    ![image](img/lab4-k8app-healthyfilter.gif)
 
 3. Switch over to the Utilization tab and sort by CPU Usage, ascending
-    ![image](img/akslevelup-lab1-k8app-cluster-workloadslist.png)
+    ![image](img/lab3-k8app-cluster-workloadslist.png)
 
-4. You will quickly see that the `checkoutservice` sorts to the top and if you click into it to look at resource utilization details, you'll notice that the service only uses 1 millicore of CPU and 12mb of memory, but actually the CPU and memory limits are much higher
-    ![image](img/akslevelup-lab1-k8app-cluster-workloadcheckout.png)
+4. You will quickly see that the `loadgen` sorts to the top and if you click into it to look at resource utilization details, you'll notice that the service uses 200 millicore of CPU and 468mb of memory, but actually the CPU and memory limits are very close to it.
+    ![image](img/lab3-k8app-cluster-workloadloadgen.png)
 
 5. Review the utilization charts to verify the consistency of usage patterns over time
 

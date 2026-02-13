@@ -2,14 +2,13 @@
 
 ## 3.3 Deploy Sample Applications
 
-In this step, we'll deploy three sample applications to the Azure Kubernetes cluster. These applications represent different architectures and use cases that you'll explore throughout the workshop.
+In this step, we'll deploy two sample applications to the Azure Kubernetes cluster. These applications represent different architectures and use cases that you'll explore throughout the workshop.
 
 ### Applications Overview
 
 | Application | Namespace | Description |
 |-------------|-----------|-------------|
-| **Hipster Shop** | `hipster-shop` | Google's microservices demo - an e-commerce app with 10+ services |
-| **DT Orders** | `staging` | Dynatrace demo app - modernized microservices architecture |
+| **EasyTrade** | `easytrade` | A financial trading platform demo with multiple microservices |
 | **Travel Advisor** | `travel-advisor-azure-openai-sample` | AI-powered travel app using Azure OpenAI |
 
 ### Tasks to complete this step
@@ -23,118 +22,140 @@ In this step, we'll deploy three sample applications to the Azure Kubernetes clu
     ./deploy-k8-apps.sh
     ```
 
-2. The script will deploy all three applications. You'll see output similar to:
+2. The script will deploy both applications. You'll see output similar to:
 
     ```
     ==========================================================
+    Deploying Workshop K8s Applications
+    ==========================================================
+      Resource Group: dynatrace-azure-workshop
+      AKS Cluster:    dynatrace-azure-workshop-cluster
+
+    Applications to deploy:
+      1. EasyTrade
+      2. Travel Advisor
+
     Configuring AKS cluster credentials...
-    ==========================================================
-    Resource Group: dynatrace-azure-workshop
-    AKS Cluster:    dynatrace-azure-workshop-cluster
-    Connected to AKS cluster successfully.
+      Connected successfully.
 
     ==========================================================
-    Deploying App #1 - Hipster Shop
+    Deploying App #1 - EasyTrade
     ==========================================================
-    Hipster Shop deployment initiated.
+    Creating namespace 'easytrade'...
+    namespace/easytrade created
+    Deploying EasyTrade using kustomization...
+    ...
+      Done.
 
     ==========================================================
-    Deploying App #2 - DT Orders
+    Deploying App #2 - Travel Advisor
     ==========================================================
-    DT Orders deployment initiated.
+    namespace/travel-advisor-azure-openai-sample created
+    ...
+      Done.
 
     ==========================================================
-    Deploying App #3 - Travel Advisor (Azure OpenAI)
+    Deployment Complete!
     ==========================================================
-    Travel Advisor deployment initiated.
     ```
 
 #### Step 2: Verify Pod Status
 
 Wait a few minutes for the pods to start, then verify all pods are running:
 
-1. Check **Hipster Shop** pods:
+1. Check **EasyTrade** pods:
 
     ```bash
-    kubectl -n hipster-shop get pods
+    kubectl -n easytrade get pods
     ```
 
-    Expected output (11 pods):
+    Expected output (19 pods):
 
     ```
-    NAME                                     READY   STATUS    RESTARTS   AGE
-    adservice-xxxxx                          1/1     Running   0          2m
-    cartservice-xxxxx                        1/1     Running   0          2m
-    checkoutservice-xxxxx                    1/1     Running   0          2m
-    currencyservice-xxxxx                    1/1     Running   0          2m
-    emailservice-xxxxx                       1/1     Running   0          2m
-    frontend-xxxxx                           1/1     Running   0          2m
-    loadgenerator-xxxxx                      1/1     Running   0          2m
-    paymentservice-xxxxx                     1/1     Running   0          2m
-    productcatalogservice-xxxxx              1/1     Running   0          2m
-    recommendationservice-xxxxx              1/1     Running   0          2m
-    shippingservice-xxxxx                    1/1     Running   0          2m
+    NAME                                         READY   STATUS    RESTARTS   AGE
+    accountservice-xxxxx                         1/1     Running   0          2m
+    aggregator-service-xxxxx                     1/1     Running   0          2m
+    broker-service-xxxxx                         1/1     Running   0          2m
+    calculationservice-xxxxx                     1/1     Running   0          2m
+    contentcreator-xxxxx                         1/1     Running   0          2m
+    credit-card-order-service-xxxxx              1/1     Running   0          2m
+    db-xxxxx                                     1/1     Running   0          2m
+    engine-xxxxx                                 1/1     Running   0          2m
+    feature-flag-service-xxxxx                   1/1     Running   0          2m
+    frontend-xxxxx                               1/1     Running   0          2m
+    frontendreverseproxy-xxxxx                   1/1     Running   0          2m
+    loadgen-xxxxx                                1/1     Running   0          2m
+    loginservice-xxxxx                           1/1     Running   0          2m
+    manager-xxxxx                                1/1     Running   0          2m
+    offerservice-xxxxx                           1/1     Running   0          2m
+    pricing-service-xxxxx                        1/1     Running   0          2m
+    problem-operator-xxxxx                       1/1     Running   0          2m
+    rabbitmq-xxxxx                               1/1     Running   0          2m
+    third-party-service-xxxxx                    1/1     Running   0          2m
     ```
 
-2. Check **DT Orders** pods:
-
-    ```bash
-    kubectl -n staging get pods
-    ```
-
-    Expected output (6 pods):
-
-    ```
-    NAME                               READY   STATUS    RESTARTS   AGE
-    browser-traffic-xxxxx              1/1     Running   0          2m
-    catalog-xxxxx                      1/1     Running   0          2m
-    customer-xxxxx                     1/1     Running   0          2m
-    frontend-xxxxx                     1/1     Running   0          2m
-    load-traffic-xxxxx                 1/1     Running   0          2m
-    order-xxxxx                        1/1     Running   0          2m
-    ```
-
-3. Check **Travel Advisor** pods:
+2. Check **Travel Advisor** pods:
 
     ```bash
     kubectl -n travel-advisor-azure-openai-sample get pods
     ```
 
-    Expected output:
+    Expected output (2 pods):
 
     ```
-    NAME                              READY   STATUS    RESTARTS   AGE
-    travel-advisor-xxxxx              1/1     Running   0          2m
+    NAME                                       READY   STATUS    RESTARTS   AGE
+    loadgen-deployment-xxxxx                   1/1     Running   0          2m
+    traveladvisor-deployment-xxxxx             1/1     Running   0          2m
     ```
 
 !!! warning "Pod Startup Time"
-    It may take 3-5 minutes for all pods to reach `Running` status. If some pods show `ContainerCreating` or `Pending`, wait and re-run the kubectl commands.
+    EasyTrade has many services and may take several minutes for all pods to reach `Running` status. If some pods show `ContainerCreating` or `Pending`, wait and re-run the kubectl commands.
+
+#### Step 3: Access the Sample Applications (Optional)
+
+1. Get the external IP for the **EasyTrade** frontend:
+
+    ```bash
+    kubectl -n easytrade get svc frontendreverseproxy-easytrade
+    ```
+
+2. Get the external IP for the **Travel Advisor** app:
+
+    ```bash
+    kubectl -n travel-advisor-azure-openai-sample get svc traveladvisor-service
+    ```
+
+!!! tip "Accessing the Applications"
+    Copy the `EXTERNAL-IP` from the kubectl output and paste it into your browser to access the application. For example:
+
+    - EasyTrade: `http://<EXTERNAL-IP>`
+    - Travel Advisor: `http://<EXTERNAL-IP>`
+
+    Note: It may take a few minutes for the external IP to be assigned. If you see `<pending>`, wait and re-run the command.
+
+    **EasyTrade Login:** When you reach the EasyTrade login screen, click **"Login as James"** on the right side of the page to quickly access the application without creating an account.
 
 !!! success "Checkpoint"
     Before proceeding, verify:
 
-    - All Hipster Shop pods (11) are in `Running` status
-    - All DT Orders pods (6) are in `Running` status
-    - Travel Advisor pod is in `Running` status
+    - All EasyTrade pods (19) are in `Running` status
+    - Both Travel Advisor pods are in `Running` status
+    - Both apps are accessible via browser at their external IP addresses. 
 
 ??? info "About the Sample Applications"
 
-    **Hipster Shop** is Google's microservices demo application. It simulates an e-commerce platform with services for:
+    **EasyTrade** is a financial trading platform demo that showcases:
 
-    - Product catalog and recommendations
-    - Shopping cart and checkout
-    - Payment and shipping
-    - Email notifications
-    - Currency conversion
-    - Ad serving
-
-    **DT Orders** is a Dynatrace demo application that showcases:
-
-    - Frontend web interface
-    - Catalog, customer, and order services
-    - Simulated browser and load traffic
+    - **Account & Login Services** — User authentication and account management
+    - **Broker & Pricing Services** — Trading operations and real-time pricing
+    - **Offer Service** — Investment recommendations
+    - **Content Creator** — Market insights generation
+    - **Feature Flag Service** — Dynamic feature toggling
+    - **Problem Operator** — Simulated issues for troubleshooting exercises
+    - **Load Generator** — Synthetic traffic for realistic monitoring data
 
     **Travel Advisor** is an AI-powered application that uses:
 
     - Azure OpenAI for intelligent travel recommendations
+    - Load generator for continuous AI request traffic
     - This app will be used in Lab 5 for AI Observability
