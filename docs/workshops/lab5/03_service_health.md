@@ -15,37 +15,33 @@ Understanding service and model health is critical for maintaining reliable AI a
         - **Throughput** — Requests per minute/hour
     ![image](img/lab5-service-health.png)
 
-2. Analyze model-specific metrics
-    - Click on a specific model (e.g., `gpt-4`) to view:
-        - Model availability
-        - Error rates by error type
-        - Response time distribution
-        - Token usage patterns
+2. On the `Overview Tab`, you  can analyze model-specific metrics
+    - Number of Models and Agentic agents deployed
+    - Number of requests to models 
+    - Response time distribution
+    - Token usage patterns
+    - Overall
 
-3. Check for Davis AI anomalies
-    - Look for any problems or anomalies flagged by Davis AI
-    - Davis automatically detects unusual patterns in:
-        - Sudden spikes in error rates
-        - Latency degradation
-        - Abnormal token consumption
-
-4. **(Optional)** Query service health with DQL
+3. **(Optional)** Query service health with DQL
     - Open the Notebooks app and create a new notebook
     - Add a DQL section with the following query:
 
     ```dql title="AI Service Health Summary"
     fetch spans
-    | filter ai.technology.vendor == "openai"
+    | filter gen_ai.system == "openai
     | summarize
         total_requests = count(),
         error_count = countIf(otel.status_code == "ERROR"),
         avg_duration_ms = avg(duration) / 1000000,
-        by: {ai.model.id}
+        by: {gen_ai.request.model}
     | fieldsAdd error_rate = (error_count / total_requests) * 100
     | sort total_requests desc
     ```
 
     ![image](img/lab5-service-health-dql.png)
+
+4. Let's now go to the Explorer view and click on `open-ai-travel-advisor` service to look at some of the prompt traces to see what user are putting in prompt to ask our travel-advisor to do.
+    ![image](img/lab5-prompt-trace.png)
 
 !!! success "Checkpoint"
     Before proceeding to the next section, verify:

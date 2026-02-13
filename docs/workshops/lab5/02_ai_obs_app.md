@@ -33,8 +33,7 @@ In this section, we'll explore the `travel-advisor` service—a sample AI applic
 
 5. View the Models tab
     - Click on the **Models** tab to see which LLM models are being used
-    - Note the model distribution (e.g., GPT-4, GPT-3.5-turbo)
-    - Review per-model metrics for comparison
+    - If we additional models for our sample app, you would be able to see the model distribution data and per-model metrics (e.g., GPT-5, GPT-4o, etc)
 
 !!! success "Checkpoint"
     Before proceeding to the next section, verify:

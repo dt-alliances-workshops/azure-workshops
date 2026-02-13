@@ -8,18 +8,27 @@ Distributed tracing provides deep visibility into individual AI requests, includ
 
 ### Tasks to complete this step
 
-1. Navigate to traces
-    - From the travel-advisor service view, click on **Distributed traces** or the **Traces** tab
+1. From the left menu, click on Apps -> Services 
+    - Select Explorer from the top menu
+    - From the service view, select `openai-travel-advisor`
+    ![image](img/lab5-ai-service-view.png)
+2. Let's quickly review the service metrics that Dynatrace collects to give you a high level overview about your service.
+    - Overall Response Time for your service
+    - Throughput
+    - Failure Rate
+    - All endpoints within your app that are being called and their respective metrics
+
+3. Now let's dive into traces.  Click on **View traces** on upper right hand corner of your service view.
     ![image](img/lab5-traces-list.png)
 
-2. Select a trace to examine
+4. Select a trace to examine
     - Choose a trace from the list
     - Look for traces with different characteristics:
         - Successful vs. failed requests
         - Fast vs. slow responses
         - High vs. low token usage
 
-3. Examine the trace waterfall
+5. Examine the trace waterfall
     - The waterfall view shows the request flow:
         - User request received by travel-advisor
         - Prompt constructed and sent to Azure OpenAI
@@ -27,30 +36,29 @@ Distributed tracing provides deep visibility into individual AI requests, includ
         - Response received and returned to user
     ![image](img/lab5-trace-waterfall.png)
 
-4. View prompt and response details
+6. View prompt and response details
     - Click on the AI span (Azure OpenAI call) to see:
         - **Prompt text** — The full prompt sent to the model
         - **Completion text** — The model's response
         - **Model parameters** — Temperature, max_tokens, etc.
         - **Token counts** — Input, output, and total tokens
-    ![image](img/lab5-trace-prompt-response.png)
-    ![image](img/lab5-trace-prompt-response-1.png)
+    ![image](img/lab5-trace-prompt-response.png)    
 
-5. Analyze a failed or slow trace
+7. Analyze a failed or slow trace
     - Find a trace with an error or high latency
     - Examine:
         - Error messages or exceptions
         - What prompt caused the issue
         - Whether the model returned an unexpected response
 
-6. **(Optional)** Search traces with DQL
+8. **(Optional)** Search traces with DQL
     - Query for specific traces based on criteria:
 
     ```dql title="Find Slow AI Requests"
     fetch spans
-    | filter ai.technology.vendor == "openai"
-    | filter duration > 5000000000  // > 5 seconds in nanoseconds
-    | fields timestamp, ai.model.id, ai.prompt_tokens, ai.completion_tokens, duration
+    | filter gen_ai.system == "openai"
+    | filter duration > 5s
+    | fields start_time, end_time, gen_ai.request.model, gen_ai.usage.prompt_tokens, gen_ai.usage.completion_tokens, duration
     | sort duration desc
     | limit 20
     ```

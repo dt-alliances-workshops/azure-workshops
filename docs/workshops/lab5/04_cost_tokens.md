@@ -38,19 +38,19 @@ Token consumption directly impacts cost when using cloud-based LLM services. Und
 
     ```dql title="Token Consumption by Model"
     fetch spans
-    | filter ai.technology.vendor == "openai"
+    | filter gen_ai.system == "openai"
     | summarize
-        total_input_tokens = sum(ai.prompt_tokens),
-        total_output_tokens = sum(ai.completion_tokens),
-        total_tokens = sum(ai.total_tokens),
+        total_input_tokens = sum(gen_ai.usage.prompt_tokens),
+        total_output_tokens = sum(gen_ai.usage.completion_tokens),
         request_count = count(),
-        by: {ai.model.id}
+        by: {gen_ai.request.model}
+    | fieldsAdd total_tokens = total_input_tokens + total_output_tokens
     | fieldsAdd avg_tokens_per_request = total_tokens / request_count
     | sort total_tokens desc
     ```
 
     !!! tip
-        **Cost Optimization Tip:** If you notice high token usage on expensive models like GPT-4, consider whether those requests could be routed to GPT-3.5-turbo for simpler queries while reserving GPT-4 for complex reasoning tasks.
+        **Cost Optimization Tip:** If you notice high token usage on expensive models like GPT-5, consider whether those requests could be routed to GPT-4o for simpler queries while reserving GPT-5 for complex reasoning tasks.
 
 !!! success "Checkpoint"
     Before proceeding to the next section, verify:
