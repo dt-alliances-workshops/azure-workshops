@@ -28,6 +28,10 @@ By completing this workshop, you will:
 - **Build Dashboards** - Create custom visualizations using DQL queries
 - **Monitor AI Applications** - Explore AI Observability for LLM-powered services
 
+## **Tracking Your Progress**
+
+As you work through the labs, the workshop automatically tracks your progress. Completed sections are marked with a **checkmark** (✓) and highlighted in **green** on the left navigation bar. This helps you easily see which sections you've finished and where to pick up next.
+
 ## **Get Started**
 
 [Start Lab 1 →](workshops/lab1/index.md){ .md-button .md-button--primary }

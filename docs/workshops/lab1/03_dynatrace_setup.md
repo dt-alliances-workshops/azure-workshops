@@ -49,17 +49,37 @@ In this section, we'll access the new UI for Grail and set up an access token wi
           ![image](img/lab0-newUI-try-latest-dt.png)
         - Click on `Get started`
 
-1. Create Dynatrace Access Token and save it for use in the Lab setup. Follow these steps:
+1. Create Dynatrace Platform Token and save it for use in the Lab setup. Follow these steps:
 
-    1. From the left menu, click **Apps** → Choose the `Access Tokens` app.
-        ![image](img/dt-access-token.png)
-    1. On the Access token page, click the `Generate new token` button
-    1. On the new token page, enter a name like `azure-workshop`
-    1. Add `Write API Tokens` to the scope
-    1. Click on **Generate token** button at the bottom
-    1. Since this token is only shown once and you will need it in the next labs, copy this value to a local text file before you leave this page (e.g., Notepad, Notepad++, Notes.app)
-        ![image](img/dt-tokens-page-save.png)
-    1. You will use this token in the next step as you setup the lab resources
+    1. From the left menu, click **Apps**, Bottom left corner, select your account and click `Account Management`
+        ![image](img/lab1-dt-acct-mgmt.png)
+    1. On the Account Management Page, click on your user account in upper right corner and select "Platform Tokens"
+        ![image](img/lab1-acct-mgmt-platformTokens.png)
+    1. On the platform token page, click on `+ Create  token` 
+        1. Set token name  `azure workshop` to the scope
+        1. Under `Expire on` click on "Never expires"
+        1. Under `select account` pick the account that shows up under dropdown.
+            1. Check the box for `Apply to account`
+        1. Under "Select token scopes" set the following 5 scopes:
+
+            | Scope | Used For |
+            |-------|----------|
+            | `settings:objects:read` | Reading Settings 2.0 (Monaco, API checks) |
+            | `settings:objects:write` | Writing Settings 2.0 (auto-tags, MZs, K8s experience, vulnerability) |
+            | `settings:schemas:read` | Token verification, schema queries |
+            | `document:documents:read` | Checking if notebooks exist |
+            | `document:documents:write` | Uploading notebooks |
+
+            !!! warning "Watch out for similar scope names"
+                Be careful when selecting the `settings:objects:read` and `settings:objects:write` scopes. There are similar scope names called `app-settings:objects:read` and `app-settings:objects:write` — make sure you select the correct ones without the `app-` prefix.
+
+        1. Scroll back up to the top to click on `Generate`
+            ![image](img/lab1-platform-generate-token.png)
+
+        1. Since this token is only shown once and you will need it in the next labs, copy this value to a local text file before you leave this page (e.g., Notepad)
+
+            ![image](img/lab1-platform-generate-token-created.png)
+    
 
     ??? info "Save your token in Notepad"
         Open Notepad on your Windows VM and paste the token there. Keep this Notepad session open as you will need this token in the next lab under **Collect Inputs**.
