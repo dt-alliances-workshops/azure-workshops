@@ -40,27 +40,7 @@ Once the extension is installed, verify that the host appears in Dynatrace.
 
 3. In the search/filter bar, type `dt-orders-monolith` to find your host
 
-4. Click on the host to view its details. You should see:
-    - Host metrics (CPU, Memory, Disk, Network)
-    - Running processes
-    - Detected services
 
-    !!! info "Data Population Time"
-        It may take 2-5 minutes for full metrics and process data to appear after OneAgent installation.
-
-5. Explore the **Processes** section to see the sample application components running on the VM
-
-#### What OneAgent Provides
-
-With OneAgent installed on the VM, you now have access to:
-
-| Capability | Description |
-|------------|-------------|
-| **Host Metrics** | CPU, memory, disk, and network utilization at 1-minute granularity |
-| **Process Monitoring** | Automatic discovery of all running processes and their resource consumption |
-| **Service Detection** | Automatic detection of services and their dependencies |
-| **Log Ingestion** | Automatic collection of logs from the host |
-| **Code-level Insights** | Deep visibility into application performance (Java, .NET, Node.js, etc.) |
 
 !!! success "Checkpoint"
     Before proceeding, verify:
