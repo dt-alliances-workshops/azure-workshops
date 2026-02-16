@@ -60,7 +60,7 @@ In this section, we'll access the new UI for Grail and set up an access token wi
         1. Under `Expire on` click on "Never expires"
         1. Under `select account` pick the account that shows up under dropdown.
             1. Check the box for `Apply to account`
-        1. Under "Select token scopes" set the following 5 scopes:
+        1. Under "Select token scopes" set the following 6 scopes:
 
             | Scope | Used For |
             |-------|----------|
@@ -69,6 +69,7 @@ In this section, we'll access the new UI for Grail and set up an access token wi
             | `settings:schemas:read` | Token verification, schema queries |
             | `document:documents:read` | Checking if notebooks exist |
             | `document:documents:write` | Uploading notebooks |
+            | `app-engine:apps:run` | Running automated workflows for easyTrade sample app |
 
             !!! warning "Watch out for similar scope names"
                 Be careful when selecting the `settings:objects:read` and `settings:objects:write` scopes. There are similar scope names called `app-settings:objects:read` and `app-settings:objects:write` — make sure you select the correct ones without the `app-` prefix.
