@@ -2,7 +2,7 @@
 
 # **Welcome to Azure Workshops**
 
-This collection of self-paced labs and workshops is designed to guide you through common Azure services and development scenarios. Each module provides step-by-step instructions, code snippets, and verification checks.
+This collection of Instructer-led labs and workshops is designed to guide you through common Azure services and development scenarios. Each module provides step-by-step instructions, code snippets, and verification checks.
 
 We recommend starting with **Lab 1** to ensure your environment is set up correctly.
 
@@ -31,6 +31,8 @@ By completing this workshop, you will:
 ## **Tracking Your Progress**
 
 As you work through the labs, the workshop automatically tracks your progress. Completed sections are marked with a **checkmark** (✓) and highlighted in **green** on the left navigation bar. This helps you easily see which sections you've finished and where to pick up next.
+
+   ![image](workshops/lab1/img/index-progress-tracker.png)
 
 ## **Get Started**
 
