@@ -9,7 +9,7 @@
 
 One of the key pillars of Modern Cloud Operations is **Prevention** — automating DevOps and SRE tasks with preventive automation and reacting to health changes before they impact your users.
 
-Davis AI enables you to forecast utilization of cloud resources and foresee potential issues like CPU spikes or resource exhaustion before they impact your users.
+Dynatrace Intelligence enables you to forecast utilization of cloud resources and foresee potential issues like CPU spikes or resource exhaustion before they impact your users.
 
 ### Tasks to complete this step
 
@@ -32,7 +32,7 @@ Davis AI enables you to forecast utilization of cloud resources and foresee pote
 
     - Click **Run** to see the current CPU utilization for your Azure VMs
 
-1. Add Davis AI forecasting via visualization
+1. Add Dynatrace Intelligence forecasting via visualization
     - After running your query, click on **Options** and the **Visualizations** section
     - Select **Line chart** as the visualization type (if not already selected)
     - In the visualization settings, scroll down to **Analyze and Alert** section
@@ -44,14 +44,14 @@ Davis AI enables you to forecast utilization of cloud resources and foresee pote
     ![image](img/lab2-forecasting-notebook.png)
 
     
-    !!! tip "Davis AI Forecasting"
-        Davis AI forecasting uses machine learning to predict future values based on historical patterns. The forecast appears as a shaded band on your time series chart, helping you visualize potential issues before they occur. Note that forecasting works best with metrics that have variance and patterns - CPU usage typically shows clear patterns that Davis AI can use for predictions.
+    !!! tip "Dynatrace Intelligence Forecasting"
+        Dynatrace Intelligence forecasting uses machine learning to predict future values based on historical patterns. The forecast appears as a shaded band on your time series chart, helping you visualize potential issues before they occur. Note that forecasting works best with metrics that have variance and patterns - CPU usage typically shows clear patterns that Dynatrace Intelligence can use for predictions.
 
 ### Key Takeaways
 
 | Concept | Description |
 |---------|-------------|
-| **Davis AI Forecasting** | Predicts future resource utilization based on historical patterns |
+| **Dynatrace Intelligence Forecasting** | Predicts future resource utilization based on historical patterns |
 | **Proactive Monitoring** | Forecasting helps identify potential issues before they impact users |
 | **Prevention over Reaction** | Modern Cloud Operations focuses on preventing issues, not just detecting them |
 
@@ -59,5 +59,5 @@ Davis AI enables you to forecast utilization of cloud resources and foresee pote
     Before proceeding to the next section, verify:
 
     - You created a DQL query to analyze CPU utilization
-    - You added Davis AI forecasting to predict future values
+    - You added Dynatrace Intelligence forecasting to predict future values
     - You can identify VMs where CPU usage may spike or require attention

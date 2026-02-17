@@ -24,7 +24,7 @@ By completing this workshop, you will:
 - **Set up Azure Native Dynatrace Service** - Deploy Dynatrace directly from the Azure Marketplace
 - **Monitor Azure Cloud Resources** - Use the Clouds App to explore VMs, AKS, and other Azure services
 - **Deploy to Kubernetes** - Deploy a modernized microservices application to AKS
-- **Troubleshoot with AI** - Use Davis AI to automatically detect and diagnose issues
+- **Troubleshoot with AI** - Use Dynatrace Intelligence to automatically detect and diagnose issues
 - **Build Dashboards** - Create custom visualizations using DQL queries
 - **Monitor AI Applications** - Explore AI Observability for LLM-powered services
 

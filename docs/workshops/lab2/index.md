@@ -37,7 +37,7 @@ This approach is powered by the Dynatrace Platform foundation:
 
 - **Grail** — Unified data lakehouse for all observability telemetry
 - **Smartscape** — Real-time context graph that automatically discovers infrastructure, services, and their relationships
-- **Davis AI** — Predictive, Causal, and Generative AI for intelligent automation
+- **Dynatrace Intelligence** — Predictive, Causal, and Generative AI for intelligent automation
 
 ### Azure Native Dynatrace Integration
 
@@ -67,7 +67,7 @@ By the end of this lab, you will be able to:
 
 🔷 **Compare observability perspectives** - Understand the difference between Azure Monitor metrics (Clouds App) and OneAgent metrics (Infrastructure & Operations) to choose the right data for each use case
 
-🔷 **Forecast capacity issues** - Use Davis AI to forecast resource utilization and prevent capacity problems before they impact your environment
+🔷 **Forecast capacity issues** - Use Dynatrace Intelligence to forecast resource utilization and prevent capacity problems before they impact your environment
 
 ### Lab Sections
 
@@ -77,5 +77,5 @@ By the end of this lab, you will be able to:
 | 2.3 Clouds App | Explore Azure resources in Dynatrace |
 | 2.4 Cloud Resource Analysis | Query and analyze cloud resources with DQL |
 | 2.5 Infrastructure & Operations | Explore host metrics and processes via OneAgent |
-| 2.6 Forecasting & Prevention | Predict capacity issues with Davis AI |
+| 2.6 Forecasting & Prevention | Predict capacity issues with Dynatrace Intelligence |
 | 2.7 Summary | Review what you accomplished |

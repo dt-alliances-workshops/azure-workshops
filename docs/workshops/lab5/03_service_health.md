@@ -48,5 +48,5 @@ Understanding service and model health is critical for maintaining reliable AI a
 
     - You reviewed service health indicators (success rate, failure rate, throughput)
     - You analyzed model-specific metrics for at least one model
-    - You checked for any Davis AI anomalies
+    - You checked for any Dynatrace Intelligence anomalies
     - (Optional) You ran a DQL query to summarize AI service health
