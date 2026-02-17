@@ -2,9 +2,38 @@
 
 ## 3.2 Deploy the Dynatrace Kubernetes Operator via Azure Portal
 
-One key Dynatrace advantage is ease of activation via Azure Portal. OneAgent technology simplifies deployment across large enterprises and relieves engineers of the burden of instrumenting their applications by hand. As Kubernetes adoption continues to grow, it becomes more important than ever to simplify the activation of observability across workloads without sacrificing the deployment automation that Kubernetes provides. Observability should be as cloud-native as Kubernetes itself.
+### How Dynatrace Monitors Kubernetes
 
-With Azure Native Dynatrace Service, you can install the Dynatrace Operator directly from the Dynatrace resource in Azure Portal - no tokens or manual configuration required.
+Dynatrace provides full-stack observability for Kubernetes environments by automatically discovering and monitoring all layers—from cluster infrastructure to application code. This is achieved through the **Dynatrace Operator**, a Kubernetes-native component that manages the deployment and lifecycle of all Dynatrace monitoring components.
+
+#### Dynatrace Operator Components
+
+When you deploy the Dynatrace Operator, the following components are automatically configured:
+
+| Component | Description |
+|-----------|-------------|
+| **OneAgent** | Deployed as a DaemonSet, collects host metrics from Kubernetes nodes and automatically detects new containers |
+| **ActiveGate** | Routes observability data to Dynatrace and monitors the Kubernetes API for cluster-level metrics |
+| **CSI Driver** | Provides efficient storage for OneAgent binaries, minimizing network and storage usage across nodes |
+| **Webhook** | Validates configurations and injects OneAgent code modules into application Pods automatically |
+
+#### How Full-Stack Monitoring Works
+
+1. **Infrastructure Monitoring** — OneAgent runs on each node and collects host metrics, container metrics, and process information
+2. **Automatic Injection** — The webhook uses mutating admission controllers to inject OneAgent code modules into application Pods at deployment time
+3. **Kubernetes API Monitoring** — ActiveGate queries the Kubernetes API to collect cluster, namespace, workload, and pod metadata
+4. **Data Enrichment** — All telemetry is automatically enriched with Kubernetes context (namespace, deployment, pod name, labels)
+
+The rollout is governed by a **DynaKube** custom resource, which defines the deployment mode, capabilities, and configuration for your environment.
+
+!!! info "Why Cloud-Native Full Stack?"
+    This workshop uses **cloud-native full stack** deployment mode, which provides complete observability with minimal resource overhead. OneAgent code modules are injected only into application pods, while a lightweight DaemonSet handles node-level metrics.
+
+### Deploy via Azure Portal
+
+One key Dynatrace advantage is ease of activation via Azure Portal. As Kubernetes adoption continues to grow, it becomes more important than ever to simplify the activation of observability across workloads without sacrificing the deployment automation that Kubernetes provides.
+
+With Azure Native Dynatrace Service, you can install the Dynatrace Operator directly from the Dynatrace resource in Azure Portal—no tokens or manual configuration required.
 
 ### Tasks to complete this step
 

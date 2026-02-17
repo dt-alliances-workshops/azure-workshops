@@ -4,9 +4,20 @@
 
 ## 3.1 Intro
 
-Re-hosting (also referred to as lift and shift) is a common migration use case. Re-architecture and Re-platform are steps that break the traditional architectures and replace individual components with cloud services and microservices.
+### The Challenge of Kubernetes Observability
 
-We just learned how we can get great information on services, processes and user requests using Dynatrace and OneAgent. This helps us now decide what individual features or complete applications based on business benefits we need to migrate and modernize. The idea here is to focus on feature-based business benefit with functional migration.
+Kubernetes has become the standard for container orchestration, but its dynamic and ephemeral nature creates unique observability challenges. Pods scale up and down automatically, containers are short-lived, and the sheer volume of components—clusters, nodes, namespaces, deployments, services, and pods—makes it difficult to understand what's happening across your environment.
+
+**Common Kubernetes monitoring challenges:**
+
+- **Dynamic workloads** — Pods and containers are constantly created and destroyed, making traditional monitoring approaches ineffective
+- **Multi-layer complexity** — Issues can originate from infrastructure, platform, or application layers, requiring correlation across all three
+- **Resource optimization** — Understanding actual resource usage vs. requested resources is critical for cost control and performance
+- **Security vulnerabilities** — Container images and dependencies can introduce vulnerabilities that are difficult to track at scale
+
+### What You'll Do in This Lab
+
+In this lab, you'll deploy the Dynatrace Operator to an Azure Kubernetes Service (AKS) cluster and experience how Dynatrace provides full-stack observability for Kubernetes environments. You'll deploy a sample microservices application, analyze cluster health, identify resource optimization opportunities, troubleshoot application issues, and detect security vulnerabilities—all from a single platform.
 
 ### Objectives of this Lab
 

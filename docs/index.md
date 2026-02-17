@@ -6,16 +6,17 @@ This collection of Instructer-led labs and workshops is designed to guide you th
 
 We recommend starting with **Lab 1** to ensure your environment is set up correctly.
 
-## **Workshop Overview**
+## **Workshop Agenda**
 
-| Lab | Description | Sections |
-| :---- | :---- | :---- |
-| [Lab 1: Setting up Environment](workshops/lab1/index.md) | Set up Azure and Dynatrace environment | 6 sections |
-| [Lab 2: Monitor Azure Cloud](workshops/lab2/index.md) | Learn how to monitor Azure Cloud resources | 6 sections |
-| [Lab 3: Azure Kubernetes Observability](workshops/lab3/index.md) | Monitor AKS with Dynatrace | 9 sections |
-| [Lab 4: Dashboards & Notebooks](workshops/lab4/index.md) | Visualize data with Dashboards and Notebooks | 5 sections |
-| [Lab 5: AI Observability](workshops/lab5/index.md) | Monitor AI/LLM applications with Dynatrace | 7 sections |
-| [Lab 6: Cleanup](workshops/lab6/index.md) | Cleanup workshop resources | 4 sections |
+| Lab | Description | Sections | Time |
+|-----|-------------|----------|------|
+| [Lab 1: Environment Setup](workshops/lab1/index.md) | Connect to pre-provisioned Azure resources, configure Dynatrace tokens | 6 | 15 min |
+| [Lab 2: Monitor Azure Cloud](workshops/lab2/index.md) | Explore Clouds App, analyze logs with DQL, compare metrics, forecast capacity | 6 | 30 min |
+| [Lab 3: Kubernetes Observability](workshops/lab3/index.md) | Deploy Operator, deploy app, cluster health, resource optimization, troubleshooting, security | 8 | 45 min |
+| [Lab 4: Dashboards & Notebooks](workshops/lab4/index.md) | Build custom visualizations with DQL queries | 5 | 20 min |
+| [Lab 5: AI Observability](workshops/lab5/index.md) | Monitor LLM-powered applications, analyze prompts and tokens | 7 | 25 min |
+| [Lab 6: Cleanup](workshops/lab6/index.md) | Remove workshop resources | 4 | 10 min |
+| | **Total Workshop Duration** | **36** | **~2.5 hrs** |
 
 ## **What You'll Learn**
 
@@ -33,6 +34,15 @@ By completing this workshop, you will:
 As you work through the labs, the workshop automatically tracks your progress. Completed sections are marked with a **checkmark** (✓) and highlighted in **green** on the left navigation bar. This helps you easily see which sections you've finished and where to pick up next.
 
    ![image](workshops/lab1/img/index-progress-tracker.png)
+
+### Resetting Your Progress
+
+If you need to redo a section or start over, you can reset your progress using the buttons at the bottom of each page:
+
+- **Reset Section Progress** — Clears the completion status for the current section only, allowing you to redo that specific part of the lab
+- **Reset All Progress** — Clears all completion status across all labs, resetting the entire workshop to the beginning
+
+Look for these buttons at the bottom of any lab section page.
 
 ## **Get Started**
 
