@@ -7,11 +7,13 @@ The next steps of this guide will have you gather various information from your 
 From your Dynatrace environment, you will capture:
 
 * Dynatrace Base URL
+* Dynatrace Platform Token
 * Dynatrace API token
 
 ??? info
     - The `Base URL` will be in the Dynatrace tenant URL such as: `https://[ENVIRONMENT ID].apps.dynatrace.com/`.
-    - The `Platform Token` will the token generated in the previous step when you setup your Dynatrace envrionment.    
+    - The `Platform Token` will be token generated in the previous step when you setup your Dynatrace envrionment. 
+    -   The `Classic Access Token` will  generated for OTEL traces in Lab5.
 
 ### Tasks to complete this step
 
@@ -32,8 +34,9 @@ In the code repo you cloned, there is a simple UNIX shell script that prompts fo
       Please enter your Dynatrace credentials as requested below:
       Press <enter> to keep the current value
       ===================================================================
-      Dynatrace Base URL              (current: ) :
-      Dynatrace Access API Token      (current: ) :      
+      Dynatrace Base URL              (current: https://abc12345.apps.dynatrace.com) :
+      Dynatrace Platform  Token      (current: dt0s16.) :      
+      Dynatrace Classic Access Token (current: dtco1.)
       ===================================================================
      ```
    1. Confirm all of the inputs are correct.

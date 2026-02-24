@@ -85,7 +85,7 @@ In this section, we'll access the new UI for Grail and set up an access token wi
     ??? info "Save your token in Notepad"
         Open Notepad on your Windows VM and paste the token there. Keep this Notepad session open as you will need this token in the next lab under **Collect Inputs**.
 
-1. Create a Classic API Token for additional API operations. Follow these steps:
+1. Create a Classic Access Token for additional API operations. Follow these steps:
 
     1. From the left menu, click **Apps** and search for `Access Tokens`
         ![image](img/lab1-dt-access-tokens-app.png)        
@@ -108,13 +108,13 @@ In this section, we'll access the new UI for Grail and set up an access token wi
         1. Copy the generated token and save it to your Notepad file alongside the platform token
             
 
-    ??? info "Platform Tokens vs Classic API Tokens"
+    ??? info "Platform Tokens vs Classic Access Tokens"
         Dynatrace has two types of tokens:
 
         | Token Type | Created In | Use Case |
         |------------|------------|----------|
         | **Platform Token** | Account Management | Account-level operations, new platform APIs, document/notebook management |
-        | **Classic API Token** | Access Tokens app | Environment-level operations, entity queries, metrics ingestion, settings API |
+        | **Classic Access Token** | Access Tokens app | Environment-level operations, entity queries, metrics ingestion, settings API |
 
         For this workshop, we use **Platform Tokens** for notebook uploads and settings configuration, and **Classic API Tokens** for entity queries and metrics operations.
 

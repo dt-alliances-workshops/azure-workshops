@@ -10,13 +10,13 @@ We recommend starting with **Lab 1** to ensure your environment is set up correc
 
 | Lab | Description | Sections | Time |
 |-----|-------------|----------|------|
-| [Lab 1: Environment Setup](workshops/lab1/index.md) | Connect to pre-provisioned Azure resources, configure Dynatrace tokens | 6 | 15 min |
+| [Lab 1: Environment Setup](workshops/lab1/index.md) | Connect to pre-provisioned Azure resources, configure Dynatrace tokens | 6 | 20 min |
 | [Lab 2: Monitor Azure Cloud](workshops/lab2/index.md) | Explore Clouds App, analyze logs with DQL, compare metrics, forecast capacity | 6 | 30 min |
 | [Lab 3: Kubernetes Observability](workshops/lab3/index.md) | Deploy Operator, deploy app, cluster health, resource optimization, troubleshooting, security | 8 | 45 min |
-| [Lab 4: Dashboards & Notebooks](workshops/lab4/index.md) | Build custom visualizations with DQL queries | 5 | 20 min |
-| [Lab 5: AI Observability](workshops/lab5/index.md) | Monitor LLM-powered applications, analyze prompts and tokens | 7 | 25 min |
-| [Lab 6: Cleanup](workshops/lab6/index.md) | Remove workshop resources | 4 | 10 min |
-| | **Total Workshop Duration** | **36** | **~2.5 hrs** |
+| [Lab 4: Dashboards & Notebooks](workshops/lab4/index.md) | Build custom visualizations with DQL queries | 5 | 30 min |
+| [Lab 5: AI Observability](workshops/lab5/index.md) | Monitor LLM-powered applications, analyze prompts and tokens | 7 | 30 min |
+| [Lab 6: Cleanup](workshops/lab6/index.md) | Wrapup/Cleanup/Closing | 4 | 10 min |
+| | **Total Workshop Duration** | **36** | **~3.25-3.5 hrs** |
 
 ## **What You'll Learn**
 

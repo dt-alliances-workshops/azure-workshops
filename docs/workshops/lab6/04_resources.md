@@ -8,14 +8,15 @@ To signup for a free fully featured enabled Azure Native Dynatrace Service based
 ### Resources
 Addition Azure & Dynatrace related resources to get your started with:
 
-* [Partner Cafe Quick Azure Overview](https://www.youtube.com/watch?v=VCdEHAoEePw)
+* [Azure Native Dynatrace Service Overview](https://www.dynatrace.com/technologies/azure-monitoring/)
 * [Dynatrace YouTube Videos](https://www.youtube.com/channel/UCcYJ-5q_AfmjQ4XTjTS0o3g)
 * [More Support resources](https://www.dynatrace.com/services-support/#support-resources-section)
 * Customer Stories:​
-    - [Barbari](https://www.dynatrace.com/news/customer-stories/barbri/)
+    - [Air France](https://www.dynatrace.com/customers/air-france-klm/)
     - [Kroger](https://www.dynatrace.com/news/customer-stories/kroger/)
-    - [Mitchells & Butlers](https://www.dynatrace.com/news/customer-stories/mitchells-and-butlers/)
+    - [OneStream Software](https://www.dynatrace.com/customers/onestream/)
+    - [TD Bank](https://www.dynatrace.com/customers/td-bank/)
 
 ---
 
-**Thank you for completing the Azure Grail Workshop!**
+**Thank you for completing the Workshop!**
