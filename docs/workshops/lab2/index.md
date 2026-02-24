@@ -76,6 +76,6 @@ By the end of this lab, you will be able to:
 | 2.2 Azure Monitor Flow | How data flows from Azure to Dynatrace |
 | 2.3 Clouds App | Explore Azure resources in Dynatrace |
 | 2.4 Cloud Resource Analysis | Query and analyze cloud resources with DQL |
-| 2.5 Infrastructure & Operations | Explore host metrics and processes via OneAgent |
-| 2.6 Forecasting & Prevention | Predict capacity issues with Dynatrace Intelligence |
+| 2.5 Forecasting & Prevention | Predict capacity issues with Dynatrace Intelligence |
+| 2.6 Infrastructure & Operations | Explore host metrics and processes via OneAgent |
 | 2.7 Summary | Review what you accomplished |

@@ -13,8 +13,8 @@ In this lab, you completed the following:
 | **2.2 Azure Monitor Flow** | Understood how Azure Native Dynatrace Service automatically ingests metrics and logs without additional infrastructure |
 | **2.3 Clouds App** | Explored Azure resources in the Clouds App, reviewed metrics, configurations, and filtered by tags and regions |
 | **2.4 Cloud Resource Analysis** | Used DQL in Notebooks to query logs, metrics, and run governance queries for inventory and cost optimization |
-| **2.5 Compare Metrics** | Compared Azure Monitor metrics (Clouds App) with OneAgent metrics (Infrastructure & Operations) to understand when to use each |
-| **2.6 Forecasting** | Used Dynatrace Intelligence forecasting to predict CPU utilization and prevent capacity issues before they occur |
+| **2.5 Forecasting** | Used Dynatrace Intelligence forecasting to predict CPU utilization and prevent capacity issues before they occur |
+| **2.6 Compare Metrics** | Compared Azure Monitor metrics (Clouds App) with OneAgent metrics (Infrastructure & Operations) to understand when to use each |
 
 ### Key Takeaways
 

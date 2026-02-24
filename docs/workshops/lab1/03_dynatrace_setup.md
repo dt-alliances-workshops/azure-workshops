@@ -37,7 +37,7 @@ In this section, we'll access the new UI for Grail and set up an access token wi
 
         For more details, see the <a href="https://docs.dynatrace.com/docs/manage/identity-access-management/user-and-group-management/sign-in-with-microsoft" target="_blank">Dynatrace documentation on Sign in with Microsoft</a>.
 
-1. You should be accessing the new UI with Grail.
+1. You should be accessing the new Dynatrace UI with Grail.
     ![image](img/lab1-newui-main.png)
 
     ??? tip "If you're not seeing the new menu, follow these steps"
@@ -85,10 +85,44 @@ In this section, we'll access the new UI for Grail and set up an access token wi
     ??? info "Save your token in Notepad"
         Open Notepad on your Windows VM and paste the token there. Keep this Notepad session open as you will need this token in the next lab under **Collect Inputs**.
 
+1. Create a Classic API Token for additional API operations. Follow these steps:
+
+    1. From the left menu, click **Apps** and search for `Access Tokens`
+        ![image](img/lab1-dt-access-tokens-app.png)        
+
+    1. Configure the token with the following settings:
+        1. Set the token name to `dynatrace workshop`
+        1. Under **Expiration date**, select `Never expires` or set an appropriate expiration
+        1. Under **Select scopes**, type `otel` and search for and add the following scopes:
+
+            | Scope | Used For |
+            |-------|----------|            
+            | `Ingest metrics` | Sending custom metrics to Dynatrace |
+            | `Ingest OpenTelemetry traces` | Sending OpenTel traces to Dynatrace |
+            | `Ingest logs` | Sending  logs to Dynatrace |
+
+            ![image](img/lab1-dt-generate-new-token.png)
+
+        1. Click `Generate token`            
+
+        1. Copy the generated token and save it to your Notepad file alongside the platform token
+            
+
+    ??? info "Platform Tokens vs Classic API Tokens"
+        Dynatrace has two types of tokens:
+
+        | Token Type | Created In | Use Case |
+        |------------|------------|----------|
+        | **Platform Token** | Account Management | Account-level operations, new platform APIs, document/notebook management |
+        | **Classic API Token** | Access Tokens app | Environment-level operations, entity queries, metrics ingestion, settings API |
+
+        For this workshop, we use **Platform Tokens** for notebook uploads and settings configuration, and **Classic API Tokens** for entity queries and metrics operations.
+
 !!! success "Checkpoint"
     Before proceeding to the next section, verify:
 
     - You can access the Dynatrace environment via Azure Portal
     - You are using the new Dynatrace UI (Grail)
-    - You have created an API token with `Write API Tokens` scope
-    - You have saved the token value to a local text file
+    - You have created a Platform Token with the required scopes
+    - You have created a Classic API Token with the required scopes
+    - You have saved both token values to a local text file

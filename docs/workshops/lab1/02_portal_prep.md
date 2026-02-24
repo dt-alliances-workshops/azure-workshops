@@ -39,9 +39,6 @@ In this section, you will configure the CloudLabs sandbox environment.
 
         ![image](img/lab1-cloudlabs-paste.png)
 
-    ??? info "Keep Your Account Secure Prompt"
-        If prompted to "Keep your account secure" by setting up another verification method for MFA, click **Ask later** or **Skip for now** to proceed with the workshop.
-
 1. Once you've successfully logged in to Azure Portal, you'll notice the Azure Native Dynatrace Service (which will give you your own Dynatrace environment) and also Azure resources in the `dynatrace-azure-workshop` Resource group that are pre-provisioned for you.
    ![image](img/lab1-azportal-recent.png)
 

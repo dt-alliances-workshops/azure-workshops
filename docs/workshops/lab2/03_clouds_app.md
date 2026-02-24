@@ -2,21 +2,10 @@
 
 ## 2.3 Explore the Clouds App
 
-!!! warning "Shared Workshop Environment"
-    **For this section only (2.3), you will use a shared Dynatrace environment** instead of your own. This is because the Clouds App is currently in **private preview** and requires special access.
+!!! info "Instructor-Led Demo"
+    For this section, the instructor will walk you through a live demo of the Clouds App to show you the key capabilities and how to navigate the interface.
 
-    **Shared Environment URL:** [TODO: INSERT DYNATRACE ENVIRONMENT LINK]
-
-    Please log in to the shared environment now before continuing with the tasks below.
-
-!!! info "Why a Different Environment?"
-    The Clouds App provides a unified view of cloud resources across Azure, AWS, and GCP. Since this feature is in private preview, we've set up a shared environment pre-configured with:
-
-    - Access to the Clouds App (private preview)
-    - Sample Azure resources for you to explore
-    - Pre-ingested metrics and logs from Azure Monitor
-
-    You will return to your own Dynatrace environment in section 2.4.
+    Follow along as the instructor demonstrates the features described below. You will return to hands-on exercises in your own Dynatrace environment starting in section 2.4.
 
 The <a href="https://www.dynatrace.com/hub/detail/clouds/?query=clouds&filter=all" target="_blank">Dynatrace Clouds App</a> provides a centralized view of all your cloud resources across multiple providers. Instead of switching between Azure Portal, AWS Console, and GCP Console, you can monitor everything from a single interface.
 
