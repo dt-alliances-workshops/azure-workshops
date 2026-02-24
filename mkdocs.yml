@@ -132,5 +132,5 @@ nav:
     - 'Lab 6: Cleanup':
       - '6.1 Workshop Complete': workshops/lab6/index.md
       - '6.2 Environment Reminder': workshops/lab6/02_environment_reminder.md
-      - '6.3 Cleanup': workshops/lab6/03_cleanup.md
+      - '6.3 Cleanup (Optional)': workshops/lab6/03_cleanup.md
       - '6.4 Resources': workshops/lab6/04_resources.md
