@@ -1,6 +1,6 @@
 # Lab 6: Cleanup & Reminder
 
-## 6.3 Workshop Cleanup
+## 6.3 Workshop Cleanup (Optional)
 
 When you are ready to cleanup the workshop resource, run this command to remove the Azure resources and Dynatrace configuration:
 
