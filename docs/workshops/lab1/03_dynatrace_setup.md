@@ -111,12 +111,12 @@ In this section, we'll access the new UI for Grail and set up an access token wi
     ??? info "Platform Tokens vs Classic Access Tokens"
         Dynatrace has two types of tokens:
 
-        | Token Type | Created In | Use Case |
-        |------------|------------|----------|
-        | **Platform Token** | Account Management | Account-level operations, new platform APIs, document/notebook management |
-        | **Classic Access Token** | Access Tokens app | Environment-level operations, entity queries, metrics ingestion, settings API |
+        | Token Type | Created In | Use Case | Authentication|
+        |------------|------------|----------|---------------|
+        | **Platform Token** | Account Management | Account-level operations, new platform APIs, document/notebook management | Use the `Bearer` authorization scheme.|
+        | **Classic Access Token** | Access Tokens app | Used for API access, now mostly replaced by platform tokens. |Use the `Api-Token` authorization scheme.|
 
-        For this workshop, we use **Platform Tokens** for notebook uploads and settings configuration, and **Classic API Tokens** for entity queries and metrics operations.
+        For this workshop, we use **Platform Tokens** for notebook uploads and settings configuration, and **Classic API Tokens** for OTEL Traces, metrics and logs data for Lab5.
 
 !!! success "Checkpoint"
     Before proceeding to the next section, verify:
