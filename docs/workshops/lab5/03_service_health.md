@@ -28,7 +28,7 @@ Understanding service and model health is critical for maintaining reliable AI a
 
     ```dql title="AI Service Health Summary"
     fetch spans
-    | filter gen_ai.system == "openai
+    | filter gen_ai.system == "openai"
     | summarize
         total_requests = count(),
         error_count = countIf(otel.status_code == "ERROR"),
