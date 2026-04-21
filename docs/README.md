@@ -37,4 +37,4 @@ Attendees can expect to learn the following from this workshop:​
 
 Ready to start?
 
-## [View the Lab Guide](https://dt-alliances-workshops.github.io/azure-workshops/)
+## [View the Lab Guide](https://dt-alliances.github.io/azure-workshops/)
